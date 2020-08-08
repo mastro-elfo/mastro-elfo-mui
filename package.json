@@ -1,0 +1,9 @@
+{
+  "name": "mastro-elfo-mui",
+  "version": "1.0.0",
+  "description": "MaterialUI extension",
+  "main": "index.js",
+  "repository": "https://github.com/mastro-elfo/mastro-elfo-mui",
+  "author": "mastro-elfo <francesco.209@gmail.com>",
+  "license": "MIT"
+}
