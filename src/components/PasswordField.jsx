@@ -19,7 +19,11 @@ export default function({ IconButtonProps = {}, ...others }) {
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
-            <IconButton onClick={() => setHide(!hide)} {...IconButtonProps}>
+            <IconButton
+              onClick={() => setHide(!hide)}
+              tabIndex={-1}
+              {...IconButtonProps}
+            >
               {hide ? <VisibilityOffIcon /> : <VisibilityIcon />}
             </IconButton>
           </InputAdornment>
