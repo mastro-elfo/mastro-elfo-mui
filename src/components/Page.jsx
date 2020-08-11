@@ -1,0 +1,30 @@
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+
+import { Print, NoPrint } from "./Print";
+import TopFab from "./TopFab";
+
+export default function Page({
+  content = null,
+  header = null,
+  print = null,
+  topFab = true
+}) {
+  return (
+    <Fragment>
+      <NoPrint>
+        {topFab && <TopFab />}
+        {!!header && header}
+        {!!content && content}
+      </NoPrint>
+      <Print>{!!print && print}</Print>
+    </Fragment>
+  );
+}
+
+Page.propTypes = {
+  topFab: PropTypes.bool,
+  content: PropTypes.element,
+  header: PropTypes.element,
+  print: PropTypes.element
+};
