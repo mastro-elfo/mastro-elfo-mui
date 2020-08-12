@@ -1,6 +1,6 @@
 {
   "name": "mastro-elfo-mui",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "MaterialUI extension",
   "main": "index.js",
   "scripts": {
@@ -18,10 +18,20 @@
     "@babel/preset-react": "^7.10.4",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "@testing-library/react": "^10.4.8",
     "jest": "^26.2.2",
+    "notistack": "^0.9.17",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "notistack": "^0.9.17",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
