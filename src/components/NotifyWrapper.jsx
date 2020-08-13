@@ -8,6 +8,8 @@ import CloseIcon from "@material-ui/icons/Close";
 
 const notistackRef = createRef();
 
+// TODO: Should take props
+
 export default function({ children }) {
   const handleDismiss = key => () => notistackRef.current.closeSnackbar(key);
 

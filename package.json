@@ -1,6 +1,6 @@
 {
   "name": "mastro-elfo-mui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "MaterialUI extension",
   "main": "index.js",
   "scripts": {

@@ -15,6 +15,8 @@ const THEME = createMuiTheme({
   }
 });
 
+// TODO: Should pass theme as prop
+
 export default function ThemeWrapper({ children }) {
   return <MuiThemeProvider theme={THEME}>{children}</MuiThemeProvider>;
 }

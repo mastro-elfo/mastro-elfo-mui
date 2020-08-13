@@ -3,6 +3,8 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import TableCell from "@material-ui/core/TableCell";
 
+// TODO: See ./Danger.jsx to use `styled`
+
 export default withStyles(theme => {
   return {
     head: {

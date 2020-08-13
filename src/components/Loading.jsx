@@ -5,13 +5,9 @@ import { Button, IconButton } from "@material-ui/core";
 
 import AbsoluteCircularProgress from "./AbsoluteCircularProgress";
 
-// TODO: Test use ./Loading.jsx
-
-export default function LoadingButton({
+export default function Loading({
   children,
   delay = 1000,
-  disabled = false,
-  isIcon = false,
   loading = false,
   ...others
 }) {
@@ -26,24 +22,14 @@ export default function LoadingButton({
     } else setInnerLoading(false);
   }, [delay, loading]);
 
-  // Use Button or IconButton
-  const Component = isIcon ? IconButton : Button;
-
   return (
-    <Component color="inherit" disabled={loading || disabled} {...others}>
-      {children}
-      {innerLoading && <AbsoluteCircularProgress />}
-    </Component>
+    <span>{innerLoading && <AbsoluteCircularProgress {...others} />}</span>
   );
 }
 
 LoadingButton.propTypes = {
   //
   delay: PropTypes.number,
-  // Disable button
-  disabled: PropTypes.bool,
-  // If true, use IconButton; use Button otherwise
-  isIcon: PropTypes.bool,
   // Display CircularProgress and disable button
   loading: PropTypes.bool
 };

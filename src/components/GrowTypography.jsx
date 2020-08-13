@@ -4,9 +4,7 @@
  * Useful in AppBar/Toolbar
  */
 
-import { styled } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import { Grow } from "./";
 
-export default styled(Typography)({
-  flexGrow: 1
-});
+export default Grow(Typography);

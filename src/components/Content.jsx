@@ -6,6 +6,9 @@ import { Box, Container } from "@material-ui/core";
  * Puts a `Box` inside a `Container`.
  *
  * Children are rendered inside box and all other props are passed to `Box` element.
+ *
+ * @see: https://material-ui.com/api/container/
+ * @see: https://material-ui.com/api/box/
  */
 export default function Content({
   children,
@@ -14,7 +17,9 @@ export default function Content({
 }) {
   return (
     <Container {...ContainerProps}>
-      <Box {...BoxProps}>{children}</Box>
+      <Box pt={1} {...BoxProps}>
+        {children}
+      </Box>
     </Container>
   );
 }
