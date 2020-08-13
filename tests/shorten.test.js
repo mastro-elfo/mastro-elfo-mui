@@ -1,4 +1,4 @@
-import { shorten } from "../src/";
+import { shorten } from "../src/utils/";
 
 test("String", () => {
   expect(shorten("Hello", 4)).toBe("ello");
