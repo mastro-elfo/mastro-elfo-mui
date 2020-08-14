@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import { Button, IconButton } from "@material-ui/core";
-
 import AbsoluteCircularProgress from "./AbsoluteCircularProgress";
 
 export default function Loading({
@@ -22,12 +20,10 @@ export default function Loading({
     } else setInnerLoading(false);
   }, [delay, loading]);
 
-  return (
-    <span>{innerLoading && <AbsoluteCircularProgress {...others} />}</span>
-  );
+  return innerLoading ? <AbsoluteCircularProgress {...others} /> : null;
 }
 
-LoadingButton.propTypes = {
+Loading.propTypes = {
   //
   delay: PropTypes.number,
   // Display CircularProgress and disable button
