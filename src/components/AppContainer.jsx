@@ -2,13 +2,11 @@ import React from "react";
 
 import { ErrorWrapper, NotifyWrapper, ThemeWrapper } from "./";
 
-// TODO: Should take ThemeProps, ErrorProps, NotifyProps
-
-export default function App({ children }) {
+export default function App({ children, ThemeProps = {}, NotifyProps = {} }) {
   return (
-    <ThemeWrapper>
+    <ThemeWrapper {...ThemeProps}>
       <ErrorWrapper>
-        <NotifyWrapper>{children}</NotifyWrapper>
+        <NotifyWrapper {...NotifyProps}>{children}</NotifyWrapper>
       </ErrorWrapper>
     </ThemeWrapper>
   );

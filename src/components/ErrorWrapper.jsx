@@ -1,16 +1,10 @@
 import React, { Component, Fragment } from "react";
 
-import {
-  AppBar,
-  Container,
-  IconButton,
-  Toolbar,
-  Typography
-} from "@material-ui/core";
+import { IconButton, Typography } from "@material-ui/core";
 
 import RefreshIcon from "@material-ui/icons/Refresh";
 
-import { Content, GrowTypography, Header } from "./";
+import { Content, Header } from "./";
 
 export default class ErrorWrapper extends Component {
   constructor(props) {
