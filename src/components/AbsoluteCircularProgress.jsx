@@ -1,5 +1,5 @@
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-import { Absolute } from "./";
+import { absolute } from "../";
 
-export default Absolute(CircularProgress);
+export default absolute(CircularProgress);

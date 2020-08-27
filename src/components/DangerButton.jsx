@@ -1,4 +1,4 @@
 import { Button } from "@material-ui/core";
-import { Danger } from "./";
+import { danger } from "../";
 
-export default Danger(Button);
+export default danger(Button);
