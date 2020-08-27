@@ -1,4 +1,4 @@
-import { pluralize } from "../";
+import pluralize from "../src/utils/pluralize";
 
 test("Plural with count 0", () => {
   expect(pluralize(0, "Singular", "Plural")).toBe("Plural");

@@ -5,6 +5,6 @@
  */
 
 import Typography from "@material-ui/core/Typography";
-import { grow } from "../";
+import grow from "../styles/grow";
 
 export default grow(Typography);
