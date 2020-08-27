@@ -5,5 +5,5 @@ test("String", () => {
 });
 
 test("Array", () => {
-  expect(shorten("Hello".split(""), 4).join("")).toBe("ello");
+  expect(shorten("Hello".split(""), 4)).toEqual("ello".split(""));
 });
