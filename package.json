@@ -21,6 +21,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@testing-library/react": "^10.4.8",
     "jest": "^26.2.2",
+    "lodash": "^4.17.20",
     "notistack": "^0.9.17",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
