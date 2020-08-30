@@ -1,32 +1,15 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-import classNames from "classnames";
 import { debounce, deburr } from "lodash";
 import { useSnackbar } from "notistack";
 
-import { fade, makeStyles } from "@material-ui/core/styles";
 import { IconButton, InputAdornment, TextField } from "@material-ui/core";
 
 import ClearIcon from "@material-ui/icons/Clear";
 import SearchIcon from "@material-ui/icons/Search";
 
-const useStyles = makeStyles(theme => ({
-  AppBarSearch: {
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25)
-    }
-  },
-  AppBarInput: {
-    color: "inherit"
-  }
-}));
-
 export default function SearchField({
-  // Set style for AppBar
-  appBar = false,
   // Debounce delay
   delay = 250,
   // Clear button callback
@@ -57,8 +40,6 @@ export default function SearchField({
       return () => debounced.cancel();
     }
   }, [query]);
-
-  const classes = useStyles();
 
   // Handle search from any event (click, enter, keypress)
   const handleSearch = () => {
@@ -102,16 +83,17 @@ export default function SearchField({
   return (
     <TextField
       type="text"
-      variant={appBar ? "standard" : "outlined"}
-      className={classNames({ [classes.AppBarSearch]: appBar })}
-      placeholder="Search..."
       value={query}
       onChange={handleChange}
       onKeyPress={handleKeyPress}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <IconButton title="Search" onClick={handleSearch}>
+            <IconButton
+              title="Search"
+              onClick={handleSearch}
+              {...SearchButtonProps}
+            >
               <SearchIcon />
             </IconButton>
           </InputAdornment>
@@ -119,16 +101,17 @@ export default function SearchField({
         endAdornment: (
           <InputAdornment position="end">
             {!!query && (
-              <IconButton title="Clear" onClick={handleClear} color="inherit">
+              <IconButton
+                title="Clear"
+                onClick={handleClear}
+                color="inherit"
+                {...ClearButtonProps}
+              >
                 <ClearIcon />
               </IconButton>
             )}
           </InputAdornment>
-        ),
-        classes: {
-          root: classNames({ [classes.AppBarInput]: appBar })
-        },
-        ...(appBar && { disableUnderline: true })
+        )
       }}
       {...others}
     />
@@ -136,7 +119,6 @@ export default function SearchField({
 }
 
 SearchField.propTypes = {
-  appBar: PropTypes.bool,
   delay: PropTypes.number,
   onClear: PropTypes.func,
   onSearch: PropTypes.func,
