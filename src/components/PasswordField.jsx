@@ -24,7 +24,7 @@ export default function({ IconButtonProps = {}, ...others }) {
               tabIndex={-1}
               {...IconButtonProps}
             >
-              {hide ? <VisibilityOffIcon /> : <VisibilityIcon />}
+              {hide ? <VisibilityIcon /> : <VisibilityOffIcon />}
             </IconButton>
           </InputAdornment>
         )
