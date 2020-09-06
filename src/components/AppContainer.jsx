@@ -1,12 +1,19 @@
 import React from "react";
 
-import { ErrorWrapper, NotifyWrapper, ThemeWrapper } from "./";
+import { ErrorWrapper, NotifyWrapper, RouterWrapper, ThemeWrapper } from "./";
 
-export default function App({ children, ThemeProps = {}, NotifyProps = {} }) {
+export default function App({
+  children,
+  ThemeProps = {},
+  NotifyProps = {},
+  RouterProps = {}
+}) {
   return (
     <ThemeWrapper {...ThemeProps}>
       <ErrorWrapper>
-        <NotifyWrapper {...NotifyProps}>{children}</NotifyWrapper>
+        <NotifyWrapper {...NotifyProps}>
+          <RouterWrapper>{children}</RouterWrapper>
+        </NotifyWrapper>
       </ErrorWrapper>
     </ThemeWrapper>
   );
