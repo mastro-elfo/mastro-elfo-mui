@@ -13,6 +13,7 @@ export default function({
   routes = [],
   redirect = null
 }) {
+  console.warning("Deprecated");
   return (
     <Router>
       <Switch>
