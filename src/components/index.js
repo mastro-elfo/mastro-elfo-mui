@@ -1,6 +1,7 @@
 // export { default as Absolute } from "./Absolute";
 export { default as AbsoluteCircularProgress } from "./AbsoluteCircularProgress";
 export { default as AppContainer } from "./AppContainer";
+export { default as BackIconButton } from "./BackIconButton";
 export { default as ConfirmDialog } from "./ConfirmDialog";
 export { default as ConfirmDialogButton } from "./ConfirmDialogButton";
 export { default as Content } from "./Content";
