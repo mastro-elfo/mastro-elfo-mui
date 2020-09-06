@@ -15,7 +15,7 @@ export default function SearchField({
   // Clear button callback
   onClear = () => {},
   // Search callback
-  onSearch = Promise.reject(new Error("No search function provided")),
+  onSearch = () => Promise.reject(new Error("No search function provided")),
   // Search button props
   SearchButtonProps = {},
   // Clear button props
@@ -28,18 +28,6 @@ export default function SearchField({
   // Searching status
   const [searching, setSearching] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
-
-  // Define a debounced function to handle keypress searches
-  const debounced = debounce(handleSearch, delay);
-
-  // Debounce search when query changes
-  useEffect(() => {
-    if (query) {
-      // Search only if there's a query string
-      debounced();
-      return () => debounced.cancel();
-    }
-  }, [query]);
 
   // Handle search from any event (click, enter, keypress)
   const handleSearch = () => {
@@ -56,6 +44,18 @@ export default function SearchField({
       // In any case reset searching
       .then(() => setSearching(false));
   };
+
+  // Define a debounced function to handle keypress searches
+  const debounced = debounce(handleSearch, delay);
+
+  // Debounce search when query changes
+  useEffect(() => {
+    if (query) {
+      // Search only if there's a query string
+      debounced();
+      return () => debounced.cancel();
+    }
+  }, [query]);
 
   // Handle clear click events
   const handleClear = () => {
