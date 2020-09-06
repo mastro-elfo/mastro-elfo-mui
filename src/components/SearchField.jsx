@@ -92,6 +92,7 @@ export default function SearchField({
             <IconButton
               title="Search"
               onClick={handleSearch}
+              disabled={searching}
               {...SearchButtonProps}
             >
               <SearchIcon />
