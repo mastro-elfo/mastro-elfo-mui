@@ -11,10 +11,11 @@ import {
 export default function({
   Router = MemoryRouter,
   routes = [],
-  redirect = null
+  redirect = null,
+  ...others
 }) {
   return (
-    <Router>
+    <Router {...others}>
       <Switch>
         {routes.map((route, i) => (
           <Route key={i} {...route} />
