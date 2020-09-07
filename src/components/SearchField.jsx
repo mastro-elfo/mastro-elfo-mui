@@ -61,6 +61,7 @@ export default function SearchField({
       debounced();
       return () => debounced.cancel();
     }
+    // eslint-disable-next-line
   }, [query]);
 
   // Handle clear click events
