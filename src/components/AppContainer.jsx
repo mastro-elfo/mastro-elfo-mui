@@ -12,7 +12,7 @@ export default function App({
     <ThemeWrapper {...ThemeProps}>
       <ErrorWrapper>
         <NotifyWrapper {...NotifyProps}>
-          <RouterWrapper>{children}</RouterWrapper>
+          <RouterWrapper {...RouterProps}>{children}</RouterWrapper>
         </NotifyWrapper>
       </ErrorWrapper>
     </ThemeWrapper>
