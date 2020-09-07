@@ -1,3 +1,7 @@
+/**
+ * Complex `Paper` that contains a login form.
+ */
+
 import React, { useState } from "react";
 
 import { Box, Button, Paper, TextField, Typography } from "@material-ui/core";

@@ -1,6 +1,7 @@
 /**
- *
+ * A `TableCell` with theme primary color as background and corresponding contrast color as text color.
  */
+
 import { withStyles } from "@material-ui/core/styles";
 import TableCell from "@material-ui/core/TableCell";
 

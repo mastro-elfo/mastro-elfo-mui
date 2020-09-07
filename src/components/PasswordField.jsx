@@ -1,5 +1,5 @@
 /**
- * Create a password field with an icon button that toggles visibility
+ * A `TextField` with an `IconButton` that toggles visibility.
  */
 
 import React, { useState } from "react";

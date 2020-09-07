@@ -1,14 +1,14 @@
-import React, { Fragment } from "react";
-
-import { AppBar, Toolbar } from "@material-ui/core";
-
-import GrowTypography from "./GrowTypography";
-
 /**
  * Create an AppBar/Toolbar header.
  *
  * Children are rendered inside a flexGrow Typography
  */
+
+import React, { Fragment } from "react";
+
+import { AppBar, Toolbar } from "@material-ui/core";
+
+import GrowTypography from "./GrowTypography";
 
 export default function Header({
   children,

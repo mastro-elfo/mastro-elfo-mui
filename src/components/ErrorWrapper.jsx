@@ -1,3 +1,7 @@
+/**
+ * Error handler.
+ */
+
 import React, { Component, Fragment } from "react";
 
 import { IconButton, Typography } from "@material-ui/core";

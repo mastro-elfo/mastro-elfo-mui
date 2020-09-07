@@ -1,3 +1,9 @@
+/**
+ * A `TextField` that manages a search input.
+ *
+ * `onSearch` is called when a search happens (by clicking or typing) with the query string as first parameter and the "deburred" string as second.
+ */
+
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 

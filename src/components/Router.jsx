@@ -1,3 +1,5 @@
+// TODO: Remove this component
+
 import React from "react";
 
 import {
@@ -13,7 +15,7 @@ export default function({
   routes = [],
   redirect = null
 }) {
-  console.warning("Deprecated");
+  console.warning("This component is deprecated and will be removed");
   return (
     <Router>
       <Switch>

@@ -1,3 +1,7 @@
+/**
+ * Complex dialog box that asks to confirm some action.
+ */
+
 import React from "react";
 import PropTypes from "prop-types";
 

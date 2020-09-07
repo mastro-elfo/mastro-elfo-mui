@@ -1,3 +1,9 @@
+/**
+ * `IconButton` with `ArrowBack` icon.
+ *
+ * Use `useHistory` to go back when clicked.
+ */
+
 import React from "react";
 
 import { useHistory } from "react-router-dom";

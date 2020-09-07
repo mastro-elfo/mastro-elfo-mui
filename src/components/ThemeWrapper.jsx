@@ -1,3 +1,7 @@
+/**
+ * Theme Wrapper
+ */
+
 import React from "react";
 
 // Customize main theme

@@ -1,3 +1,7 @@
+/**
+ * A `SearchField` styled to stay inside `Header`.
+ */
+
 import React from "react";
 import classNames from "classnames";
 import { fade, makeStyles } from "@material-ui/core/styles";

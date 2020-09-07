@@ -1,3 +1,9 @@
+/**
+ * Create a single page with header, content and a "printable" version (hidden on screen).
+ *
+ * By default scrolling the page make a `TopFab` appear.
+ */
+
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 

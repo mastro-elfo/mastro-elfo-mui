@@ -1,3 +1,7 @@
+/**
+ * A `Fab` that zooms in when the page is scolled and scrolls to top when clicked.
+ */
+
 import React from "react";
 import PropTypes from "prop-types";
 

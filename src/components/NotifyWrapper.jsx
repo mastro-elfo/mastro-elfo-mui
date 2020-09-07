@@ -1,3 +1,9 @@
+/**
+ * Wrapper for `notistack` snackbars.
+ *
+ * @see: https://iamhosseindhv.com/notistack
+ */
+
 import React, { createRef } from "react";
 
 import { SnackbarProvider } from "notistack";
@@ -35,14 +41,3 @@ export default function({ children, ...props }) {
     </SnackbarProvider>
   );
 }
-
-// Use
-// `import {useSnackbar} from 'notistack';`
-// ...
-// This provide `enqueueSnackbar(message, options)` as hook.
-// See also: https://iamhosseindhv.com/notistack
-//
-// Options:
-// 	* `.variant`: oneOf(['default', 'error', 'success', 'warning', 'info'])
-//
-// Pass prop `autoHideDuration`, in milliseconds, to SnackbarProvider. Default is 5000.
