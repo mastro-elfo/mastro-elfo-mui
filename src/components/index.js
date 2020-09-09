@@ -17,6 +17,7 @@ export { NoPrint, Print } from "./Print";
 export { default as ResultList } from "./ResultList";
 export { default as RouterWrapper } from "./RouterWrapper";
 export { default as SearchField } from "./SearchField";
+export { default as StrengthLinearProgress } from "./StrengthLinearProgress";
 export { default as TableHeadCell } from "./TableHeadCell";
 export { default as ThemeWrapper } from "./ThemeWrapper";
 export { default as TopFab } from "./TopFab";
