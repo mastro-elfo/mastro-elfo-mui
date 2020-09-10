@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ErrorWrapper, NotifyWrapper, ThemeWrapper } from "./";
+import { ErrorWrapper, NotifyWrapper, RouterWrapper, ThemeWrapper } from "./";
 
 export default function App({
   NotifyProps = {},
