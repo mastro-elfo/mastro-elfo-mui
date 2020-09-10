@@ -11,5 +11,8 @@ export default function(start, delay = 1000) {
       return () => clearTimeout(to);
     }
   }, [delay, value]);
-  return value;
+
+  const reset = () => setValue(start);
+
+  return [value, reset];
 }
