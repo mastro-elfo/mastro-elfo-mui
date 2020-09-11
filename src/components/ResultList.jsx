@@ -21,6 +21,8 @@ import {
 } from "@material-ui/core";
 
 export default function({ subheader, mapper = r => r, results, ...others }) {
+  // TODO: When ready use Condition?
+
   if (results === null || results === undefined) return null;
   return (
     <List

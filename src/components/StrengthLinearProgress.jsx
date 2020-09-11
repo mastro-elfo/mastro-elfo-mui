@@ -33,6 +33,9 @@ export default function StrengthLinearProgress({
   ...others
 }) {
   const strength = evaluate(password);
+
+  // TODO: When ready use Condition?
+
   return (
     <Fragment>
       <LinearProgress variant="determinate" value={strength} {...others} />

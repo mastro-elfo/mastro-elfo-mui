@@ -33,6 +33,8 @@ export default function ConfirmDialog({
   // Other props are passed to `Dialog`
   ...other
 }) {
+  // TODO: When ready use Condition?
+
   return (
     <Dialog {...other}>
       {!!title && <DialogTitle>{title}</DialogTitle>}
