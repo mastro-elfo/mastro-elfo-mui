@@ -1,3 +1,11 @@
+/**
+ * Creates a countdown timer from `start` to 0.
+ *
+ * Value is update each `delay` milliseconds.
+ *
+ * @return: [value, resetFunction]
+ */
+
 import { useEffect, useState } from "react";
 
 export default function(start, delay = 1000) {
