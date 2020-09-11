@@ -1,16 +1,33 @@
 /**
- * Display an `AbsoluteCircularProgress` after a delay.
+ * Renders `children` after `delay` milliseconds when `show` goes `true`.
+ *
+ * Otherwise renders `null`.
+ * @param delay = 1000
+ * @param show = false
+ *
+ * Example:
+ * ```jsx
+ *  <Button onClick={handler} disabled={loading}>
+ *    Send
+ *    <Loading show={loading}>
+ *      <AbsoluteCircularProgress/>
+ *    </Loading>
+ *  </Button>
+ * ```
+ *
+ * `handler` sets `loading` to `true` and sends a message to a server. If the operation takes more than `delay` an `AbsoluteCircularProgress` is displayed.
+ * When operation is complete `handler` sets `loading` to `false` to hide the component.
  */
 
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import AbsoluteCircularProgress from "./AbsoluteCircularProgress";
-
 export default function Loading({
   children,
+  // Wait for `delay` milliseconds
   delay = 1000,
-  loading = false,
+  // Display `children`
+  show = false,
   ...others
 }) {
   // Display CircularProgress if innerLoading is true
@@ -18,18 +35,16 @@ export default function Loading({
 
   useEffect(() => {
     // Delay setting innerLoading
-    if (loading) {
+    if (show) {
       const to = setTimeout(setInnerLoading, delay, true);
       return () => clearTimeout(to);
     } else setInnerLoading(false);
-  }, [delay, loading]);
+  }, [delay, show]);
 
-  return innerLoading ? <AbsoluteCircularProgress {...others} /> : null;
+  return innerLoading ? children : null;
 }
 
 Loading.propTypes = {
-  //
   delay: PropTypes.number,
-  // Display CircularProgress and disable button
-  loading: PropTypes.bool
+  show: PropTypes.bool
 };
