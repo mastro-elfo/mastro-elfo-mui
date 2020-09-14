@@ -19,8 +19,6 @@
  * When operation is complete `handler` sets `loading` to `false` to hide the component.
  */
 
-// TODO: When ready use Condition
-
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 

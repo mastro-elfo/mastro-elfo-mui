@@ -13,8 +13,6 @@ export default function({ IconButtonProps = {}, ...others }) {
   // Visibility state
   const [hide, setHide] = useState(true);
 
-  // TODO: When ready use Condition?
-
   return (
     <TextField
       type={hide ? "password" : "text"}

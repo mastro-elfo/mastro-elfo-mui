@@ -20,34 +20,35 @@ import {
   ListSubheader
 } from "@material-ui/core";
 
+import { Condition } from "./";
+
 export default function({ subheader, mapper = r => r, results, ...others }) {
-  // TODO: When ready use Condition?
-
-  if (results === null || results === undefined) return null;
   return (
-    <List
-      subheader={!!subheader && <ListSubheader>{subheader}</ListSubheader>}
-      {...others}
-    >
-      {results.map(r => {
-        const {
-          LeftIcon,
-          RightIcon,
-          primary,
-          secondary,
-          onClick,
-          ...others
-        } = mapper(r);
-        return (
-          <ListItem button={!!onClick} onClick={onClick} {...others}>
-            {!!LeftIcon && <ListItemIcon>{LeftIcon}</ListItemIcon>}
+    <Condition show={results !== null && results !== undefined}>
+      <List
+        subheader={!!subheader && <ListSubheader>{subheader}</ListSubheader>}
+        {...others}
+      >
+        {results.map(r => {
+          const {
+            LeftIcon,
+            RightIcon,
+            primary,
+            secondary,
+            onClick,
+            ...others
+          } = mapper(r);
+          return (
+            <ListItem button={!!onClick} onClick={onClick} {...others}>
+              {!!LeftIcon && <ListItemIcon>{LeftIcon}</ListItemIcon>}
 
-            <ListItemText primary={primary} secondary={secondary} />
+              <ListItemText primary={primary} secondary={secondary} />
 
-            {!!RightIcon && <ListItemIcon>{RightIcon}</ListItemIcon>}
-          </ListItem>
-        );
-      })}
-    </List>
+              {!!RightIcon && <ListItemIcon>{RightIcon}</ListItemIcon>}
+            </ListItem>
+          );
+        })}
+      </List>
+    </Condition>
   );
 }

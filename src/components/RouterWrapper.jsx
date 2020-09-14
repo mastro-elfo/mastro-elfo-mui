@@ -28,8 +28,6 @@ export default function({
   redirect = null,
   ...others
 }) {
-  // TODO: When ready use Condition?
-
   return (
     <Router {...others}>
       <Switch>

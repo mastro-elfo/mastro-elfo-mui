@@ -7,8 +7,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
-import { Print, NoPrint } from "./Print";
-import TopFab from "./TopFab";
+import { NoPrint, Print, TopFab } from "./";
 
 export default function Page({
   content = null,
@@ -16,7 +15,6 @@ export default function Page({
   print = null,
   topFab = true
 }) {
-  // TODO: When ready use Condition?
   return (
     <Fragment>
       <NoPrint>

@@ -14,6 +14,8 @@ import {
   DialogContentText
 } from "@material-ui/core";
 
+import { Condition } from "./";
+
 export default function ConfirmDialog({
   // Content of `DialogTitle`
   title = "",
@@ -33,12 +35,13 @@ export default function ConfirmDialog({
   // Other props are passed to `Dialog`
   ...other
 }) {
-  // TODO: When ready use Condition?
-
   return (
     <Dialog {...other}>
-      {!!title && <DialogTitle>{title}</DialogTitle>}
-      {!!content && (
+      <Condition show={title}>
+        <DialogTitle>{title}</DialogTitle>
+      </Condition>
+
+      <Condition show={content}>
         <DialogContent>
           {typeof content === "object" && content.map ? (
             content.map((item, i) => (
@@ -48,10 +51,11 @@ export default function ConfirmDialog({
             <DialogContentText>{content}</DialogContentText>
           )}
         </DialogContent>
-      )}
-      {(!!confirm || !!cancel) && (
+      </Condition>
+
+      <Condition show={!!confirm || !!cancel}>
         <DialogActions>
-          {!!confirm && (
+          <Condition show={confirm}>
             <Button
               color="primary"
               variant="contained"
@@ -61,8 +65,9 @@ export default function ConfirmDialog({
             >
               {confirm}
             </Button>
-          )}
-          {!!cancel && (
+          </Condition>
+
+          <Condition show={cancel}>
             <Button
               color="secondary"
               title="Cancel"
@@ -71,9 +76,9 @@ export default function ConfirmDialog({
             >
               {cancel}
             </Button>
-          )}
+          </Condition>
         </DialogActions>
-      )}
+      </Condition>
     </Dialog>
   );
 }
