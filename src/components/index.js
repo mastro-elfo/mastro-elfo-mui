@@ -23,6 +23,3 @@ export { default as StrengthLinearProgress } from "./StrengthLinearProgress";
 export { default as TableHeadCell } from "./TableHeadCell";
 export { default as ThemeWrapper } from "./ThemeWrapper";
 export { default as TopFab } from "./TopFab";
-
-// Deprecated
-export { default as Router } from "./Router";
