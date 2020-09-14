@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import { Switch, Route, useParams } from "react-router-dom";
+import { Switch, Route, useParams, useHistory } from "react-router-dom";
 import { useSnackbar } from "notistack";
 
-import { CircularProgress, Grid } from "@material-ui/core";
+import { CircularProgress, Grid, IconButton } from "@material-ui/core";
 
+import AddIcon from "@material-ui/icons/Add";
+import EditIcon from "@material-ui/icons/Edit";
 import SaveIcon from "@material-ui/icons/Save";
 
 import {
   BackIconButton,
-  Condition,
+  Conditional,
   Content,
   Header,
   LoadingIconButton,
@@ -19,49 +21,47 @@ import {
   ResultList
 } from "./";
 
+import { evaluate } from "../utils";
+
 export default function Collection({
   cid,
   search = () => Promise.reject(new Error("No search function provided")),
   load = () => Promise.reject(new Error("No load function provided")),
-  // save= ()=>Promise.reject(new Error("No save function provided")),
-  mapper = r => r
+  save = () => Promise.reject(new Error("No save function provided")),
+  CollectionProps = {
+    mapper: r => r
+  },
+  ViewProps = {
+    title: "View Item",
+    render: () => {}
+  },
+  NewProps = {
+    title: "New Item",
+    render: () => {},
+    data: {}
+  },
+  EditProps = {
+    title: "Edit Item",
+    render: () => {}
+  }
 }) {
-  const { enqueueSnackbar } = useSnackbar();
-  const [data, setData] = useState();
-  const { id } = useParams();
-
-  // Load data if there's an id
-  useEffect(() => {
-    if (id !== undefined) {
-      load(id)
-        .then(r => {
-          setData(r);
-        })
-        .catch(err => {
-          console.error(err);
-          enqueueSnackbar(err.message, { variant: "error" });
-        });
-    }
-    // eslint-disable-next-line
-  }, [id]);
-
   return (
     <Switch>
       <Route path={`/${cid}/v/:id`}>
-        <Condition show={data !== undefined} alt={<LoadingPage />}>
-          <ViewPage />
-        </Condition>
+        <ViewItem cid={cid} load={load} {...ViewProps} />
       </Route>
       <Route path={`/${cid}/e/:id`}>
-        <Condition show={data !== undefined} alt={<LoadingPage />}>
-          <EditPage />
-        </Condition>
+        <EditItem cid={cid} load={load} save={save} {...EditProps} />
       </Route>
       <Route path={`/${cid}/n`}>
-        <NewPage />
+        <NewItem cid={cid} save={save} {...NewProps} />
       </Route>
       <Route path={`/${cid}`}>
-        <CollectionPage mapper={mapper}></CollectionPage>
+        <CollectionPage
+          cid={cid}
+          search={search}
+          {...CollectionProps}
+        ></CollectionPage>
       </Route>
     </Switch>
   );
@@ -75,7 +75,14 @@ Collection.propTypes = {
   save: PropTypes.func
 };
 
-function CollectionPage({ search, mapper }) {
+function CollectionPage({
+  cid,
+  search = Promise.reject(
+    new Error("No search function provided to CollectionPage")
+  ),
+  mapper
+}) {
+  const { push } = useHistory();
   const { enqueueSnackbar } = useSnackbar();
   const [results, setResults] = useState(null);
 
@@ -93,7 +100,22 @@ function CollectionPage({ search, mapper }) {
 
   return (
     <Page
-      header={<Header LeftAction={<BackIconButton />}>Collection</Header>}
+      header={
+        <Header
+          LeftAction={<BackIconButton />}
+          RightActions={[
+            <IconButton
+              key="new"
+              color="inherit"
+              onClick={() => push(`/${cid}/n`)}
+            >
+              <AddIcon />
+            </IconButton>
+          ]}
+        >
+          Collection
+        </Header>
+      }
       content={
         <Content>
           <Grid container item justify="center">
@@ -110,54 +132,153 @@ function CollectionPage({ search, mapper }) {
   );
 }
 
-function ViewPage({ data }) {
+function ViewItem({
+  load = Promise.reject(new Error("No load function provided to ViewItem")),
+  ...others
+}) {
+  const { id } = useParams();
+  const { enqueueSnackbar } = useSnackbar();
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    load(id)
+      .then(r => setData(r))
+      .catch(err => {
+        console.error(err);
+        enqueueSnackbar(err.message, { variant: "error" });
+      });
+  }, [id]);
+
+  return (
+    <Conditional
+      show={data}
+      Component={ViewPage}
+      Alt={LoadingPage}
+      data={data}
+      {...others}
+    />
+  );
+}
+
+function ViewPage({ cid, title = "View Item", render = () => {}, data }) {
+  const { push } = useHistory();
+  const { id } = data;
   return (
     <Page
-      header={<Header LeftAction={<BackIconButton />}>View Item</Header>}
-      content={<Content></Content>}
+      header={
+        <Header
+          LeftAction={<BackIconButton />}
+          RightActions={[
+            <IconButton
+              key="edit"
+              color="inherit"
+              onClick={() => push(`/${cid}/e/${id}`)}
+            >
+              <EditIcon />
+            </IconButton>
+          ]}
+        >
+          {evaluate(title, data)}
+        </Header>
+      }
+      content={<Content>{render(data)}</Content>}
+    />
+  );
+}
+
+function EditItem({
+  load = Promise.reject(new Error("No load function provided to EditItem")),
+  ...others
+}) {
+  const { id } = useParams();
+  const { enqueueSnackbar } = useSnackbar();
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    load(id)
+      .then(r => setData(r))
+      .catch(err => {
+        console.error(err);
+        enqueueSnackbar(err.message, { variant: "error" });
+      });
+  }, [id]);
+
+  return (
+    <Conditional
+      show={Boolean(data)}
+      Component={EditPage}
+      Alt={LoadingPage}
+      data={data}
+      setData={setData}
+      {...others}
     />
   );
 }
 
 function EditPage({
+  title = "Edit Item",
+  render = () => {},
   data,
-  save = () => Promise.reject(new Error("No save function provided"))
+  setData,
+  save = () =>
+    Promise.reject(new Error("No save function provided to EditPage"))
 }) {
+  const { goBack } = useHistory();
+
+  const handleSave = () => save(data).then(({ id }) => setTimeout(goBack, 100));
+
   return (
     <Page
       header={
         <Header
           LeftAction={<BackIconButton />}
           RightActions={[
-            <LoadingIconButton key="save" color="inherit" callback={save}>
+            <LoadingIconButton key="save" color="inherit" callback={handleSave}>
               <SaveIcon />
             </LoadingIconButton>
           ]}
         >
-          Edit Item
+          {evaluate(title, data)}
         </Header>
       }
-      content={<Content></Content>}
+      content={<Content>{render(data, setData)}</Content>}
     />
   );
 }
 
-function NewPage({ save }) {
+function NewItem({ data: defaultData, ...others }) {
+  const [data, setData] = useState(defaultData);
+  return <NewPage data={data} setData={setData} {...others} />;
+}
+
+function NewPage({
+  cid,
+  title = "New Item",
+  render,
+  data,
+  setData,
+  save = Promise.reject(new Error("No save function provided to NewPage"))
+}) {
+  const { replace } = useHistory();
+
+  const handleSave = () =>
+    save(data).then(({ id }) => setTimeout(replace, 100, `/${cid}/v/${id}`));
+
   return (
     <Page
       header={
         <Header
           LeftAction={<BackIconButton />}
           RightActions={[
-            <LoadingIconButton key="save" color="inherit" callback={save}>
+            <LoadingIconButton key="save" color="inherit" callback={handleSave}>
               <SaveIcon />
             </LoadingIconButton>
           ]}
         >
-          New Item
+          {evaluate(title, data)}
         </Header>
       }
-      content={<Content></Content>}
+      content={<Content>{render(data, setData)}</Content>}
     />
   );
 }
@@ -168,7 +289,7 @@ function LoadingPage() {
       header={
         <Header
           LeftAction={<BackIconButton />}
-          RightActions={[<CircularProgress color="secondary" />]}
+          RightActions={[<CircularProgress key="progress" color="secondary" />]}
         >
           Loading...
         </Header>
