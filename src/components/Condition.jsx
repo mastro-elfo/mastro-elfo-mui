@@ -7,7 +7,6 @@
  * If `show` is a function, it is evaluated and its return value is used as condition.
  */
 
-import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 export default function Condition({ alt = null, children, show = false }) {
