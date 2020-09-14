@@ -29,25 +29,26 @@ export default function({ subheader, mapper = r => r, results, ...others }) {
         subheader={!!subheader && <ListSubheader>{subheader}</ListSubheader>}
         {...others}
       >
-        {results.map(r => {
-          const {
-            LeftIcon,
-            RightIcon,
-            primary,
-            secondary,
-            onClick,
-            ...others
-          } = mapper(r);
-          return (
-            <ListItem button={!!onClick} onClick={onClick} {...others}>
-              {!!LeftIcon && <ListItemIcon>{LeftIcon}</ListItemIcon>}
+        {results &&
+          results.map(r => {
+            const {
+              LeftIcon,
+              RightIcon,
+              primary,
+              secondary,
+              onClick,
+              ...others
+            } = mapper(r);
+            return (
+              <ListItem button={!!onClick} onClick={onClick} {...others}>
+                {!!LeftIcon && <ListItemIcon>{LeftIcon}</ListItemIcon>}
 
-              <ListItemText primary={primary} secondary={secondary} />
+                <ListItemText primary={primary} secondary={secondary} />
 
-              {!!RightIcon && <ListItemIcon>{RightIcon}</ListItemIcon>}
-            </ListItem>
-          );
-        })}
+                {!!RightIcon && <ListItemIcon>{RightIcon}</ListItemIcon>}
+              </ListItem>
+            );
+          })}
       </List>
     </Condition>
   );
