@@ -21,7 +21,7 @@
 
 // TODO: When ready use Condition
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 export default function Loading({
