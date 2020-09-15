@@ -7,6 +7,7 @@ export { default as Conditional } from "./Conditional";
 export { default as ConfirmDialog } from "./ConfirmDialog";
 export { default as ConfirmDialogButton } from "./ConfirmDialogButton";
 export { default as Content } from "./Content";
+export { default as CreditTextField } from "./CreditTextField";
 export { default as DangerButton } from "./DangerButton";
 export { default as ErrorWrapper } from "./ErrorWrapper";
 export { default as GrowTypography } from "./GrowTypography";
