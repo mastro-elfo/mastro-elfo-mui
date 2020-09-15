@@ -147,6 +147,7 @@ function ViewItem({
         console.error(err);
         enqueueSnackbar(err.message, { variant: "error" });
       });
+    // eslint-disable-next-line
   }, [id]);
 
   return (
@@ -201,6 +202,7 @@ function EditItem({
         console.error(err);
         enqueueSnackbar(err.message, { variant: "error" });
       });
+    // eslint-disable-next-line
   }, [id]);
 
   return (
