@@ -22,20 +22,25 @@ import {
   Redirect
 } from "react-router-dom";
 
+import { Wrapper } from "./";
+
 export default function({
   Router = MemoryRouter,
   routes = [],
   redirect = null,
+  WrapperProps = {},
   ...others
 }) {
   return (
     <Router {...others}>
-      <Switch>
-        {routes.map((route, i) => (
-          <Route key={i} {...route} />
-        ))}
-        {!!redirect && <Redirect to={redirect} />}
-      </Switch>
+      <Wrapper {...WrapperProps}>
+        <Switch>
+          {routes.map((route, i) => (
+            <Route key={i} {...route} />
+          ))}
+          {!!redirect && <Redirect to={redirect} />}
+        </Switch>
+      </Wrapper>
     </Router>
   );
 }
