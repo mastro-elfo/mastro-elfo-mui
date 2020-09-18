@@ -26,3 +26,4 @@ export { default as StrengthLinearProgress } from "./StrengthLinearProgress";
 export { default as TableHeadCell } from "./TableHeadCell";
 export { default as ThemeWrapper } from "./ThemeWrapper";
 export { default as TopFab } from "./TopFab";
+export { default as Wrapper } from "./Wrapper";
