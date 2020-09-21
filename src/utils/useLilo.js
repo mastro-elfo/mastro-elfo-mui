@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 /**
  * Creates a LastInLastOut list of length `length`
  * @param  {Array}  [start=[]] List initialization
