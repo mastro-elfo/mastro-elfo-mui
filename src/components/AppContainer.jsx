@@ -8,18 +8,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ErrorWrapper, NotifyWrapper, RouterWrapper, ThemeWrapper } from "./";
+import {
+  ErrorWrapper,
+  NotifyWrapper,
+  RouterWrapper,
+  ThemeWrapper,
+  Wrapper
+} from "./";
 
 export default function App({
   NotifyProps = {},
   RouterProps = {},
-  ThemeProps = {}
+  ThemeProps = {},
+  WrapperProps = {}
 }) {
   return (
     <ThemeWrapper {...ThemeProps}>
       <ErrorWrapper>
         <NotifyWrapper {...NotifyProps}>
-          <RouterWrapper {...RouterProps}></RouterWrapper>
+          <Wrapper {...WrapperProps}>
+            <RouterWrapper {...RouterProps} />
+          </Wrapper>
         </NotifyWrapper>
       </ErrorWrapper>
     </ThemeWrapper>
@@ -29,5 +38,6 @@ export default function App({
 App.propTypes = {
   NotifyProps: PropTypes.object,
   RouterProps: PropTypes.object,
-  ThemeProps: PropTypes.object
+  ThemeProps: PropTypes.object,
+  WrapperProps: PropTypes.object
 };
