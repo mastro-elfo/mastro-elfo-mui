@@ -12,6 +12,7 @@ import {
   ErrorWrapper,
   NotifyWrapper,
   RouterWrapper,
+  SuspenseWrapper,
   ThemeWrapper,
   Wrapper
 } from "./";
@@ -19,18 +20,21 @@ import {
 export default function App({
   NotifyProps = {},
   RouterProps = {},
+  SuspenseProps = {},
   ThemeProps = {},
   WrapperProps = {}
 }) {
   return (
     <ThemeWrapper {...ThemeProps}>
-      <ErrorWrapper>
-        <NotifyWrapper {...NotifyProps}>
-          <Wrapper {...WrapperProps}>
-            <RouterWrapper {...RouterProps} />
-          </Wrapper>
-        </NotifyWrapper>
-      </ErrorWrapper>
+      <SuspenseWrapper {...SuspenseProps}>
+        <ErrorWrapper>
+          <NotifyWrapper {...NotifyProps}>
+            <Wrapper {...WrapperProps}>
+              <RouterWrapper {...RouterProps} />
+            </Wrapper>
+          </NotifyWrapper>
+        </ErrorWrapper>
+      </SuspenseWrapper>
     </ThemeWrapper>
   );
 }
@@ -38,6 +42,7 @@ export default function App({
 App.propTypes = {
   NotifyProps: PropTypes.object,
   RouterProps: PropTypes.object,
+  SuspenseProps: PropTypes.object,
   ThemeProps: PropTypes.object,
   WrapperProps: PropTypes.object
 };
