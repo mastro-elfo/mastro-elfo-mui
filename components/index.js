@@ -177,6 +177,12 @@ Object.defineProperty(exports, "StrengthLinearProgress", {
     return _StrengthLinearProgress["default"];
   }
 });
+Object.defineProperty(exports, "SuspenseWrapper", {
+  enumerable: true,
+  get: function get() {
+    return _SuspenseWrapper["default"];
+  }
+});
 Object.defineProperty(exports, "TableHeadCell", {
   enumerable: true,
   get: function get() {
@@ -257,6 +263,8 @@ var _RouterWrapper = _interopRequireDefault(require("./RouterWrapper"));
 var _SearchField = _interopRequireDefault(require("./SearchField"));
 
 var _StrengthLinearProgress = _interopRequireDefault(require("./StrengthLinearProgress"));
+
+var _SuspenseWrapper = _interopRequireDefault(require("./SuspenseWrapper"));
 
 var _TableHeadCell = _interopRequireDefault(require("./TableHeadCell"));
 

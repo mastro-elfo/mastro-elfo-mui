@@ -24,16 +24,19 @@ function App(_ref) {
       NotifyProps = _ref$NotifyProps === void 0 ? {} : _ref$NotifyProps,
       _ref$RouterProps = _ref.RouterProps,
       RouterProps = _ref$RouterProps === void 0 ? {} : _ref$RouterProps,
+      _ref$SuspenseProps = _ref.SuspenseProps,
+      SuspenseProps = _ref$SuspenseProps === void 0 ? {} : _ref$SuspenseProps,
       _ref$ThemeProps = _ref.ThemeProps,
       ThemeProps = _ref$ThemeProps === void 0 ? {} : _ref$ThemeProps,
       _ref$WrapperProps = _ref.WrapperProps,
       WrapperProps = _ref$WrapperProps === void 0 ? {} : _ref$WrapperProps;
-  return /*#__PURE__*/_react["default"].createElement(_.ThemeWrapper, ThemeProps, /*#__PURE__*/_react["default"].createElement(_.ErrorWrapper, null, /*#__PURE__*/_react["default"].createElement(_.NotifyWrapper, NotifyProps, /*#__PURE__*/_react["default"].createElement(_.Wrapper, WrapperProps, /*#__PURE__*/_react["default"].createElement(_.RouterWrapper, RouterProps)))));
+  return /*#__PURE__*/_react["default"].createElement(_.ThemeWrapper, ThemeProps, /*#__PURE__*/_react["default"].createElement(_.SuspenseWrapper, SuspenseProps, /*#__PURE__*/_react["default"].createElement(_.ErrorWrapper, null, /*#__PURE__*/_react["default"].createElement(_.NotifyWrapper, NotifyProps, /*#__PURE__*/_react["default"].createElement(_.Wrapper, WrapperProps, /*#__PURE__*/_react["default"].createElement(_.RouterWrapper, RouterProps))))));
 }
 
 App.propTypes = {
   NotifyProps: _propTypes["default"].object,
   RouterProps: _propTypes["default"].object,
+  SuspenseProps: _propTypes["default"].object,
   ThemeProps: _propTypes["default"].object,
   WrapperProps: _propTypes["default"].object
 };
