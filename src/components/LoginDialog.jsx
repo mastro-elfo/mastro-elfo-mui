@@ -1,3 +1,8 @@
+/**
+ * [login description]
+ * @type {[type]}
+ */
+
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useSnackbar } from "notistack";
@@ -15,13 +20,14 @@ import {
 import { Loading, PasswordField } from "./";
 
 export default function LoginDialog({
-  title = "",
-  BoxProps = {},
-  UsernameProps = {},
-  PasswordProps = {},
-  ButtonProps = {},
-  ButtonLabel = "Login",
   login = () => Promise.reject(new Error("No login function provided")),
+  title = "",
+  actions = [],
+  BoxProps = {},
+  ButtonLabel = "Login",
+  ButtonProps = {},
+  PasswordProps = {},
+  UsernameProps = {},
   ...others
 }) {
   const [loading, setLoading] = useState(false);
@@ -63,6 +69,8 @@ export default function LoginDialog({
         </Box>
       </DialogContent>
       <DialogActions>
+        {actions}
+
         <Button disabled={loading} onClick={handleLogin} {...ButtonProps}>
           {ButtonLabel}
           <Loading loading={loading} />
@@ -73,10 +81,11 @@ export default function LoginDialog({
 }
 
 LoginDialog.propTypes = {
+  login: PropTypes.func,
   title: PropTypes.string,
+  actions: PropTypes.arrayOf(PropTypes.node),
   BoxProps: PropTypes.object,
-  UsernameProps: PropTypes.object,
-  PasswordProps: PropTypes.object,
   ButtonProps: PropTypes.object,
-  login: PropTypes.func
+  PasswordProps: PropTypes.object,
+  UsernameProps: PropTypes.object
 };
