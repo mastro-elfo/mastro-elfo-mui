@@ -77,8 +77,9 @@ var ErrorWrapper = /*#__PURE__*/function (_Component) {
       if (error) {
         return /*#__PURE__*/_react["default"].createElement(_react.Fragment, null, /*#__PURE__*/_react["default"].createElement(_.Header, {
           RightActions: [/*#__PURE__*/_react["default"].createElement(_core.IconButton, {
+            key: "reload",
             color: "inherit",
-            title: "Refresh",
+            title: "Reload",
             onClick: this.handleReloadClick
           }, /*#__PURE__*/_react["default"].createElement(_Refresh["default"], null))]
         }, "An error occurred"), /*#__PURE__*/_react["default"].createElement(_.Content, null, /*#__PURE__*/_react["default"].createElement(_core.Typography, {

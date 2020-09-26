@@ -42,23 +42,25 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function LoginDialog(_ref) {
-  var _ref$title = _ref.title,
-      title = _ref$title === void 0 ? "" : _ref$title,
-      _ref$BoxProps = _ref.BoxProps,
-      BoxProps = _ref$BoxProps === void 0 ? {} : _ref$BoxProps,
-      _ref$UsernameProps = _ref.UsernameProps,
-      UsernameProps = _ref$UsernameProps === void 0 ? {} : _ref$UsernameProps,
-      _ref$PasswordProps = _ref.PasswordProps,
-      PasswordProps = _ref$PasswordProps === void 0 ? {} : _ref$PasswordProps,
-      _ref$ButtonProps = _ref.ButtonProps,
-      ButtonProps = _ref$ButtonProps === void 0 ? {} : _ref$ButtonProps,
-      _ref$ButtonLabel = _ref.ButtonLabel,
-      ButtonLabel = _ref$ButtonLabel === void 0 ? "Login" : _ref$ButtonLabel,
-      _ref$login = _ref.login,
+  var _ref$login = _ref.login,
       login = _ref$login === void 0 ? function () {
     return Promise.reject(new Error("No login function provided"));
   } : _ref$login,
-      others = _objectWithoutProperties(_ref, ["title", "BoxProps", "UsernameProps", "PasswordProps", "ButtonProps", "ButtonLabel", "login"]);
+      _ref$title = _ref.title,
+      title = _ref$title === void 0 ? "" : _ref$title,
+      _ref$actions = _ref.actions,
+      actions = _ref$actions === void 0 ? [] : _ref$actions,
+      _ref$BoxProps = _ref.BoxProps,
+      BoxProps = _ref$BoxProps === void 0 ? {} : _ref$BoxProps,
+      _ref$ButtonLabel = _ref.ButtonLabel,
+      ButtonLabel = _ref$ButtonLabel === void 0 ? "Login" : _ref$ButtonLabel,
+      _ref$ButtonProps = _ref.ButtonProps,
+      ButtonProps = _ref$ButtonProps === void 0 ? {} : _ref$ButtonProps,
+      _ref$PasswordProps = _ref.PasswordProps,
+      PasswordProps = _ref$PasswordProps === void 0 ? {} : _ref$PasswordProps,
+      _ref$UsernameProps = _ref.UsernameProps,
+      UsernameProps = _ref$UsernameProps === void 0 ? {} : _ref$UsernameProps,
+      others = _objectWithoutProperties(_ref, ["login", "title", "actions", "BoxProps", "ButtonLabel", "ButtonProps", "PasswordProps", "UsernameProps"]);
 
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -104,7 +106,7 @@ function LoginDialog(_ref) {
       var value = _ref3.target.value;
       return setPassword(value);
     }
-  }, PasswordProps)))), /*#__PURE__*/_react["default"].createElement(_core.DialogActions, null, /*#__PURE__*/_react["default"].createElement(_core.Button, _extends({
+  }, PasswordProps)))), /*#__PURE__*/_react["default"].createElement(_core.DialogActions, null, actions, /*#__PURE__*/_react["default"].createElement(_core.Button, _extends({
     disabled: loading,
     onClick: handleLogin
   }, ButtonProps), ButtonLabel, /*#__PURE__*/_react["default"].createElement(_.Loading, {
@@ -113,10 +115,11 @@ function LoginDialog(_ref) {
 }
 
 LoginDialog.propTypes = {
+  login: _propTypes["default"].func,
   title: _propTypes["default"].string,
+  actions: _propTypes["default"].arrayOf(_propTypes["default"].node),
   BoxProps: _propTypes["default"].object,
-  UsernameProps: _propTypes["default"].object,
-  PasswordProps: _propTypes["default"].object,
   ButtonProps: _propTypes["default"].object,
-  login: _propTypes["default"].func
+  PasswordProps: _propTypes["default"].object,
+  UsernameProps: _propTypes["default"].object
 };
