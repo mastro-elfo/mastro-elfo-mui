@@ -16,6 +16,7 @@ export { default as ErrorWrapper } from "./ErrorWrapper";
 export { default as GrowTypography } from "./GrowTypography";
 export { default as Header } from "./Header";
 export { default as Loading } from "./Loading";
+export { default as Login } from "./Login";
 export { default as LoginDialog } from "./LoginDialog";
 export { default as LoadingIconButton } from "./LoadingIconButton";
 export { default as NotifyWrapper } from "./NotifyWrapper";
