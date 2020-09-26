@@ -39,8 +39,9 @@ export default class ErrorWrapper extends Component {
           <Header
             RightActions={[
               <IconButton
+                key="reload"
                 color="inherit"
-                title="Refresh"
+                title="Reload"
                 onClick={this.handleReloadClick}
               >
                 <RefreshIcon />
