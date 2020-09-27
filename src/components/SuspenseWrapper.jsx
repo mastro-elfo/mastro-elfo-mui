@@ -11,7 +11,6 @@ import { Box, LinearProgress } from "@material-ui/core";
 
 export function Fallback({ logo, progress = false, title = "" }) {
   const theme = useTheme();
-  console.log(typeof logo);
 
   return (
     <Box
