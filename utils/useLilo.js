@@ -1,33 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = useLilo;
-
-var _react = require("react");
-
-function _toArray(arr) { return _arrayWithHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableRest(); }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+import { useState } from "react";
 
 /**
  * Creates a LastInLastOut list of length `length`
@@ -35,44 +6,32 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
  * @param  {Number} [length=1] Length of the list
  * @return {Array}             [list, push, pop]
  */
-function useLilo() {
-  var start = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  var length = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
 
+export default function useLilo(start = [], length = 1) {
   if (length === 0) {
     console.warn("A list with length 0 is always empty");
-  } // Setup
-
-
-  var _useState = (0, _react.useState)(slice(start, length)),
-      _useState2 = _slicedToArray(_useState, 2),
-      lilo = _useState2[0],
-      setLilo = _useState2[1]; // Push method
-
-
-  var push = function push(item) {
+  }
+  // Setup
+  const [lilo, setLilo] = useState(slice(start, length));
+  // Push method
+  const push = item => {
     // Append, slice and set
-    setLilo(slice([].concat(_toConsumableArray(lilo), [item]), length));
-  }; // Pop
-
-
-  var pop = function pop() {
+    setLilo(slice([...lilo, item], length));
+  };
+  // Pop
+  const pop = () => {
     // Extract
-    var _lilo = _toArray(lilo),
-        item = _lilo[0],
-        rest = _lilo.slice(1); // Set
-
-
-    setLilo(rest); // Return
-
+    const [item, ...rest] = lilo;
+    // Set
+    setLilo(rest);
+    // Return
     return item;
-  }; // Return lilo list, push method, and pop
-
-
+  };
+  // Return lilo list, push method, and pop
   return [lilo, push, pop];
-} // Slice list to length
+}
 
-
+// Slice list to length
 function slice(list, length) {
   // If length is undefined don't slice
   if (length !== undefined) return list.slice(-length);
