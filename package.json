@@ -7,7 +7,7 @@
     "build": "babel src -d build",
     "test": "jest",
     "deploy": "gh-pages -d build -b build",
-    "predeploy": "yarn test && yarn build"
+    "predeploy": "yarn test && (mkdir -p build; rm -rf build/*; cp -r src/* build/.)"
   },
   "repository": "https://github.com/mastro-elfo/mastro-elfo-mui",
   "author": "mastro-elfo <francesco.209@gmail.com>",
