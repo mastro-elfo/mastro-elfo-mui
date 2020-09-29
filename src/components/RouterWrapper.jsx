@@ -1,3 +1,15 @@
+import React from "react";
+
+import {
+  // See https://reacttraining.com/react-router/web/guides/quick-start for details
+  MemoryRouter,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
+
+import { Wrapper } from "./";
+
 /**
  * Router wrapper that use "react-router-dom" to create routes.
  *
@@ -10,19 +22,13 @@
  * Anything else is passed to `Router`.
  *
  * @see: https://reacttraining.com/react-router/web/guides/quick-start
+ * @param  {[type]} [Router=MemoryRouter] [description]
+ * @param  {Array}  [routes=[]]           [description]
+ * @param  {[type]} [redirect=null]       [description]
+ * @param  {Object} [WrapperProps={}]     [description]
+ * @param  {[type]} others                [description]
+ * @return {[type]}                       [description]
  */
-
-import React from "react";
-
-import {
-  // See https://reacttraining.com/react-router/web/guides/quick-start for details
-  MemoryRouter,
-  Route,
-  Switch,
-  Redirect
-} from "react-router-dom";
-
-import { Wrapper } from "./";
 
 export default function({
   Router = MemoryRouter,

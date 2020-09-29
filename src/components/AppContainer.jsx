@@ -17,6 +17,18 @@ import {
   Wrapper
 } from "./";
 
+/**
+ * App main container.
+ *
+ * Wraps application with Theme, Error handler, Notifier and Router.
+ * @param       {Object} [NotifyProps={}]   [description]
+ * @param       {Object} [RouterProps={}]   [description]
+ * @param       {Object} [SuspenseProps={}] [description]
+ * @param       {Object} [ThemeProps={}]    [description]
+ * @param       {Object} [WrapperProps={}}] [description]
+ * @constructor
+ */
+
 export default function App({
   NotifyProps = {},
   RouterProps = {},
@@ -24,6 +36,18 @@ export default function App({
   ThemeProps = {},
   WrapperProps = {}
 }) {
+  // TODO: can wrap everything in Wrapper:
+  /*
+  <Wrapper Children={[
+    { Child: ThemeWrapper, ...ThemeProps },
+    { Child: SuspenseWrapper, ...SuspenseProps },
+    { Child: ErrorWrapper },
+    { Child: NotifyWrapper, ...NotifyProps },
+    ...WrapperProps.Children
+  ]}>
+  <RouterWrapper {...RouterProps} />
+  </Wrapper>
+   */
   return (
     <ThemeWrapper {...ThemeProps}>
       <SuspenseWrapper {...SuspenseProps}>

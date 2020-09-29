@@ -1,6 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+/**
+ * Conditionally renders `Component` or `Alt`
+ * @param       {node} Component [description]
+ * @param       {node} [Alt=()=>null]   [description]
+ * @constructor
+ */
 export default function Conditional({
   Component,
   Alt = () => null,

@@ -1,9 +1,8 @@
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+
 /**
  * Renders `children` after `delay` milliseconds when `show` goes `true`.
- *
- * Otherwise renders `null`.
- * @param delay = 1000
- * @param show = false
  *
  * Example:
  * ```jsx
@@ -17,10 +16,13 @@
  *
  * `handler` sets `loading` to `true` and sends a message to a server. If the operation takes more than `delay` an `AbsoluteCircularProgress` is displayed.
  * When operation is complete `handler` sets `loading` to `false` to hide the component.
+ *
+ * @param       {[type]}  children     [description]
+ * @param       {Number}  [delay=1000] [description]
+ * @param       {Boolean} [show=false] [description]
+ * @param       {[type]}  others       [description]
+ * @constructor
  */
-
-import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 
 export default function Loading({
   children,

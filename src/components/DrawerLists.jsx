@@ -1,7 +1,3 @@
-/**
- *
- */
-
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
@@ -15,6 +11,11 @@ import {
   ListSubheader
 } from "@material-ui/core";
 
+/**
+ * [DrawerLists description]
+ * @param       {Array} [lists=[] }] [description]
+ * @constructor
+ */
 export default function DrawerLists({ lists = [] }) {
   return (
     <Fragment>

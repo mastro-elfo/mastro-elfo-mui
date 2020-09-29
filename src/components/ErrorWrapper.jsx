@@ -1,7 +1,3 @@
-/**
- * Error handler.
- */
-
 import React, { Component, Fragment } from "react";
 
 import { IconButton, Typography } from "@material-ui/core";
@@ -10,6 +6,9 @@ import RefreshIcon from "@material-ui/icons/Refresh";
 
 import { Content, Header } from "./";
 
+/**
+ * Error handler component
+ */
 export default class ErrorWrapper extends Component {
   constructor(props) {
     super(props);

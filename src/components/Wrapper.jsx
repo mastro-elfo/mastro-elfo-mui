@@ -1,14 +1,16 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 /**
  * Wraps a component dinamically
  *
  * `Children` defaults to `[]`, is an array of object. Each object must have a `Component` property that will wrap the following items in the list. Any other property in each item is passed to its `Component`.
  *
  * If `Component` has `children`, it must render also its `children` property.
+ * @param       {[type]} children     [description]
+ * @param       {Array}  [Children=[] }]            [description]
+ * @constructor
  */
-
-import React from "react";
-import PropTypes from "prop-types";
-
 export default function Wrapper({ children, Children = [] }) {
   // Take the first child
   const [Child, ...rest] = Children;

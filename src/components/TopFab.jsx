@@ -1,7 +1,3 @@
-/**
- * A `Fab` that zooms in when the page is scolled and scrolls to top when clicked.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -19,6 +15,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+/**
+ * A `Fab` that zooms in when the page is scolled and scrolls to top when clicked.
+ * @param       {Number} [threshold=100] [description]
+ * @param       {[type]} others          [description]
+ * @constructor
+ */
 export default function TopFab({ threshold = 100, ...others }) {
   const classes = useStyles();
   const trigger = useScrollTrigger({ disableHysteresis: true, threshold });

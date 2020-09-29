@@ -1,7 +1,3 @@
-/**
- * Complex dialog box that asks to confirm some action.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -16,6 +12,15 @@ import {
 
 import { Condition } from "./";
 
+/**
+ * Complex dialog box that asks to confirm some action.
+ * @param       {String} [title=""]    [description]
+ * @param       {String} [content=""]  [description]
+ * @param       {String} [confirm=""]  [description]
+ * @param       {String} [cancel=""]   [description]
+ * @param       {[type]} [onConfirm=(] [description]
+ * @constructor
+ */
 export default function ConfirmDialog({
   // Content of `DialogTitle`
   title = "",

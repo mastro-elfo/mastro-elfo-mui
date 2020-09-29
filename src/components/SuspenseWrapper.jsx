@@ -1,14 +1,16 @@
-/**
- * [Fallback description]
- * @type {[type]}
- */
-
 import React, { Suspense } from "react";
 import PropTypes from "prop-types";
 
 import { useTheme } from "@material-ui/core/";
 import { Box, LinearProgress } from "@material-ui/core";
 
+/**
+ * [Fallback description]
+ * @param       {[type]}  logo             [description]
+ * @param       {Boolean} [progress=false] [description]
+ * @param       {String}  [title=""        }]            [description]
+ * @constructor
+ */
 export function Fallback({ logo, progress = false, title = "" }) {
   const theme = useTheme();
 
@@ -50,6 +52,13 @@ Fallback.propTypes = {
   title: PropTypes.string
 };
 
+/**
+ * [SuspenseWrapper description]
+ * @param       {[type]} children [description]
+ * @param       {[type]} Fallback [description]
+ * @param       {[type]} rest     [description]
+ * @constructor
+ */
 export default function SuspenseWrapper({
   children,
   Fallback: FallbackComponent = Fallback,

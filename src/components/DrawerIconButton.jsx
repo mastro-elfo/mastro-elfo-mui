@@ -1,8 +1,3 @@
-/**
- * [IconButtonProps description]
- * @type {Object}
- */
-
 import React, { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 
@@ -12,6 +7,13 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 import { Drawer } from "./";
 
+/**
+ * [DrawerIconButton description]
+ * @param       {[type]} children             [description]
+ * @param       {Object} [IconButtonProps={}] [description]
+ * @param       {Object} [DrawerProps={}}]    [description]
+ * @constructor
+ */
 export default function DrawerIconButton({
   children,
   IconButtonProps = {},

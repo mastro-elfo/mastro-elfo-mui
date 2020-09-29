@@ -1,9 +1,3 @@
-/**
- * Wrapper for `notistack` snackbars.
- *
- * @see: https://iamhosseindhv.com/notistack
- */
-
 import React, { createRef } from "react";
 
 import { SnackbarProvider } from "notistack";
@@ -14,6 +8,14 @@ import CloseIcon from "@material-ui/icons/Close";
 
 const notistackRef = createRef();
 
+/**
+ * Wrapper for `notistack` snackbars.
+ *
+ * @see: https://iamhosseindhv.com/notistack
+ * @param  {[type]} children [description]
+ * @param  {[type]} props    [description]
+ * @return {[type]}          [description]
+ */
 export default function({ children, ...props }) {
   const handleDismiss = key => () => notistackRef.current.closeSnackbar(key);
 

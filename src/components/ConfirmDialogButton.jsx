@@ -1,7 +1,3 @@
-/**
- * Creates a `Button`  or an `IconButton` that opens a `ConfirmDialog`.
- */
-
 import React, { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 
@@ -9,6 +5,13 @@ import { Button, IconButton } from "@material-ui/core";
 
 import ConfirmDialog from "./ConfirmDialog";
 
+/**
+ * Creates a `Button`  or an `IconButton` that opens a `ConfirmDialog`.
+ * @param       {[type]}  children       [description]
+ * @param       {Boolean} [isIcon=false] [description]
+ * @param       {[type]}  [onConfirm=(]  [description]
+ * @constructor
+ */
 export default function ConfirmDialogButton({
   children,
   isIcon = false,

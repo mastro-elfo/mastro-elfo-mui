@@ -1,7 +1,3 @@
-/**
- * A `SearchField` styled to stay inside `Header`.
- */
-
 import React from "react";
 import classNames from "classnames";
 import { fade, makeStyles } from "@material-ui/core/styles";
@@ -20,6 +16,11 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+/**
+ * A `SearchField` styled to stay inside `Header`.
+ * @param  {[type]} props [description]
+ * @return {[type]}       [description]
+ */
 export default function(props) {
   const classes = useStyles();
 

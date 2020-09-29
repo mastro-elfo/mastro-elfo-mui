@@ -23,6 +23,13 @@ import {
 
 import { evaluate } from "../utils";
 
+/**
+ * [Collection description]
+ * @param       {[type]} cid        [description]
+ * @param       {function} [search=()=>{}] [description]
+ * @constructor
+ */
+
 export default function Collection({
   cid,
   search = () => Promise.reject(new Error("No search function provided")),

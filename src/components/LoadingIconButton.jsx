@@ -7,6 +7,12 @@ import { IconButton } from "@material-ui/core";
 
 import { AbsoluteCircularProgress, Loading } from "./";
 
+/**
+ * [LoadingIconButton description]
+ * @param       {[type]} children     [description]
+ * @param       {[type]} [callback=(] [description]
+ * @constructor
+ */
 export default function LoadingIconButton({
   children,
   callback = () => Promise.reject(new Error("No callback provided")),

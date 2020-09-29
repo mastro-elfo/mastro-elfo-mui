@@ -1,11 +1,3 @@
-/**
- * `LinearProgress` that shows the strength of a password.
- *
- * `password` is the string to be checked. Strength function is in progress.
- * `others` are passed to `LinearProgress`.
- * If component has children, this must be a function and the evaluated strength is passed.
- */
-
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
@@ -27,6 +19,17 @@ function evaluate(password) {
   return Math.min(100, s);
 }
 
+/**
+ * `LinearProgress` that shows the strength of a password.
+ *
+ * `password` is the string to be checked. Strength function is in progress.
+ * `others` are passed to `LinearProgress`.
+ * If component has children, this must be a function and the evaluated strength is passed.
+ * @param       {[type]} children      [description]
+ * @param       {String} [password=""] [description]
+ * @param       {[type]} others        [description]
+ * @constructor
+ */
 export default function StrengthLinearProgress({
   children,
   password = "",

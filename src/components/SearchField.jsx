@@ -15,6 +15,14 @@ import { IconButton, InputAdornment, TextField } from "@material-ui/core";
 import ClearIcon from "@material-ui/icons/Clear";
 import SearchIcon from "@material-ui/icons/Search";
 
+/**
+ * A `TextField` that manages a search input.
+ *
+ * `onSearch` is called when a search happens (by clicking or typing) with the query string as first parameter and the "deburred" string as second.
+ * @param       {Number} [delay=250] [description]
+ * @param       {[type]} [onClear=(] [description]
+ * @constructor
+ */
 export default function SearchField({
   // Debounce delay
   delay = 250,

@@ -1,8 +1,3 @@
-/**
- * [login description]
- * @type {[type]}
- */
-
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useSnackbar } from "notistack";
@@ -19,6 +14,11 @@ import {
 
 import { Loading, PasswordField } from "./";
 
+/**
+ * [LoginDialog description]
+ * @param       {[type]} [login=(] [description]
+ * @constructor
+ */
 export default function LoginDialog({
   login = () => Promise.reject(new Error("No login function provided")),
   title = "",
