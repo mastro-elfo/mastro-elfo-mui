@@ -1,10 +1,10 @@
-/**
- * Use `error` palette to create a "danger" component
- */
-
-// https://material-ui.com/styles/api/#styled-component-styles-options-component
 import { styled } from "@material-ui/core/styles";
 
+/**
+ * Use `error` palette to create a "danger" component
+ * @param  {elementType} Component Input component
+ * @return {elementType}           Danger component
+ */
 export default Component =>
   styled(Component)(
     ({

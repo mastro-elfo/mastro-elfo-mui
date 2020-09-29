@@ -1,12 +1,14 @@
+import { useEffect, useState } from "react";
+
 /**
  * Creates a countdown timer from `start` to 0.
  *
- * Value is update each `delay` milliseconds.
+ * Returns `value` and a function to reset the timer.
  *
- * @return: [value, resetFunction]
+ * @param  {Number} start        Starting point
+ * @param  {Number} [delay=1000] Update delay
+ * @return {Array}              `[value, reset]`
  */
-
-import { useEffect, useState } from "react";
 
 export default function(start, delay = 1000) {
   // Inner state
