@@ -1,6 +1,6 @@
 {
   "name": "mastro-elfo-mui",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "MaterialUI extension",
   "keywords": [
     "react",
@@ -10,7 +10,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d build",
+    "build": "rm -rf build/*; babel src -d build",
     "prebuild": "yarn run test",
     "test": "jest",
     "deploy": "gh-pages -d build -b build",

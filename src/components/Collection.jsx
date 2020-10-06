@@ -36,6 +36,7 @@ export default function Collection({
   load = () => Promise.reject(new Error("No load function provided")),
   save = () => Promise.reject(new Error("No save function provided")),
   CollectionProps = {
+    title: "Collection",
     mapper: r => r
   },
   ViewProps = {
@@ -87,7 +88,8 @@ function CollectionPage({
   search = Promise.reject(
     new Error("No search function provided to CollectionPage")
   ),
-  mapper
+  title = "Collection",
+  mapper = r => r
 }) {
   const { push } = useHistory();
   const { enqueueSnackbar } = useSnackbar();
@@ -120,7 +122,7 @@ function CollectionPage({
             </IconButton>
           ]}
         >
-          Collection
+          {title}
         </Header>
       }
       content={
