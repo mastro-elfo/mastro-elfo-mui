@@ -1,6 +1,6 @@
 {
   "name": "mastro-elfo-mui",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "MaterialUI extension",
   "keywords": [
     "react",
@@ -45,6 +45,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.7.3",
+    "react-markdown": "^4.3.1",
     "react-router-dom": "^5.2.0",
     "react-test-renderer": "^16.13.1"
   }
