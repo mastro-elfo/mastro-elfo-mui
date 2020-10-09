@@ -37,7 +37,8 @@ export default function Collection({
   save = () => Promise.reject(new Error("No save function provided")),
   CollectionProps = {
     title: "Collection",
-    mapper: r => r
+    mapper: r => r,
+    SearchFieldProps: {}
   },
   ViewProps = {
     title: "View Item",
@@ -89,7 +90,8 @@ function CollectionPage({
     new Error("No search function provided to CollectionPage")
   ),
   title = "Collection",
-  mapper = r => r
+  mapper = r => r,
+  SearchFieldProps = {}
 }) {
   const { push } = useHistory();
   const { enqueueSnackbar } = useSnackbar();
@@ -132,6 +134,7 @@ function CollectionPage({
               label="Search"
               onSearch={handleSearch}
               onClear={handleClear}
+              {...SearchFieldProps}
             />
           </Grid>{" "}
           <ResultList results={results} mapper={mapper} />
