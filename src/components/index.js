@@ -19,6 +19,7 @@ export { default as Loading } from "./Loading";
 export { default as Login } from "./Login";
 export { default as LoginDialog } from "./LoginDialog";
 export { default as LoadingIconButton } from "./LoadingIconButton";
+export { default as NestedListTypography } from "./NestedListTypography";
 export { default as NotifyWrapper } from "./NotifyWrapper";
 export { default as Page } from "./Page";
 export { default as PasswordField } from "./PasswordField";
