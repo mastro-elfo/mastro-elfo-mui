@@ -21,7 +21,7 @@ import { Condition } from "./";
  *
  * Anything else is passed to `ListItem`. By default `onClick` sets `button` to `true`.
  * @param  {[type]} subheader [description]
- * @param  {[type]} [mapper=r =>            r] [description]
+ * @param  {[type]} [mapper=r => r] [description]
  * @param  {[type]} results   [description]
  * @param  {[type]} others    [description]
  * @return {[type]}           [description]
