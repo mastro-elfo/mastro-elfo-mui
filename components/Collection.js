@@ -73,8 +73,16 @@ function Collection(_ref) {
   } : _ref$save,
       _ref$CollectionProps = _ref.CollectionProps,
       CollectionProps = _ref$CollectionProps === void 0 ? {
+    title: "Collection",
     mapper: function mapper(r) {
       return r;
+    },
+    SearchFieldProps: {},
+    ResultListProps: {
+      subheader: null,
+      mapper: function mapper(r) {
+        return r;
+      }
     }
   } : _ref$CollectionProps,
       _ref$ViewProps = _ref.ViewProps,
@@ -129,7 +137,21 @@ function CollectionPage(_ref2) {
   var cid = _ref2.cid,
       _ref2$search = _ref2.search,
       search = _ref2$search === void 0 ? Promise.reject(new Error("No search function provided to CollectionPage")) : _ref2$search,
-      mapper = _ref2.mapper;
+      _ref2$title = _ref2.title,
+      title = _ref2$title === void 0 ? "Collection" : _ref2$title,
+      _ref2$mapper = _ref2.mapper,
+      _mapper = _ref2$mapper === void 0 ? function (r) {
+    return r;
+  } : _ref2$mapper,
+      _ref2$SearchFieldProp = _ref2.SearchFieldProps,
+      SearchFieldProps = _ref2$SearchFieldProp === void 0 ? {} : _ref2$SearchFieldProp,
+      _ref2$ResultListProps = _ref2.ResultListProps,
+      ResultListProps = _ref2$ResultListProps === void 0 ? {
+    mapper: function mapper(r) {
+      return r;
+    },
+    subheader: null
+  } : _ref2$ResultListProps;
 
   var _useHistory = (0, _reactRouterDom.useHistory)(),
       push = _useHistory.push;
@@ -167,19 +189,25 @@ function CollectionPage(_ref2) {
           return push("/".concat(cid, "/n"));
         }
       }, /*#__PURE__*/_react["default"].createElement(_Add["default"], null))]
-    }, "Collection"),
+    }, title),
     content: /*#__PURE__*/_react["default"].createElement(_.Content, null, /*#__PURE__*/_react["default"].createElement(_core.Grid, {
       container: true,
       item: true,
       justify: "center"
-    }, /*#__PURE__*/_react["default"].createElement(_.SearchField, {
+    }, /*#__PURE__*/_react["default"].createElement(_.SearchField, _extends({
       label: "Search",
       onSearch: handleSearch,
       onClear: handleClear
-    })), " ", /*#__PURE__*/_react["default"].createElement(_.ResultList, {
+    }, SearchFieldProps))), " ", /*#__PURE__*/_react["default"].createElement(_.ResultList, _extends({
       results: results,
-      mapper: mapper
-    }))
+      mapper: function mapper(a) {
+        // TODO: // DEPRECATED: Remove in version 2.0
+        console.warn("`mapper` is deprecated, use `ResultListProps.mapper` instead. Will be removed in version 2.0");
+        return _mapper(a);
+      }
+    }, ResultListProps, {
+      subheader: (0, _utils.evaluate)(ResultListProps.subheader, results)
+    })))
   });
 }
 
