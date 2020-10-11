@@ -36,8 +36,10 @@ export default function NestedListTypography({
         ))}
       </Typography>
     );
+  } else if (children !== null && children !== undefined) {
+    return <Typography {...liProps}>{children}</Typography>;
   }
-  return <Typography {...liProps}>{children}</Typography>;
+  return null;
 }
 
 NestedListTypography.propTypes = {
