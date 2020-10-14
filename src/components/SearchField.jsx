@@ -20,7 +20,12 @@ import SearchIcon from "@material-ui/icons/Search";
  *
  * `onSearch` is called when a search happens (by clicking or typing) with the query string as first parameter and the "deburred" string as second.
  * @param       {Number} [delay=250] [description]
- * @param       {[type]} [onClear=(] [description]
+ * @param       {function} [onClear=()=>{}] [description]
+ * @param       {function} [onSearch] Returns a `Promise`
+ * @param       {object}  [SearchButtonProps={}] [description]
+ * @param       {object}  [ClearButtonProps={}] [description]
+ * @param       {object}  [InputProps={}] Override `TextField` `InputProps`
+ * @param       {any} [others]  Forwarded to `TextField`
  * @constructor
  */
 export default function SearchField({
@@ -34,6 +39,8 @@ export default function SearchField({
   SearchButtonProps = {},
   // Clear button props
   ClearButtonProps = {},
+  // Override `InputProps`
+  InputProps = {},
   // Others are passed to TextField
   ...others
 }) {
@@ -127,7 +134,8 @@ export default function SearchField({
               </IconButton>
             )}
           </InputAdornment>
-        )
+        ),
+        ...InputProps
       }}
       {...others}
     />
