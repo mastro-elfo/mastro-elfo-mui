@@ -22,6 +22,7 @@ import {
 } from "./";
 
 import { evaluate } from "../utils";
+import useSearchParams from "../utils";
 
 /**
  * [Collection description]
@@ -279,7 +280,8 @@ function EditPage({
 }
 
 function NewItem({ data: defaultData, ...others }) {
-  const [data, setData] = useState(defaultData);
+  const searchData = useSearchParams();
+  const [data, setData] = useState({ ...defaultData, ...searchData });
   return <NewPage data={data} setData={setData} {...others} />;
 }
 
