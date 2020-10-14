@@ -22,7 +22,7 @@ import {
 } from "./";
 
 import { evaluate } from "../utils";
-import useSearchParams from "../utils";
+import { useSearchParams } from "../utils";
 
 /**
  * [Collection description]
