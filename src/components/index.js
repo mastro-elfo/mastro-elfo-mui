@@ -15,6 +15,7 @@ export { default as DrawerLists } from "./DrawerLists";
 export { default as ErrorWrapper } from "./ErrorWrapper";
 export { default as GrowTypography } from "./GrowTypography";
 export { default as Header } from "./Header";
+export { default as HeaderSearchField } from "./HeaderSearchField";
 export { default as Loading } from "./Loading";
 export { default as Login } from "./Login";
 export { default as LoginDialog } from "./LoginDialog";
