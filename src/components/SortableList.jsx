@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import { Container, Draggable } from "react-smooth-dnd";
@@ -31,38 +31,48 @@ import DragHandleIcon from "@material-ui/icons/DragHandle";
  * @param       {any}  rest          Forwarded to `List`
  * @constructor
  */
-export function SortableList({
+export default function SortableList({
   children,
   handler = <Handler />,
   onDrop = () => {},
   right = false,
   ...rest
 }) {
+  const leftHandler = !right && handler;
+  const rightHandler = !!right && handler;
   return (
     <List {...rest}>
       <Container dragHandleSelector=".drag-handle" lockAxis="y" onDrop={onDrop}>
-        {children.map(({ props: { children, ...rest }, key, ref }) => {
-          return (
-            <Draggable key={key}>
-              <ListItem {...rest} ref={ref}>
-                {!right && handler}
-                {children}
-                {!!right && handler}
-              </ListItem>
-            </Draggable>
-          );
-        })}
+        {!!children.map
+          ? children.map(item => mapper(item, leftHandler, rightHandler))
+          : mapper(children, leftHandler, rightHandler)}
       </Container>
     </List>
   );
 }
 
 SortableList.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.instanceOf(ListItem)),
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   handler: PropTypes.element,
   onDrop: PropTypes.func,
   right: PropTypes.bool
 };
+
+function mapper(
+  { props: { children, ...rest }, key, ref },
+  leftHandler,
+  rightHandler
+) {
+  return (
+    <Draggable key={key}>
+      <ListItem {...rest} ref={ref}>
+        {leftHandler}
+        {children}
+        {rightHandler}
+      </ListItem>
+    </Draggable>
+  );
+}
 
 function Handler() {
   return (
