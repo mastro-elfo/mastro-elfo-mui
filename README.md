@@ -13,3 +13,9 @@ This is useful inside buttons.
 App main container.
 
 Wraps application with Theme, Error handler, Notifier and Router.
+
+### BackIconButton
+
+`IconButton` with `ArrowBack` icon.
+
+Calls history's `goBack` when clicked.
