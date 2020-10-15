@@ -156,11 +156,7 @@ function CollectionPage({
               {...SearchFieldProps}
             />
           </Grid>{" "}
-          <ResultList
-            results={results}
-            {...ResultListProps}
-            subheader={evaluate(ResultListProps.subheader, results)}
-          />
+          <ResultList results={results} {...ResultListProps} />
         </Content>
       }
     />
