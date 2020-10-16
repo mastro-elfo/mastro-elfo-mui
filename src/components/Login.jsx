@@ -18,10 +18,10 @@ import LoginDialog from "./LoginDialog";
  *
  * `...rest` is passed to `Component`.
  *
- * @param       {[type]}  children                [description]
- * @param       {[type]}  [Component=LoginDialog] [description]
+ * @param       {node}  children                [description]
+ * @param       {elementType}  [Component=LoginDialog] [description]
  * @param       {Boolean} [show=false]            [description]
- * @param       {[type]}  rest                    [description]
+ * @param       {any}  rest                    [description]
  * @constructor
  */
 export default function Login({

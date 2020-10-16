@@ -40,8 +40,8 @@ i18n
  * ```
  *
  * @param  {Boolean} [backend=false] If `true` then `use(Backend)`
- * @param  {[type]}  options         options passed to `init` method: https://www.i18next.com/overview/configuration-options
- * @return {[type]}                  `i18n`
+ * @param  {Object}  [options]         options passed to `init` method: https://www.i18next.com/overview/configuration-options
+ * @return {i18n}                  `i18n`
  */
 
 export default (backend = false, options) => {

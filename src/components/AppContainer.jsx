@@ -1,10 +1,3 @@
-/**
- * Main container for an application.
- *
- * Wraps the application with Theme, Error handler, Notifier and Router.
- * Wrappers can be configured with ThemeProps, NotifyProps and RouterProps.
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -18,16 +11,16 @@ import Wrapper from "./Wrapper";
 /**
  * App main container.
  *
- * Wraps application with Theme, Error handler, Notifier and Router.
- * @param       {Object} [NotifyProps={}]   [description]
+ * Wraps application with Theme, Error handler, Notifier and Router. Wrappers can be configured with ThemeProps, NotifyProps and RouterProps.
+ *
+ * @param       {Object} [NotifyProps={}]   Properties for `NotifyWrapper`
  * @param       {Object} [RouterProps={}]   [description]
  * @param       {Object} [SuspenseProps={}] [description]
  * @param       {Object} [ThemeProps={}]    [description]
  * @param       {Object} [WrapperProps={}}] [description]
  * @constructor
  */
-
-export default function App({
+export default function AppContainer({
   NotifyProps = {},
   RouterProps = {},
   SuspenseProps = {},
@@ -62,7 +55,7 @@ export default function App({
   // );
 }
 
-App.propTypes = {
+AppContainer.propTypes = {
   NotifyProps: PropTypes.object,
   RouterProps: PropTypes.object,
   SuspenseProps: PropTypes.object,

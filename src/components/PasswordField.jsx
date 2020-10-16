@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import { IconButton, InputAdornment, TextField } from "@material-ui/core";
 
@@ -8,10 +9,10 @@ import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 /**
  * A `TextField` with an `IconButton` that toggles visibility.
  * @param  {Object} [IconButtonProps={}] [description]
- * @param  {[type]} others               [description]
- * @return {[type]}                      [description]
+ * @param  {any} others               [description]
+ * @constructor
  */
-export default function({ IconButtonProps = {}, ...others }) {
+export default function PasswordField({ IconButtonProps = {}, ...others }) {
   // Visibility state
   const [hide, setHide] = useState(true);
 
@@ -35,3 +36,7 @@ export default function({ IconButtonProps = {}, ...others }) {
     />
   );
 }
+
+PasswordField.propTypes = {
+  IconButtonProps: PropTypes.object
+};

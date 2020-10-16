@@ -8,7 +8,7 @@ import SearchField from "./SearchField";
 /**
  * A `SearchField` styled to stay inside `Header`.
  * @param       {Object} [BoxProps={}] [description]
- * @param       {[type]} rest          Forwarded to `SearchField`
+ * @param       {any} rest          Forwarded to `SearchField`
  * @constructor
  */
 export default function HeaderSearchField({ BoxProps = {}, ...rest }) {

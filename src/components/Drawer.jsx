@@ -5,8 +5,8 @@ import { SwipeableDrawer } from "@material-ui/core";
 
 /**
  * [Drawer description]
- * @param       {[type]} children [description]
- * @param       {[type]} others   [description]
+ * @param       {node} children [description]
+ * @param       {any} others   [description]
  * @constructor
  */
 export default function Drawer({ children, ...others }) {

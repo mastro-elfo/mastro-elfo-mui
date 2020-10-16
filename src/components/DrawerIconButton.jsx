@@ -9,7 +9,7 @@ import Drawer from "./Drawer";
 
 /**
  * [DrawerIconButton description]
- * @param       {[type]} children             [description]
+ * @param       {node} children             [description]
  * @param       {Object} [IconButtonProps={}] [description]
  * @param       {Object} [DrawerProps={}}]    [description]
  * @constructor

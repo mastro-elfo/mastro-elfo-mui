@@ -5,8 +5,8 @@ import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 /**
  * Theme wrapper
- * @param       {[type]} children [description]
- * @param       {[type]} props    [description]
+ * @param       {node} children [description]
+ * @param       {any} props    [description]
  * @constructor
  */
 export default function ThemeWrapper({ children, ...props }) {

@@ -22,11 +22,11 @@ import evaluate from "../utils/evaluate";
  * Also `LeftIcon` and `RightIcon` are used inside a `ListItemIcon`, and `primary` and `secondary` are used with `ListItemText`.
  *
  * Anything else is passed to `ListItem`. By default `onClick` sets `button` to `true`.
- * @param  {[type]} subheader [description]
- * @param  {[type]} [mapper=r => r] [description]
- * @param  {[type]} results   [description]
- * @param  {[type]} others    [description]
- * @return {[type]}           [description]
+ * @param  {string|function} subheader [description]
+ * @param  {function} [mapper=r => r] [description]
+ * @param  {array} results   [description]
+ * @param  {any} others    [description]
+ * @constructor
  */
 export default function ResultList({
   mapper = r => r,

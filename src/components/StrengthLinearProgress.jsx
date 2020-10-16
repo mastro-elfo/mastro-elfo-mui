@@ -25,9 +25,9 @@ function evaluate(password) {
  * `password` is the string to be checked. Strength function is in progress.
  * `others` are passed to `LinearProgress`.
  * If component has children, this must be a function and the evaluated strength is passed.
- * @param       {[type]} children      [description]
+ * @param       {node} children      [description]
  * @param       {String} [password=""] [description]
- * @param       {[type]} others        [description]
+ * @param       {any} others        [description]
  * @constructor
  */
 export default function StrengthLinearProgress({

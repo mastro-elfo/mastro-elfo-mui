@@ -18,7 +18,7 @@ import Condition from "./Condition";
  * @param       {String} [content=""]  [description]
  * @param       {String} [confirm=""]  [description]
  * @param       {String} [cancel=""]   [description]
- * @param       {[type]} [onConfirm=(] [description]
+ * @param       {Function} [onConfirm=()=>{}] [description]
  * @constructor
  */
 export default function ConfirmDialog({

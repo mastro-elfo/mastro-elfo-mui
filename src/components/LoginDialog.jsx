@@ -17,7 +17,7 @@ import PasswordField from "./PasswordField";
 
 /**
  * [LoginDialog description]
- * @param       {[type]} [login=(] [description]
+ * @param       {function} [login=()=>{}] [description]
  * @constructor
  */
 export default function LoginDialog({

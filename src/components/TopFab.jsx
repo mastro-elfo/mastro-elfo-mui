@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 /**
  * A `Fab` that zooms in when the page is scolled and scrolls to top when clicked.
  * @param       {Number} [threshold=100] [description]
- * @param       {[type]} others          [description]
+ * @param       {any} [others]          [description]
  * @constructor
  */
 export default function TopFab({ threshold = 100, ...others }) {

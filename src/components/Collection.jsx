@@ -24,8 +24,9 @@ import useSearchParams from "../utils/useSearchParams";
 
 /**
  * [Collection description]
- * @param       {[type]} cid        [description]
- * @param       {function} [search=()=>{}] [description]
+ * @param       {string} [cid] Collection identifier
+ * @param       {function} [search=()=>{}] Returns a `Promise` that resolves to an array of results
+ * @param {function} [load=(id)=>{}] Returns a `Promise` that resolves to an item of the collection
  * @constructor
  */
 

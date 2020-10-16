@@ -7,9 +7,9 @@ import ConfirmDialog from "./ConfirmDialog";
 
 /**
  * Creates a `Button`  or an `IconButton` that opens a `ConfirmDialog`.
- * @param       {[type]}  children       [description]
+ * @param       {node}  children       [description]
  * @param       {Boolean} [isIcon=false] [description]
- * @param       {[type]}  [onConfirm=(]  [description]
+ * @param       {function}  [onConfirm=()={}]  [description]
  * @constructor
  */
 export default function ConfirmDialogButton({

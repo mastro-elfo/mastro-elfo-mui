@@ -17,10 +17,10 @@ import TopFab from "./TopFab";
  *
  * By default scrolling the page make a `TopFab` appear.
  *
- * @param       {[type]} [content=null] [description]
- * @param       {[type]} [header=null]  [description]
- * @param       {[type]} [print=null]   [description]
- * @param       {[type]} [topFab=true}] [description]
+ * @param       {node} [content=null] [description]
+ * @param       {node} [header=null]  [description]
+ * @param       {node} [print=null]   [description]
+ * @param       {Boolean} [topFab=true] [description]
  * @constructor
  */
 export default function Page({

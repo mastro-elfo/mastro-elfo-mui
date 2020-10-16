@@ -12,9 +12,9 @@ const notistackRef = createRef();
  * Wrapper for `notistack` snackbars.
  *
  * @see: https://iamhosseindhv.com/notistack
- * @param  {[type]} children [description]
- * @param  {[type]} props    [description]
- * @return {[type]}          [description]
+ * @param  {node} children [description]
+ * @param  {any} props    [description]
+ * @constructor
  */
 export default function({ children, ...props }) {
   const handleDismiss = key => () => notistackRef.current.closeSnackbar(key);

@@ -5,9 +5,9 @@ import Fallback from "./Fallback";
 
 /**
  * [SuspenseWrapper description]
- * @param       {[type]} children [description]
- * @param       {[type]} Fallback [description]
- * @param       {[type]} rest     [description]
+ * @param       {node} children [description]
+ * @param       {elementType} Fallback [description]
+ * @param       {any} rest      Passed to `Fallback`
  * @constructor
  */
 export default function SuspenseWrapper({

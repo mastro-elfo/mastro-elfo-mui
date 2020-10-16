@@ -7,7 +7,6 @@ import TableCell from "@material-ui/core/TableCell";
 
 /**
  * A `TableCell` with theme primary color as background and corresponding contrast color as text color.
- * @type {[type]}
  */
 export default withStyles(theme => {
   return {

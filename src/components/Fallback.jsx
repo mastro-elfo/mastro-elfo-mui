@@ -6,7 +6,7 @@ import { Box, LinearProgress } from "@material-ui/core";
 
 /**
  * [Fallback description]
- * @param       {[type]}  logo             [description]
+ * @param       {node}  logo             [description]
  * @param       {Boolean} [progress=false] [description]
  * @param       {String}  [title=""]       [description]
  * @constructor

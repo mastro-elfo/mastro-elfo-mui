@@ -11,6 +11,7 @@
  */
 
 import React from "react";
+import PropTypes from "prop-types";
 
 import { InputAdornment, TextField } from "@material-ui/core";
 
@@ -27,11 +28,15 @@ import CreditCardIcon from "@material-ui/icons/CreditCard";
  * Why should I provide a validation function?
  * See https://en.wikipedia.org/wiki/Payment_card_number and https://web.archive.org/web/20180908155112/https://creditcardjs.com/credit-card-type-detection
  * @param  {String} [value=""]   [description]
- * @param  {[type]} [validate=(] [description]
- * @return {[type]}              [description]
+ * @param  {function} [validate=()=>({})] [description]
+ * @constructor
  */
 
-export default function({ value = "", validate = () => ({}), ...others }) {
+export default function CreditTextField({
+  value = "",
+  validate = () => ({}),
+  ...others
+}) {
   // Remove non digit characters from value
   const innerValue = value.replace(/[^\d]/g, "");
   // Split innerValue into 4-length pieces
@@ -52,3 +57,8 @@ export default function({ value = "", validate = () => ({}), ...others }) {
     />
   );
 }
+
+CreditTextField.propTypes = {
+  validate: PropTypes.func,
+  value: PropTypes.string
+};

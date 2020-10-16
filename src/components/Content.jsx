@@ -4,7 +4,7 @@ import { Box, Container } from "@material-ui/core";
 
 /**
  * Puts a `Box` inside a `Container`.
- * @param       {[type]} children            [description]
+ * @param       {node} children            [description]
  * @param       {Object} [ContainerProps={}] [description]
  * @param       {Object} [BoxProps={}}]      [description]
  * @constructor

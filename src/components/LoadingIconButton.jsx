@@ -10,8 +10,8 @@ import Loading from "./Loading";
 
 /**
  * [LoadingIconButton description]
- * @param       {[type]} children     [description]
- * @param       {[type]} [callback=(] [description]
+ * @param       {node} children     [description]
+ * @param       {function} [callback=(] [description]
  * @constructor
  */
 export default function LoadingIconButton({

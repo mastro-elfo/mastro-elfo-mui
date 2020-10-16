@@ -22,12 +22,12 @@ import Wrapper from "./Wrapper";
  * Anything else is passed to `Router`.
  *
  * @see: https://reacttraining.com/react-router/web/guides/quick-start
- * @param  {[type]} [Router=MemoryRouter] [description]
+ * @param  {Router} [Router=MemoryRouter] [description]
  * @param  {Array}  [routes=[]]           [description]
- * @param  {[type]} [redirect=null]       [description]
+ * @param  {string} [redirect=null]       [description]
  * @param  {Object} [WrapperProps={}]     [description]
- * @param  {[type]} others                [description]
- * @return {[type]}                       [description]
+ * @param  {any} others                [description]
+ * @constructor
  */
 
 export default function({

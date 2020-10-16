@@ -13,7 +13,7 @@ import {
 
 /**
  * [DrawerLists description]
- * @param       {Array} [lists=[] }] [description]
+ * @param       {Array} [lists=[]] [description]
  * @constructor
  */
 export default function DrawerLists({ lists = [] }) {
