@@ -3,4 +3,5 @@ todo.md
 package-lock.json
 yarn.lock
 /build
+/dist
 *.log
