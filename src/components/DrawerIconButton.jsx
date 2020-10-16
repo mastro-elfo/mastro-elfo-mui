@@ -5,7 +5,7 @@ import { IconButton } from "@material-ui/core";
 
 import MenuIcon from "@material-ui/icons/Menu";
 
-import { Drawer } from "./";
+import Drawer from "./Drawer";
 
 /**
  * [DrawerIconButton description]

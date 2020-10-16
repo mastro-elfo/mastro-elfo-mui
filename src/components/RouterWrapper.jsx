@@ -8,7 +8,7 @@ import {
   Redirect
 } from "react-router-dom";
 
-import { Wrapper } from "./";
+import Wrapper from "./Wrapper";
 
 /**
  * Router wrapper that use "react-router-dom" to create routes.

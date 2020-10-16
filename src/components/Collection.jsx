@@ -10,19 +10,17 @@ import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
 import SaveIcon from "@material-ui/icons/Save";
 
-import {
-  BackIconButton,
-  Conditional,
-  Content,
-  Header,
-  LoadingIconButton,
-  Page,
-  SearchField,
-  ResultList
-} from "./";
+import BackIconButton from "./BackIconButton";
+import Conditional from "./Conditional";
+import Content from "./Content";
+import Header from "./Header";
+import LoadingIconButton from "./LoadingIconButton";
+import Page from "./Page";
+import SearchField from "./SearchField";
+import ResultList from "./ResultList";
 
-import { evaluate } from "../utils";
-import { useSearchParams } from "../utils";
+import evaluate from "../utils/evaluate";
+import useSearchParams from "../utils/useSearchParams";
 
 /**
  * [Collection description]

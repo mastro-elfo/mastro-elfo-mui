@@ -12,7 +12,8 @@ import {
   TextField
 } from "@material-ui/core";
 
-import { Loading, PasswordField } from "./";
+import Loading from "./Loading";
+import PasswordField from "./PasswordField";
 
 /**
  * [LoginDialog description]

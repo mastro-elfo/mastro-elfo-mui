@@ -4,7 +4,8 @@ import { IconButton, Typography } from "@material-ui/core";
 
 import RefreshIcon from "@material-ui/icons/Refresh";
 
-import { Content, Header } from "./";
+import Content from "./Content";
+import Header from "./Header";
 
 /**
  * Error handler component

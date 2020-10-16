@@ -10,7 +10,7 @@ import {
   DialogContentText
 } from "@material-ui/core";
 
-import { Condition } from "./";
+import Condition from "./Condition";
 
 /**
  * Complex dialog box that asks to confirm some action.

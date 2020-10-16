@@ -5,7 +5,8 @@ import { useSnackbar } from "notistack";
 
 import { IconButton } from "@material-ui/core";
 
-import { AbsoluteCircularProgress, Loading } from "./";
+import AbsoluteCircularProgress from "./AbsoluteCircularProgress";
+import Loading from "./Loading";
 
 /**
  * [LoadingIconButton description]

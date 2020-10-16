@@ -8,14 +8,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {
-  ErrorWrapper,
-  NotifyWrapper,
-  RouterWrapper,
-  SuspenseWrapper,
-  ThemeWrapper,
-  Wrapper
-} from "./";
+import ErrorWrapper from "./ErrorWrapper";
+import NotifyWrapper from "./NotifyWrapper";
+import RouterWrapper from "./RouterWrapper";
+import SuspenseWrapper from "./SuspenseWrapper";
+import ThemeWrapper from "./ThemeWrapper";
+import Wrapper from "./Wrapper";
 
 /**
  * App main container.

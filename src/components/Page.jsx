@@ -9,7 +9,8 @@ import PropTypes from "prop-types";
 
 import { Paper } from "@material-ui/core";
 
-import { NoPrint, Print, TopFab } from "./";
+import { NoPrint, Print } from "./Print";
+import TopFab from "./TopFab";
 
 /**
  * Create a single page with header, content and a "printable" version (hidden on screen).

@@ -9,8 +9,8 @@ import {
   ListSubheader
 } from "@material-ui/core";
 
-import { Condition } from "./";
-import { evaluate } from "../";
+import Condition from "./Condition";
+import evaluate from "../utils/evaluate";
 
 /**
  * Organizes a List with optional SubHeader

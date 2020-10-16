@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import { useLocation } from "react-router-dom";
 
-import { LoginDialog } from "./";
+import LoginDialog from "./LoginDialog";
 
 // TODO: I want to pass actions to Component only if its type is LoginDialog
 // This is one way to do it, but relies on Component.name and I'm not sure about this
