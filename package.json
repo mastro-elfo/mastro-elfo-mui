@@ -1,6 +1,6 @@
 {
   "name": "mastro-elfo-mui",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "description": "MaterialUI extension",
   "keywords": [
     "react",
@@ -25,7 +25,7 @@
     "build": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
     "-prebuild": "yarn run test",
     "test": "jest",
-    "deploy": "yarn publish dist",
+    "deploy": "yarn publish",
     "predeploy": "yarn run build"
   },
   "devDependencies": {
