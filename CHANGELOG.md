@@ -1,3 +1,11 @@
+# v1.13.0
+
+- [FIX] Entry point in package.json
+  ```diff
+  - "main": "index.js",
+  + "main": "dist/index.js"
+  ```
+
 # v1.12.0
 
 Use rollup to build yarn package
