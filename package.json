@@ -8,14 +8,10 @@
     "material design",
     "material-ui"
   ],
-  "main": "index.js",
-  "scripts": {
-    "build": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
-    "-prebuild": "yarn run test",
-    "test": "jest",
-    "deploy": "yarn publish dist",
-    "predeploy": "yarn run build"
-  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/mastro-elfo/mastro-elfo-mui"
@@ -25,9 +21,13 @@
   "bugs": {
     "url": "https://github.com/mastro-elfo/mastro-elfo-mui/issues"
   },
-  "files": [
-    "dist"
-  ],
+  "scripts": {
+    "build": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
+    "-prebuild": "yarn run test",
+    "test": "jest",
+    "deploy": "yarn publish dist",
+    "predeploy": "yarn run build"
+  },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
