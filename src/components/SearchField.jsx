@@ -7,13 +7,15 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-import { debounce, deburr } from "lodash";
+import { debounce } from "lodash";
 import { useSnackbar } from "notistack";
 
 import { IconButton, InputAdornment, TextField } from "@material-ui/core";
 
 import ClearIcon from "@material-ui/icons/Clear";
 import SearchIcon from "@material-ui/icons/Search";
+
+import clean from "../utils/clean";
 
 /**
  * A `TextField` that manages a search input.
@@ -60,7 +62,16 @@ export default function SearchField({
     // Set searching true
     setSearching(true);
     // Callback
-    onSearch(query, deburr(query))
+    onSearch(
+      query,
+      clean(query, {
+        lower: true,
+        trim: true,
+        deburr: true,
+        replace_symbol: true,
+        compact_spaces: true
+      })
+    )
       .catch(err => {
         console.error(err);
         enqueueSnackbar(err.message, { variant: "error" });
