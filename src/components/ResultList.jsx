@@ -82,5 +82,5 @@ export default function ResultList({
 ResultList.propTypes = {
   mapper: PropTypes.func,
   results: PropTypes.array,
-  subheader: PropTypes.string
+  subheader: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 };
