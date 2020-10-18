@@ -1,3 +1,14 @@
+# v1.14.0
+
+- [FIX] _prop-types_ peerDependencies: `15.0.0`
+- [FIX] `ResultList` incorrect `PropTypes` for `subheader`
+  ```diff
+  - subheader: PropTypes.string
+  + subheader: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
+  ```
+- [NEW] component `FixedBottomNavigation`
+- [IMPROVE] `SearchField` completely clean deburred value with utility `clean`
+
 # v1.13.0
 
 - [FIX] Entry point in package.json
