@@ -37,6 +37,7 @@ export default function Page({
           {topFab && <TopFab {...TopFabProps} />}
           {!!header && header}
           {!!content && content}
+          <div style={{ height: "1px" }} />
         </Paper>
       </NoPrint>
       <Print>{!!print && print}</Print>
