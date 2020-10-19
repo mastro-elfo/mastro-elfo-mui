@@ -23,11 +23,7 @@ export default function DrawerIconButton({
 
   return (
     <Fragment>
-      <IconButton
-        color="inherit"
-        onClick={() => setOpen(true)}
-        {...IconButtonProps}
-      >
+      <IconButton onClick={() => setOpen(true)} {...IconButtonProps}>
         <MenuIcon />
       </IconButton>
       <Drawer

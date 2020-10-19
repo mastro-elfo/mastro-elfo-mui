@@ -15,7 +15,7 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 export default function(props) {
   const { goBack } = useHistory();
   return (
-    <IconButton onClick={goBack} color="inherit" {...props}>
+    <IconButton onClick={goBack} {...props}>
       <ArrowBackIcon />
     </IconButton>
   );

@@ -133,11 +133,7 @@ function CollectionPage({
         <Header
           LeftAction={<BackIconButton />}
           RightActions={[
-            <IconButton
-              key="new"
-              color="inherit"
-              onClick={() => push(`/${cid}/n`)}
-            >
+            <IconButton key="new" onClick={() => push(`/${cid}/n`)}>
               <AddIcon />
             </IconButton>
           ]}
@@ -200,11 +196,7 @@ function ViewPage({ cid, title = "View Item", render = () => {}, data }) {
         <Header
           LeftAction={<BackIconButton />}
           RightActions={[
-            <IconButton
-              key="edit"
-              color="inherit"
-              onClick={() => push(`/${cid}/e/${id}`)}
-            >
+            <IconButton key="edit" onClick={() => push(`/${cid}/e/${id}`)}>
               <EditIcon />
             </IconButton>
           ]}
@@ -265,7 +257,7 @@ function EditPage({
         <Header
           LeftAction={<BackIconButton />}
           RightActions={[
-            <LoadingIconButton key="save" color="inherit" callback={handleSave}>
+            <LoadingIconButton key="save" callback={handleSave}>
               <SaveIcon />
             </LoadingIconButton>
           ]}
@@ -303,7 +295,7 @@ function NewPage({
         <Header
           LeftAction={<BackIconButton />}
           RightActions={[
-            <LoadingIconButton key="save" color="inherit" callback={handleSave}>
+            <LoadingIconButton key="save" callback={handleSave}>
               <SaveIcon />
             </LoadingIconButton>
           ]}

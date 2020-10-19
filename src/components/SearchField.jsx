@@ -141,7 +141,6 @@ export default function SearchField({
               <IconButton
                 title="Clear"
                 onClick={handleClear}
-                color="inherit"
                 {...ClearButtonProps}
               >
                 <ClearIcon />

@@ -31,7 +31,7 @@ export default function ConfirmDialogButton({
 
   return (
     <Fragment>
-      <Component color="inherit" onClick={() => setOpen(true)} {...others}>
+      <Component onClick={() => setOpen(true)} {...others}>
         {children}
       </Component>
       <ConfirmDialog
