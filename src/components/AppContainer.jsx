@@ -40,19 +40,6 @@ export default function AppContainer({
       <RouterWrapper {...RouterProps} />
     </Wrapper>
   );
-  // return (
-  //   <ThemeWrapper {...ThemeProps}>
-  //     <SuspenseWrapper {...SuspenseProps}>
-  //       <ErrorWrapper>
-  //         <NotifyWrapper {...NotifyProps}>
-  //           <Wrapper {...WrapperProps}>
-  //             <RouterWrapper {...RouterProps} />
-  //           </Wrapper>
-  //         </NotifyWrapper>
-  //       </ErrorWrapper>
-  //     </SuspenseWrapper>
-  //   </ThemeWrapper>
-  // );
 }
 
 AppContainer.propTypes = {
