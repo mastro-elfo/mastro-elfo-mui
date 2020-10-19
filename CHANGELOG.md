@@ -1,3 +1,12 @@
+# v1.15.0
+
+- [FIX] remove `color="inherit"` from components with `IconButton`
+- [FIX] In `Page` component, `Paper` needs an element that closes the content:
+  ```diff
+  + <div style={{height: "1px"}}/>
+  ```
+- [DELETE] remove comments from `AppContainer`
+
 # v1.14.0
 
 - [FIX] _prop-types_ peerDependencies: `15.0.0`
