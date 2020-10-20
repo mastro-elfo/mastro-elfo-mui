@@ -3,8 +3,8 @@ import { styled } from "@material-ui/core/styles";
 /**
  * Applies `position: "fixed"` to `Component`
  * @param  {elementType} Component Input component
- * @param {any} props Style properties
- * @return {elementType}           Absolute component
+ * @param {any} props              Style properties
+ * @return {elementType}           Fixed component
  */
 export default (Component, ...props) =>
   styled(Component)({
