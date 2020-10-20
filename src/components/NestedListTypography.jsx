@@ -27,7 +27,7 @@ export default function NestedListTypography({
   ulProps = { component: "ul" },
   liProps = { component: "li" }
 }) {
-  if (typeof children === "object") {
+  if (typeof children === "object" && children.map) {
     // Assumes array
     return (
       <Typography {...ulProps}>
