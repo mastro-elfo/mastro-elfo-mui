@@ -68,7 +68,7 @@ export default function SearchField({
         lower: true,
         trim: true,
         deburr: true,
-        replace_symbol: true,
+        replace_symbol: " ",
         compact_spaces: true
       })
     )
