@@ -1,3 +1,10 @@
+# v1.16.0
+
+- [IMPROVE] style `absolute`, accept `...rest` params
+- [NEW] style `fixed`, accept `...rest` params
+- [FIX] `NestedListTypography` check if `object` is `array`
+- [FIX] `SearchField` clean query
+
 # v1.15.0
 
 - [FIX] remove `color="inherit"` from components with `IconButton`
