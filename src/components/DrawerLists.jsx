@@ -36,10 +36,12 @@ export default function DrawerLists({ lists = [] }) {
                 key,
                 onClick = false,
                 primary = "",
-                secondary = ""
+                secondary = "",
+                title = ""
               }) => (
                 <ListItem
                   key={key}
+                  title={title}
                   button={Boolean(onClick)}
                   onClick={Boolean(onClick) ? onClick : () => {}}
                 >
