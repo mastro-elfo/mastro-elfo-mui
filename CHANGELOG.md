@@ -1,3 +1,8 @@
+# 1.17.0
+
+- [FIX] `DrawerLists` apply `title` to `ListItem`
+- [NEW] hook `usePalette`
+
 # v1.16.0
 
 - [IMPROVE] style `absolute`, accept `...rest` params
