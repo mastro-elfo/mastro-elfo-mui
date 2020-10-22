@@ -1,11 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 
-import { IconButton, Typography } from "@material-ui/core";
+import { IconButton, Paper, Typography } from "@material-ui/core";
 
 import RefreshIcon from "@material-ui/icons/Refresh";
 
 import Content from "./Content";
 import Header from "./Header";
+import Page from "./Page";
 
 /**
  * Error handler component
@@ -35,33 +36,42 @@ export default class ErrorWrapper extends Component {
 
     if (error) {
       return (
-        <Fragment>
-          <Header
-            RightActions={[
-              <IconButton
-                key="reload"
-                title="Reload"
-                onClick={this.handleReloadClick}
-              >
-                <RefreshIcon />
-              </IconButton>
-            ]}
-          >
-            An error occurred
-          </Header>
-          <Content>
-            <Typography variant="h3" gutterBottom>
-              {error.message}
-            </Typography>
-            <Typography component="ul">
-              {error.stack.split("\n").map((line, i) => (
-                <Typography key={i} component="li" variant="body2" gutterBottom>
-                  {line}
-                </Typography>
-              ))}
-            </Typography>
-          </Content>
-        </Fragment>
+        <Page
+          header={
+            <Header
+              RightActions={[
+                <IconButton
+                  key="reload"
+                  title="Reload"
+                  onClick={this.handleReloadClick}
+                >
+                  <RefreshIcon />
+                </IconButton>
+              ]}
+            >
+              An error occurred
+            </Header>
+          }
+          content={
+            <Content>
+              <Typography variant="h3" gutterBottom>
+                {error.message}
+              </Typography>
+              <Typography component="ul">
+                {error.stack.split("\n").map((line, i) => (
+                  <Typography
+                    key={i}
+                    component="li"
+                    variant="body2"
+                    gutterBottom
+                  >
+                    {line}
+                  </Typography>
+                ))}
+              </Typography>
+            </Content>
+          }
+        />
       );
     }
     return this.props.children;
