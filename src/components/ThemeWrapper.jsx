@@ -14,7 +14,10 @@ import { Context } from "../utils/usePalette";
 export default function ThemeWrapper({ children, ...props }) {
   const { palette: defaultPalette } = props;
   const [palette, setPalette] = useState(defaultPalette);
-  const THEME = createMuiTheme({ ...props, palette });
+  const THEME = createMuiTheme({
+    ...props,
+    palette: { ...props.palette, ...palette }
+  });
 
   return (
     <Context.Provider value={[palette, setPalette]}>
