@@ -1,21 +1,76 @@
-# Material-UI components
+# Install
 
-A list of components to use in React/Material-UI app.
+`yarn add mastro-elfo-mui`
 
-### AbsoluteCircularProgress
+or
 
-A `CircularProgress` styled with `absolute`.
+`npm i mastro-elfo-mui`
 
-This is useful inside buttons.
+# Getting started
 
-### AppContainer
+The start point of this library is then `AppContainer` component. This is not required, but gives the app some basic configuration.
 
-App main container.
+`AppContainer` creates wrapper for the _theme_, the **React** `Suspense` component, the _Error boundary_, the _notifier_ (with **notistack**), and the _router_ (with **react-router-dom**).
 
-Wraps application with Theme, Error handler, Notifier and Router.
+## Example
 
-### BackIconButton
+This example creates an `AppContainer` with a global theme and that uses `HashRouter`.
 
-`IconButton` with `ArrowBack` icon.
+```js
+import React from "react";
+import { HashRouter } from "react-router-dom";
+import primary from "@material-ui/core/colors/blue";
+import secondary from "@material-ui/core/colors/pink";
 
-Calls history's `goBack` when clicked.
+import { AppContainer } from "mastro-elfo-mui";
+
+import HomePage from "./pages/HomePage";
+
+function App() {
+  return (
+    <AppContainer
+      ThemeProps={{
+        palette: { primary, secondary }
+      }}
+      RouterProps={{
+        Router: HashRouter,
+        routes: [{ path: "/", component: HomePage, exact: true }]
+      }}
+    />
+  );
+}
+```
+
+The `Page` component creates the structure for a page.
+
+A `Page` has basically an _header_ and a _content_. They can be any component, but they work well with `Header` and `Content` components. _header_ and _content_ are rendered inside a `Paper` so they reflect the type of palette (light or dark).
+
+A `Page` also has a _print_ property that is rendered with `@media print`; on the other hand _header_ and _content_ don't render when printed.
+
+## Example
+
+This example creates a basic page with an header and content.
+
+```js
+import React from "react";
+
+import { Page, Header, Content } from "mastro-elfo-mui";
+
+function HomePage() {
+  return (
+    <Page
+      header={<Header>Home Page</Header>}
+      content={
+        <Content>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non mi
+          tincidunt, mattis sapien non, facilisis massa.
+        </Content>
+      }
+    />
+  );
+}
+```
+
+Many components in this library extend their counterpart in **material-ui** in a specific way.
+
+Other components group some complex structure.
