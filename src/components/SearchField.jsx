@@ -34,12 +34,20 @@ import clean from "../utils/clean";
 export default function SearchField({
   // Debounce delay
   delay = 250,
+  //
+  hideClearButton = false,
+  //
+  onChange = () => {},
   // Clear button callback
   onClear = () => {},
+  //
+  onKeyPress = () => {},
   // Search callback
   onSearch = () => Promise.reject(new Error("No search function provided")),
   //
-  showClear = false,
+  showClear = undefined,
+  //
+  value = undefined,
   // Clear button props
   ClearButtonProps = {},
   // Override `InputProps`
@@ -49,8 +57,15 @@ export default function SearchField({
   // Others are passed to TextField
   ...others
 }) {
+  if (showClear !== undefined) {
+    // TODO: DEPRECATE: v2.0.0
+    console.warn(
+      "`showClear` is no longer used (since v1.18.0) and will be removed in v2.0.0. `ClearButton` is always visible and can be hidden with `hideClearButton`."
+    );
+  }
+
   // Query string
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(value);
   // Searching status
   const [searching, setSearching] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
@@ -109,24 +124,28 @@ export default function SearchField({
       // Fire immediate search if "Enter" is pressed
       handleSearch();
     }
+    onKeyPress(e);
   };
 
   // Handle change events
-  const handleChange = ({ target: { value } }) => {
+  const handleChange = e => {
+    const {
+      target: { value }
+    } = e;
     setQuery(value);
+    onChange(e);
   };
 
   return (
     <TextField
       type="text"
-      value={query}
       onChange={handleChange}
       onKeyPress={handleKeyPress}
+      value={value}
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
             <IconButton
-              title="Search"
               onClick={handleSearch}
               disabled={searching}
               {...SearchButtonProps}
@@ -137,12 +156,8 @@ export default function SearchField({
         ),
         endAdornment: (
           <InputAdornment position="end">
-            {(showClear || !!query) && (
-              <IconButton
-                title="Clear"
-                onClick={handleClear}
-                {...ClearButtonProps}
-              >
+            {(!!query || !hideClearButton) && (
+              <IconButton onClick={handleClear} {...ClearButtonProps}>
                 <ClearIcon />
               </IconButton>
             )}
