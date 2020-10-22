@@ -1,3 +1,20 @@
+# 1.18.0
+
+- [FIX] Export `usePalette` in **utils/index.js**
+- [FIX] `Typography` inside `Header` component inherits _color_
+- [FIX] `ErrorWrapper` doesn't have `Page`
+- [FIX] `ThemeWrapper` overwrites `palette`
+  ```diff
+  - const THEME = createMuiTheme({ ...props, palette });
+  + const THEME = createMuiTheme({
+  +   ...props,
+  +   palette: { ...props.palette, ...palette }
+  + });
+  ```
+- [IMPROVE] `SearchField` to let it be controlled
+- [FIX] _ClearButton_ in `SearchField` is visible
+- [NEW] In `SearchField` hide _ClearButton_ with `hideClearButton` property
+
 # 1.17.0
 
 - [FIX] `DrawerLists` apply `title` to `ListItem`
