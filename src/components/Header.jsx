@@ -31,7 +31,7 @@ export default function Header({
       <AppBar>
         <Toolbar>
           {LeftAction}
-          <GrowTypography variant="h6" color="inherit" {...TitleProps}>
+          <GrowTypography variant="h6" {...TitleProps}>
             {children}
           </GrowTypography>
           {RightActions}
