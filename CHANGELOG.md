@@ -1,3 +1,10 @@
+# 1.19.0
+
+- [NEW] Add `footer` property to `Page`
+- [NEW] `PaperProps` property to `Page` component
+- [NEW] `Header` applies `...rest` to `AppBar`
+- [NEW] `Header` property `ToolbarProps`
+
 # 1.18.0
 
 - [FIX] Export `usePalette` in **utils/index.js**
