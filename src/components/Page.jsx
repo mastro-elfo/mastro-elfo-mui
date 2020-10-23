@@ -56,6 +56,7 @@ export default function Page({
 
 Page.propTypes = {
   content: PropTypes.element,
+  footer: PropTypes.element,
   header: PropTypes.element,
   print: PropTypes.element,
   topFab: PropTypes.bool,
