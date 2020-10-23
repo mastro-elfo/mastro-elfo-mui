@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { IconButton, Paper, Typography } from "@material-ui/core";
+import { IconButton, Typography } from "@material-ui/core";
 
 import RefreshIcon from "@material-ui/icons/Refresh";
 
