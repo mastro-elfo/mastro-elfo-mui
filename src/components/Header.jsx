@@ -5,6 +5,7 @@
  */
 
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 
 import { AppBar, Toolbar } from "@material-ui/core";
 
@@ -45,3 +46,14 @@ export default function Header({
     </Fragment>
   );
 }
+
+Header.propTypes = {
+  children: PropTypes.node,
+  LeftAction: PropTypes.node,
+  RightActions: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node)
+  ]),
+  TitleProps: PropTypes.object,
+  ToolbarProps: PropTypes.object
+};
