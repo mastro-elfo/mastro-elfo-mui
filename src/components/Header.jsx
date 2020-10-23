@@ -14,21 +14,23 @@ import GrowTypography from "./GrowTypography";
  * Create an AppBar/Toolbar header.
  *
  * Children are rendered inside a flexGrow Typography
- * @param       {node} children          [description]
- * @param       {node} [LeftAction=null] [description]
- * @param       {Array}  [RightActions=[]] [description]
- * @param       {Object} [TitleProps={}}]  [description]
+ * @param   {node}    children          [description]
+ * @param   {node}    [LeftAction=null] [description]
+ * @param   {Array}   [RightActions=[]] [description]
+ * @param   {Object}  [TitleProps={}}]  [description]
+ * @param   {any}     [rest]            [description]
  * @constructor
  */
 export default function Header({
   children,
   LeftAction = null,
   RightActions = [],
-  TitleProps = {}
+  TitleProps = {},
+  ...rest
 }) {
   return (
     <Fragment>
-      <AppBar>
+      <AppBar {...rest}>
         <Toolbar>
           {LeftAction}
           <GrowTypography variant="h6" {...TitleProps}>
