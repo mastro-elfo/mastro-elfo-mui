@@ -25,6 +25,7 @@ import TopFab from "./TopFab";
  */
 export default function Page({
   content = null,
+  footer = null,
   header = null,
   print = null,
   topFab = true,
@@ -37,6 +38,7 @@ export default function Page({
           {topFab && <TopFab {...TopFabProps} />}
           {!!header && header}
           {!!content && content}
+          {!!footer && footer}
           <div style={{ height: "1px" }} />
         </Paper>
       </NoPrint>
