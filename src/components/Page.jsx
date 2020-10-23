@@ -17,9 +17,10 @@ import TopFab from "./TopFab";
  *
  * By default scrolling the page make a `TopFab` appear.
  *
- * @param       {node} [content=null] [description]
- * @param       {node} [header=null]  [description]
- * @param       {node} [print=null]   [description]
+ * @param       {node} [content=null]   [description]
+ * @param       {node} [header=null]    [description]
+ * @param       {node} [footer=null]    [description]
+ * @param       {node} [print=null]     [description]
  * @param       {Boolean} [topFab=true] [description]
  * @constructor
  */
@@ -29,12 +30,18 @@ export default function Page({
   header = null,
   print = null,
   topFab = true,
+  PaperProps = {},
   TopFabProps = {}
 }) {
   return (
     <Fragment>
       <NoPrint>
-        <Paper square elevation={0} style={{ minHeight: "100%" }}>
+        <Paper
+          square
+          elevation={0}
+          style={{ minHeight: "100%" }}
+          {...PaperProps}
+        >
           {topFab && <TopFab {...TopFabProps} />}
           {!!header && header}
           {!!content && content}
