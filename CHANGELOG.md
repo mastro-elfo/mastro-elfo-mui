@@ -1,11 +1,17 @@
-# 1.19.0
+# v1.20.0
+
+- [FIX] add **utils/storage.js** to rollup
+- [DEL] `peerDependencies` for _i18n_
+- [FIX] `Paper` in `Page` component use `className` to apply `minHeight`
+
+# v1.19.0
 
 - [NEW] Add `footer` property to `Page`
 - [NEW] `PaperProps` property to `Page` component
 - [NEW] `Header` applies `...rest` to `AppBar`
 - [NEW] `Header` property `ToolbarProps`
 
-# 1.18.0
+# v1.18.0
 
 - [FIX] Export `usePalette` in **utils/index.js**
 - [FIX] `Typography` inside `Header` component inherits _color_
@@ -22,7 +28,7 @@
 - [FIX] _ClearButton_ in `SearchField` is visible
 - [NEW] In `SearchField` hide _ClearButton_ with `hideClearButton` property
 
-# 1.17.0
+# v1.17.0
 
 - [FIX] `DrawerLists` apply `title` to `ListItem`
 - [NEW] hook `usePalette`
