@@ -5,7 +5,7 @@ import commonjs from "rollup-plugin-commonjs";
 const extensions = [".js", ".jsx"];
 
 module.exports = {
-  input: ["./src/index.js", "./src/scripts/index.js"],
+  input: ["./src/index.js", "./src/scripts/index.js", "./src/utils/storage.js"],
   output: {
     // file: "./dist/index.js",
     format: "cjs",
