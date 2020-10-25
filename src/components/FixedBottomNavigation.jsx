@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import { useTheme } from "@material-ui/core/styles";
 import { BottomNavigation } from "@material-ui/core";
 
-function FixedBottomNavigation({ children, ...props }) {
+export function FixedBottomNavigation({ children, ...props }) {
   const theme = useTheme();
   return (
     <Fragment>
