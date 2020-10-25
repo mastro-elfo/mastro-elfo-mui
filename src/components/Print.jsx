@@ -23,6 +23,10 @@ const useStyles = makeStyles({
  * Children inside `Print` are not shown on screen.
  */
 export function Print({ children }) {
+  // TODO: Deprecated, remove in v2
+  console.warn(
+    "Print component is deprecated and will be removed in version 2. Use MediaPrint instead."
+  );
   const classes = useStyles();
   return <div className={classes.print}>{children}</div>;
 }
@@ -31,6 +35,9 @@ export function Print({ children }) {
  * Children inside `NoPrint` are not printed.
  */
 export function NoPrint({ children }) {
+  console.warn(
+    "NoPrint component is deprecated and will be removed in version 2. Use MediaScreen instead."
+  );
   const classes = useStyles();
   return <div className={classes.noPrint}>{children}</div>;
 }
