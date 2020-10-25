@@ -1,9 +1,9 @@
 # v1.21.0
 
-- [FIX] export `FixedBottomNavigation`
+- [FIX] export default `FixedBottomNavigation`
 - [FIX] export named `FixedBottomNavigation`
 - [FIX] Bug when theme is dark, print should not be affectedtar
-- [NEW] component `MediaScreen` and `MediaPrint`
+- [NEW] components `MediaScreen` and `MediaPrint`
   - see https://material-ui.com/system/display/#display-in-print
 - [FIX] `TableHeadCell` print exact backgroundColor in firefox
 
