@@ -10,7 +10,9 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper } from "@material-ui/core";
 
-import { NoPrint, Print } from "./Print";
+import MediaPrint from "./MediaPrint";
+import MediaScreen from "./MediaScreen";
+// import { NoPrint, Print } from "./Print";
 import TopFab from "./TopFab";
 
 /**
@@ -19,10 +21,12 @@ import TopFab from "./TopFab";
  * By default scrolling the page make a `TopFab` appear.
  *
  * @param       {node} [content=null]   [description]
- * @param       {node} [header=null]    [description]
  * @param       {node} [footer=null]    [description]
+ * @param       {node} [header=null]    [description]
  * @param       {node} [print=null]     [description]
  * @param       {Boolean} [topFab=true] [description]
+ * @param       {Object}  [PaperProps={}] [description]
+ * @param       {Object}  [TopFabProps={}]  [description]
  * @constructor
  */
 export default function Page({
@@ -38,7 +42,7 @@ export default function Page({
 
   return (
     <Fragment>
-      <NoPrint>
+      <MediaScreen>
         <Paper square elevation={0} className={classes.paper} {...PaperProps}>
           {topFab && <TopFab {...TopFabProps} />}
           {!!header && header}
@@ -46,8 +50,8 @@ export default function Page({
           {!!footer && footer}
           <div style={{ height: "1px" }} />
         </Paper>
-      </NoPrint>
-      <Print>{!!print && print}</Print>
+      </MediaScreen>
+      <MediaPrint>{!!print && print}</MediaPrint>
     </Fragment>
   );
 }
@@ -58,6 +62,7 @@ Page.propTypes = {
   header: PropTypes.element,
   print: PropTypes.element,
   topFab: PropTypes.bool,
+  PaperProps: PropTypes.object,
   TopFabProps: PropTypes.object
 };
 
