@@ -16,7 +16,8 @@ export default withStyles(theme => {
       color: `${theme.palette.primary.contrastText} !important`,
       textAlign: "center",
       fontWeight: "bold",
-      "-webkit-print-color-adjust": "exact"
+      "-webkit-print-color-adjust": "exact",
+      "color-adjust": "exact"
     }
   };
 })(TableCell);
