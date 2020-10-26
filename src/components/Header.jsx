@@ -1,9 +1,3 @@
-/**
- * Create an AppBar/Toolbar header.
- *
- * Children are rendered inside a flexGrow Typography
- */
-
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
