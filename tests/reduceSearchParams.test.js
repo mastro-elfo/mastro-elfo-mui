@@ -1,4 +1,4 @@
-import { reducer } from "../src/utils/reduceSearchParams";
+import reducer from "../src/utils/reduceSearchParams";
 
 test("Empty search", () => {
   expect(reducer("")).toEqual({});
