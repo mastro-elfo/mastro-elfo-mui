@@ -19,6 +19,7 @@ export default function HeaderSearchField({ BoxProps = {}, ...rest }) {
       bgcolor={fade(theme.palette.common.white, 0.15)}
       borderRadius={theme.shape.borderRadius}
       py={0.5}
+      {...BoxProps}
     >
       <SearchField
         variant="standard"
