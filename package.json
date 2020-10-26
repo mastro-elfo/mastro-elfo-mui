@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "rollup -c --environment INCLUDE_DEPS,BUILD:production",
-    "-prebuild": "yarn run test",
+    "prebuild": "yarn run test",
     "test": "jest",
     "deploy": "yarn publish",
     "predeploy": "yarn run build"
