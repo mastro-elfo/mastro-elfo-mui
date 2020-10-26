@@ -1,3 +1,8 @@
+/**
+ * Reduces a string like `?key1=val1&key2=val2...` to a key/value object
+ * @param  {string} search Input string
+ * @return {object}        Key/Value pair object
+ */
 export default function reducer(search) {
   return (
     search
