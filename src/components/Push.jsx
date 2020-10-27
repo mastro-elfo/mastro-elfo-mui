@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
 /**
- * Renders `Component` with `onClick` prop that calls pushes or replaces history with `href`.
+ * Renders `Component` with `onClick` prop that pushes or replaces history with `href`.
  *
  * @param       {node}  children        [description]
  * @param       {string}  href            location to push
