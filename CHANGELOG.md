@@ -1,3 +1,10 @@
+# V1.22.0
+
+- FIX Apply `BoxProps` to `Box` component in `HeaderSearchField`
+- FIX add named exports
+- FIX `SearchField` `hideClearButton`
+- FIX `SearchField` handled/unhandled behaviour
+
 # v1.21.0
 
 - [FIX] export default `FixedBottomNavigation`
