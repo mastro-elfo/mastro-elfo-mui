@@ -22,7 +22,6 @@ export { default as Loading } from "./Loading";
 export { default as LoadingIconButton } from "./LoadingIconButton";
 export { default as Login } from "./Login";
 export { default as LoginDialog } from "./LoginDialog";
-export { default as LoadingIconButton } from "./LoadingIconButton";
 export { default as Markdown } from "./Markdown";
 export { default as MediaPrint } from "./MediaPrint";
 export { default as MediaScreen } from "./MediaScreen";
