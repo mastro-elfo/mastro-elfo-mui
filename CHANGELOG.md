@@ -1,4 +1,9 @@
-# V1.22.0
+# v1.23.0
+
+- :arrow_up: Use `...rest` with `IconButton` in `DrawerIconButton` component instead of `IconButtonProps`
+- :wastebasket: deprection warning for `IconButtonProps`
+
+# v1.22.0
 
 - FIX Apply `BoxProps` to `Box` component in `HeaderSearchField`
 - FIX add named exports
