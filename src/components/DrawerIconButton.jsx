@@ -17,13 +17,23 @@ import Drawer from "./Drawer";
 export default function DrawerIconButton({
   children,
   IconButtonProps = {},
-  DrawerProps = {}
+  DrawerProps = {},
+  ...rest
 }) {
+  if (
+    typeof IconButtonProps === "object" &&
+    Object.keys(IconButtonProps).length > 0
+  ) {
+    console.warn(
+      "IconButtonProps is deprecated since v1.23.0 and will be removed in v2.0.0. Use `<DrawerIconButton ...rest/>` instead."
+    );
+  }
+
   const [open, setOpen] = useState(false);
 
   return (
     <Fragment>
-      <IconButton onClick={() => setOpen(true)} {...IconButtonProps}>
+      <IconButton onClick={() => setOpen(true)} {...IconButtonProps} {...rest}>
         <MenuIcon />
       </IconButton>
       <Drawer
