@@ -1,3 +1,11 @@
+# v1.24.0
+
+- :arrow_up: in `LoadingIconButton` use `onClick` instead of `callback`
+- :wastebasket: deprection warning for `callback`
+- :rotating_light: add tests for `LoadingIconButton`
+- :rotating_light: Add `LoadingProps` to `LoadingIconButton`
+- :rotating_light: Fix documentation
+
 # v1.23.0
 
 - :arrow_up: Use `...rest` with `IconButton` in `DrawerIconButton` component instead of `IconButtonProps`
