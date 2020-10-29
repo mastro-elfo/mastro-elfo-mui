@@ -1,3 +1,5 @@
+This is a collection of components that extend **@material-ui**.
+
 # Install
 
 `yarn add mastro-elfo-mui`
@@ -74,3 +76,21 @@ function HomePage() {
 Many components in this library extend their counterpart in **material-ui** in a specific way.
 
 Other components group some complex structure.
+
+# Scripts
+
+The directory 'node_modules/mastro-elfo-mui/dist/scripts/' contains utility scripts.
+
+## Example
+
+This command prints a page template.
+
+```sh
+node node_modules/mastro-elfo-mui/dist/scripts/create-page.js homepage
+```
+
+This command prints a context template.
+
+```sh
+node node_modules/mastro-elfo-mui/dist/scripts/create-context.js mycontext
+```
