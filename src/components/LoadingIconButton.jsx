@@ -9,24 +9,44 @@ import AbsoluteCircularProgress from "./AbsoluteCircularProgress";
 import Loading from "./Loading";
 
 /**
- * [LoadingIconButton description]
- * @param       {node} children     [description]
- * @param       {function} [callback=(] [description]
+ * `IconButton` with `Loading` component
+ * @param node      children
+ * @param function  callback Deprecated
+ * @param Boolean   disabled=false  [description]
+ * @param function  onClick=()=>{} Callback on click event
+ * @param Object    AbsoluteCircularProgressProps={} Properties for `AbsoluteCircularProgress` component
+ * @param Object    n sLoadingProps={}  Properties for `Loading` component
  * @constructor
  */
 export default function LoadingIconButton({
   children,
-  callback = () => Promise.reject(new Error("No callback provided")),
+  callback,
   disabled = false,
+  onClick,
   AbsoluteCircularProgressProps = {},
+  LoadingProps = {},
   ...others
 }) {
   const { enqueueSnackbar } = useSnackbar();
   const [loading, setLoading] = useState(false);
 
+  if (callback !== undefined) {
+    console.warn(
+      "`callback` is deprecated since v1.24.0 and will be removed in v2.0.0. Use `onClick` instead"
+    );
+  }
+
+  const cb =
+    onClick !== undefined
+      ? onClick
+      : callback !== undefined
+      ? callback
+      : () => Promise.reject(new Error("No callback provided"));
+
   const handleClick = () => {
     setLoading(true);
-    callback()
+    Promise.resolve()
+      .then(() => cb())
       .catch(err => {
         console.error(err);
         enqueueSnackbar(err.message, { variant: "error" });
@@ -34,6 +54,16 @@ export default function LoadingIconButton({
       .then(() => {
         setLoading(false);
       });
+
+    // setLoading(true);
+    // callback()
+    //   .catch(err => {
+    //     console.error(err);
+    //     enqueueSnackbar(err.message, { variant: "error" });
+    //   })
+    //   .then(() => {
+    //     setLoading(false);
+    //   });
   };
 
   return (
@@ -43,7 +73,7 @@ export default function LoadingIconButton({
       {...others}
     >
       {children}
-      <Loading loading={loading}>
+      <Loading loading={loading} {...LoadingProps}>
         <AbsoluteCircularProgress
           color="secondary"
           {...AbsoluteCircularProgressProps}
