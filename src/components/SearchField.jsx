@@ -54,7 +54,7 @@ export default function SearchField({
   if (showClear !== undefined) {
     // TODO: DEPRECATE: v2.0.0
     console.warn(
-      "`showClear` is no longer used (since v1.18.0) and will be removed in v2.0.0. `ClearButton` is always visible and can be hidden with `hideClearButton`."
+      "`showClear` is deprecated since version 1.18.0 and will be removed in v2.0.0. `ClearButton` is always visible and can be hidden with `hideClearButton`."
     );
   }
 

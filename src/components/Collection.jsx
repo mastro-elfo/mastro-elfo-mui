@@ -60,7 +60,7 @@ export default function Collection({
   if (CollectionProps.mapper) {
     // TODO: // DEPRECATED: Remove in version 2.0
     console.warn(
-      "`CollectionProps.mapper` is deprecated, use `CollectionProps.ResultListProps.mapper` instead. Will be removed in version 2.0"
+      "`CollectionProps.mapper` is deprecated and will be removed in version 2.0.0, use `CollectionProps.ResultListProps.mapper` instead."
     );
     if (!CollectionProps.ResultListProps) {
       CollectionProps.ResultListProps = {

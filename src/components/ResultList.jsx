@@ -58,7 +58,7 @@ export default function ResultList({
             // TODO: // Deprecated: RightIcon, remove in version 2
             if (!!RightIcon)
               console.warn(
-                "RightIcon is deprecated and will be removed in next major version"
+                "`RightIcon` is deprecated and will be removed in version 2.0.0, use `rightAction` instead."
               );
 
             return (
