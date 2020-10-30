@@ -1,3 +1,8 @@
+# v1.25.0
+
+- :arrow_up: `Push` use `cloneElement` instead of `Component` prop
+- :wastebasket: deprection warning for `Component` prop
+
 # v1.24.0
 
 - :arrow_up: in `LoadingIconButton` use `onClick` instead of `callback`
