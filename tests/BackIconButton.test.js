@@ -10,6 +10,11 @@ test("Render", () => {
       <BackIconButton />
     </HashRouter>
   );
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  let {
+    children,
+    type,
+    props: { onClick }
+  } = component.toJSON();
+  expect(type).toBe("button");
+  expect(typeof onClick).toBe("function");
 });

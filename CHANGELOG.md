@@ -1,3 +1,9 @@
+# v1.26.0
+
+- :sparkles: `BackIconButton` has new property `back`
+  - `onClick` calls `history.go(-back)`
+  - `back` defaults to `1` to avoid breaking changes
+
 # v1.25.0
 
 - :arrow_up: `Push` use `cloneElement` instead of `Component` prop
