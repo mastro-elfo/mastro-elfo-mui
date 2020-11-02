@@ -48,6 +48,7 @@ export default function Push({
 
   // Otherwise create a new element
   return createElement("span", {
+    children,
     onClick: handleClick,
     ...rest
   });
