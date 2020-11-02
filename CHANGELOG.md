@@ -1,3 +1,8 @@
+# v1.27.0
+
+- :beetle: `Push` doesn't render children when creates a new element
+- :sparkles: `BackIconButton` has new property `IconProps`
+
 # v1.26.0
 
 - :sparkles: `BackIconButton` has new property `back`
