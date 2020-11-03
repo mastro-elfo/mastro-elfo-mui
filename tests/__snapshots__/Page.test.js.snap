@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render 1`] = `
+Array [
+  <div
+    className="MuiBox-root MuiBox-root-2"
+  >
+    <div
+      className="MuiPaper-root makeStyles-paper-1 MuiPaper-elevation0"
+    >
+      <button
+        className="MuiButtonBase-root MuiFab-root makeStyles-Fab-3"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "transform": "scale(0)",
+            "visibility": "hidden",
+          }
+        }
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiFab-label"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+            />
+          </svg>
+        </span>
+      </button>
+      <header
+        className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+      >
+        <div
+          className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+        >
+          <h6
+            className="MuiTypography-root WithStyles(ForwardRef(Typography))-root-4 MuiTypography-h6"
+          >
+            Header
+          </h6>
+        </div>
+      </header>
+      <div
+        className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      />
+      <div
+        className="MuiContainer-root MuiContainer-maxWidthLg"
+      >
+        <div
+          className="MuiBox-root MuiBox-root-5"
+        >
+          Content
+        </div>
+      </div>
+      <div>
+        Footer
+      </div>
+      <div
+        style={
+          Object {
+            "height": "1px",
+          }
+        }
+      />
+    </div>
+  </div>,
+  <div
+    className="MuiBox-root MuiBox-root-6"
+  >
+    <div>
+      Print
+    </div>
+  </div>,
+]
+`;
