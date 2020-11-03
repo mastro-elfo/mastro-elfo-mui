@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 
-import style from "../src/styles/absolute";
+import style from "../src/styles/danger";
 
 const Component = style(({ children }) => <div>{children}</div>);
 
