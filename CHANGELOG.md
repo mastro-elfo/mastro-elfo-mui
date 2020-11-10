@@ -1,3 +1,8 @@
+# v1.28.0
+
+- :sparkles: `Footer` component
+- :wastebasket: `FixedBottomNavigation`, use `Footer` instead
+
 # v1.27.0
 
 - :beetle: `Push` doesn't render children when creates a new element

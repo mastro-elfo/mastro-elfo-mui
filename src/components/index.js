@@ -15,6 +15,7 @@ export { default as DrawerLists } from "./DrawerLists";
 export { default as ErrorWrapper } from "./ErrorWrapper";
 export { default as Fallback } from "./Fallback";
 export { default as FixedBottomNavigation } from "./FixedBottomNavigation";
+export { default as Footer } from "./Footer";
 export { default as GrowTypography } from "./GrowTypography";
 export { default as Header } from "./Header";
 export { default as HeaderSearchField } from "./HeaderSearchField";

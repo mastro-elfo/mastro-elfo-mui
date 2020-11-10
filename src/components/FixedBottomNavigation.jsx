@@ -11,6 +11,11 @@ import { BottomNavigation } from "@material-ui/core";
  * @constructor
  */
 export default function FixedBottomNavigation({ children, ...props }) {
+  // TODO: // DEPRECATED: Remove in version 2.0
+  console.warn(
+    "`FixedBottomNavigation` is deprecated and will be removed in version 2.0.0, use `Footer` instead."
+  );
+
   const theme = useTheme();
   return (
     <Fragment>
@@ -19,7 +24,7 @@ export default function FixedBottomNavigation({ children, ...props }) {
           position: "fixed",
           bottom: 0,
           width: "100%",
-          zIndex: theme.zIndex.appBar
+          zIndex: theme.zIndex.appBar,
         }}
         {...props}
       >
@@ -31,5 +36,5 @@ export default function FixedBottomNavigation({ children, ...props }) {
 }
 
 FixedBottomNavigation.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
