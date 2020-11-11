@@ -68,7 +68,7 @@ test("List", () => {
     </Markdown>
   );
   const json = component.toJSON();
-  console.log(json.children[0].children);
+  // console.log(json.children[0].children);
   expect(json.type).toBe("ul");
   expect(json.children.every(({ type }) => type === "li")).toBe(true);
   expect(
