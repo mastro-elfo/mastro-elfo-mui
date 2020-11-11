@@ -13,7 +13,7 @@ import { BottomNavigation } from "@material-ui/core";
 export default function FixedBottomNavigation({ children, ...props }) {
   // TODO: // DEPRECATED: Remove in version 2.0
   console.warn(
-    "`FixedBottomNavigation` is deprecated and will be removed in version 2.0.0, use `Footer` instead."
+    "`FixedBottomNavigation` is deprecated since v1.28.0 and will be removed in v2.0.0, use `Footer` instead."
   );
 
   const theme = useTheme();
