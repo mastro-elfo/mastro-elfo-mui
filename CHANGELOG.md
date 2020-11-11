@@ -1,3 +1,8 @@
+# v1.29.0
+
+- :sparkles: utility `markdown-renderes`
+- :wastebasket: `component/Markdown` is deprecated
+
 # v1.28.0
 
 - :sparkles: `Footer` component
