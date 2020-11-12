@@ -1,3 +1,7 @@
+# v1.30.0
+
+- :sparkles: new component `MenuIconButton`
+
 # v1.29.0
 
 - :sparkles: utility `markdown-renderes`
