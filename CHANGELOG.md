@@ -1,6 +1,7 @@
 # v1.30.0
 
 - :sparkles: new component `MenuIconButton`
+- :beetle: fix `React` not in scope
 
 # v1.29.0
 
