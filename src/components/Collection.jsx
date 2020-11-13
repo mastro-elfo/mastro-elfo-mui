@@ -8,6 +8,7 @@ import { CircularProgress, Grid, IconButton } from "@material-ui/core";
 
 import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
+import PrintIcon from "@material-ui/icons/Print";
 import SaveIcon from "@material-ui/icons/Save";
 
 import BackIconButton from "./BackIconButton";
@@ -40,22 +41,22 @@ export default function Collection({
     SearchFieldProps: {},
     ResultListProps: {
       subheader: null,
-      mapper: r => r
-    }
+      mapper: (r) => r,
+    },
   },
   ViewProps = {
     title: "View Item",
-    render: () => {}
+    render: () => {},
   },
   NewProps = {
     title: "New Item",
     render: () => {},
-    data: {}
+    data: {},
   },
   EditProps = {
     title: "Edit Item",
-    render: () => {}
-  }
+    render: () => {},
+  },
 }) {
   if (CollectionProps.mapper) {
     // TODO: // DEPRECATED: Remove in version 2.0
@@ -64,7 +65,7 @@ export default function Collection({
     );
     if (!CollectionProps.ResultListProps) {
       CollectionProps.ResultListProps = {
-        mapper: CollectionProps.mapper
+        mapper: CollectionProps.mapper,
       };
     } else if (CollectionProps.ResultListProps.mapper(null) === null) {
       // Check if `CollectionProps.ResultListProps.mapper` is default
@@ -99,7 +100,7 @@ Collection.propTypes = {
   // functions
   search: PropTypes.func,
   load: PropTypes.func,
-  save: PropTypes.func
+  save: PropTypes.func,
 };
 
 function CollectionPage({
@@ -109,7 +110,7 @@ function CollectionPage({
   ),
   title = "Collection",
   SearchFieldProps = {},
-  ResultListProps = { mapper: r => r, subheader: null }
+  ResultListProps = { mapper: (r) => r, subheader: null },
 }) {
   const { push } = useHistory();
   const { enqueueSnackbar } = useSnackbar();
@@ -117,8 +118,8 @@ function CollectionPage({
 
   const handleSearch = (q, d) =>
     search(q, d)
-      .then(r => setResults(r))
-      .catch(err => {
+      .then((r) => setResults(r))
+      .catch((err) => {
         console.error(err);
         enqueueSnackbar(err.message, { variant: "error" });
       });
@@ -135,7 +136,7 @@ function CollectionPage({
           RightActions={[
             <IconButton key="new" onClick={() => push(`/${cid}/n`)}>
               <AddIcon />
-            </IconButton>
+            </IconButton>,
           ]}
         >
           {title}
@@ -168,8 +169,8 @@ function ViewItem({
 
   useEffect(() => {
     load(id)
-      .then(r => setData(r))
-      .catch(err => {
+      .then((r) => setData(r))
+      .catch((err) => {
         console.error(err);
         enqueueSnackbar(err.message, { variant: "error" });
       });
@@ -187,7 +188,13 @@ function ViewItem({
   );
 }
 
-function ViewPage({ cid, title = "View Item", render = () => {}, data }) {
+function ViewPage({
+  cid,
+  data,
+  print = () => null,
+  render = () => {},
+  title = "View Item",
+}) {
   const { push } = useHistory();
   const { id } = data;
   return (
@@ -196,15 +203,19 @@ function ViewPage({ cid, title = "View Item", render = () => {}, data }) {
         <Header
           LeftAction={<BackIconButton />}
           RightActions={[
+            <IconButton key="print" onClick={() => window.print()}>
+              <PrintIcon />
+            </IconButton>,
             <IconButton key="edit" onClick={() => push(`/${cid}/e/${id}`)}>
               <EditIcon />
-            </IconButton>
+            </IconButton>,
           ]}
         >
           {evaluate(title, data)}
         </Header>
       }
       content={<Content>{render(data)}</Content>}
+      print={print(data)}
     />
   );
 }
@@ -219,8 +230,8 @@ function EditItem({
 
   useEffect(() => {
     load(id)
-      .then(r => setData(r))
-      .catch(err => {
+      .then((r) => setData(r))
+      .catch((err) => {
         console.error(err);
         enqueueSnackbar(err.message, { variant: "error" });
       });
@@ -245,7 +256,7 @@ function EditPage({
   data,
   setData,
   save = () =>
-    Promise.reject(new Error("No save function provided to EditPage"))
+    Promise.reject(new Error("No save function provided to EditPage")),
 }) {
   const { goBack } = useHistory();
 
@@ -259,7 +270,7 @@ function EditPage({
           RightActions={[
             <LoadingIconButton key="save" callback={handleSave}>
               <SaveIcon />
-            </LoadingIconButton>
+            </LoadingIconButton>,
           ]}
         >
           {evaluate(title, data)}
@@ -282,7 +293,7 @@ function NewPage({
   render,
   data,
   setData,
-  save = Promise.reject(new Error("No save function provided to NewPage"))
+  save = Promise.reject(new Error("No save function provided to NewPage")),
 }) {
   const { replace } = useHistory();
 
@@ -297,7 +308,7 @@ function NewPage({
           RightActions={[
             <LoadingIconButton key="save" callback={handleSave}>
               <SaveIcon />
-            </LoadingIconButton>
+            </LoadingIconButton>,
           ]}
         >
           {evaluate(title, data)}

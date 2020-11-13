@@ -1,6 +1,7 @@
 # v1.31.0
 
-- :arrow_up: :lipstick: `ErrorWrapper` has `header` props
+- :arrow_up: :lipstick: `ErrorWrapper` has `header` property
+- :sparkles: `Collection.View` has `PrintButton`
 
 # v1.30.0
 
