@@ -1,7 +1,8 @@
 # v1.31.0
 
 - :arrow_up: :lipstick: `ErrorWrapper` has `header` property
-- :sparkles: `Collection.View` has `PrintButton`
+- :sparkles: `Collection` has `PrintButton`
+- :sparkles: `ViewPage` in `Collection` has `PrintButton`
 
 # v1.30.0
 

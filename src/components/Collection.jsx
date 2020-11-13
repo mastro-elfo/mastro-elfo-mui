@@ -108,6 +108,7 @@ function CollectionPage({
   search = Promise.reject(
     new Error("No search function provided to CollectionPage")
   ),
+  print = () => null,
   title = "Collection",
   SearchFieldProps = {},
   ResultListProps = { mapper: (r) => r, subheader: null },
@@ -134,6 +135,9 @@ function CollectionPage({
         <Header
           LeftAction={<BackIconButton />}
           RightActions={[
+            <IconButton key="print" onClick={() => window.print()}>
+              <PrintIcon />
+            </IconButton>,
             <IconButton key="new" onClick={() => push(`/${cid}/n`)}>
               <AddIcon />
             </IconButton>,
@@ -155,6 +159,7 @@ function CollectionPage({
           <ResultList results={results} {...ResultListProps} />
         </Content>
       }
+      print={print(results)}
     />
   );
 }
