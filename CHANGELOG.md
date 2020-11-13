@@ -1,3 +1,7 @@
+# v1.31.0
+
+- :arrow_up: :lipstick: `ErrorWrapper` has `header` props
+
 # v1.30.0
 
 - :sparkles: new component `MenuIconButton`

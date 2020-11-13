@@ -13,28 +13,30 @@ import Wrapper from "./Wrapper";
  *
  * Wraps application with Theme, Error handler, Notifier and Router. Wrappers can be configured with ThemeProps, NotifyProps and RouterProps.
  *
+ * @param       {Object} [ErrorProps={}]    Properties for `ErrorWrapper`
  * @param       {Object} [NotifyProps={}]   Properties for `NotifyWrapper`
- * @param       {Object} [RouterProps={}]   [description]
- * @param       {Object} [SuspenseProps={}] [description]
- * @param       {Object} [ThemeProps={}]    [description]
- * @param       {Object} [WrapperProps={}}] [description]
+ * @param       {Object} [RouterProps={}]   Properties for `RouterWrapper`
+ * @param       {Object} [SuspenseProps={}] Properties for `SuspenseWrapper`
+ * @param       {Object} [ThemeProps={}]    Properties for `ThemeWrapper`
+ * @param       {Object} [WrapperProps={}}] Other wrappers
  * @constructor
  */
 export default function AppContainer({
+  ErrorProps = {},
   NotifyProps = {},
   RouterProps = {},
   SuspenseProps = {},
   ThemeProps = {},
-  WrapperProps = { Children: [] }
+  WrapperProps = { Children: [] },
 }) {
   return (
     <Wrapper
       Children={[
         { Component: ThemeWrapper, ...ThemeProps },
         { Component: SuspenseWrapper, ...SuspenseProps },
-        { Component: ErrorWrapper },
+        { Component: ErrorWrapper, ...ErrorProps },
         { Component: NotifyWrapper, ...NotifyProps },
-        ...WrapperProps.Children
+        ...WrapperProps.Children,
       ]}
     >
       <RouterWrapper {...RouterProps} />
@@ -47,5 +49,5 @@ AppContainer.propTypes = {
   RouterProps: PropTypes.object,
   SuspenseProps: PropTypes.object,
   ThemeProps: PropTypes.object,
-  WrapperProps: PropTypes.object
+  WrapperProps: PropTypes.object,
 };

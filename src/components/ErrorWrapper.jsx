@@ -46,10 +46,10 @@ export default class ErrorWrapper extends Component {
                   onClick={this.handleReloadClick}
                 >
                   <RefreshIcon />
-                </IconButton>
+                </IconButton>,
               ]}
             >
-              An error occurred
+              {this.props.header || "An error occurred"}
             </Header>
           }
           content={
