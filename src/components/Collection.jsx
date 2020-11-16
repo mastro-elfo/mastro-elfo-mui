@@ -58,21 +58,6 @@ export default function Collection({
     render: () => {},
   },
 }) {
-  if (CollectionProps.mapper) {
-    // TODO: // DEPRECATED: Remove in version 2.0
-    console.warn(
-      "`CollectionProps.mapper` is deprecated and will be removed in version 2.0.0, use `CollectionProps.ResultListProps.mapper` instead."
-    );
-    if (!CollectionProps.ResultListProps) {
-      CollectionProps.ResultListProps = {
-        mapper: CollectionProps.mapper,
-      };
-    } else if (CollectionProps.ResultListProps.mapper(null) === null) {
-      // Check if `CollectionProps.ResultListProps.mapper` is default
-      CollectionProps.ResultListProps.mapper = CollectionProps.mapper;
-    }
-  }
-
   return (
     <Switch>
       <Route path={`/${cid}/v/:id`}>
