@@ -156,7 +156,7 @@ export default function SearchField({
 
 SearchField.propTypes = {
   delay: PropTypes.number,
-  hideClearButton: PropTypes.boolean,
+  hideClearButton: PropTypes.bool,
   onChange: PropTypes.func,
   onClear: PropTypes.func,
   onKeyPress: PropTypes.func,
