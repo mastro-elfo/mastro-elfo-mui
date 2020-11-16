@@ -18,7 +18,6 @@ import clean from "../utils/clean";
  * @param       {Number} [delay=250] [description]
  * @param       {function} [onClear=()=>{}] [description]
  * @param       {function} [onSearch] Returns a `Promise`
- * @param       {bool}  [showClear] If `true` always show the *clear* button
  * @param       {object}  [SearchButtonProps={}] [description]
  * @param       {object}  [ClearButtonProps={}] [description]
  * @param       {object}  [InputProps={}] Override `TextField` `InputProps`
@@ -39,8 +38,6 @@ export default function SearchField({
   // Search callback
   onSearch = () => Promise.reject(new Error("No search function provided")),
   //
-  showClear = undefined,
-  //
   value = undefined,
   // Clear button props
   ClearButtonProps = {},
@@ -51,13 +48,6 @@ export default function SearchField({
   // Others are passed to TextField
   ...others
 }) {
-  if (showClear !== undefined) {
-    // TODO: DEPRECATE: v2.0.0
-    console.warn(
-      "`showClear` is deprecated since version 1.18.0 and will be removed in v2.0.0. `ClearButton` is always visible and can be hidden with `hideClearButton`."
-    );
-  }
-
   // Query string
   const [query, setQuery] = useState(value === undefined ? "" : value);
   // Searching status
@@ -78,10 +68,10 @@ export default function SearchField({
         trim: true,
         deburr: true,
         replace_symbol: " ",
-        compact_spaces: true
+        compact_spaces: true,
       })
     )
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         enqueueSnackbar(err.message, { variant: "error" });
       })
@@ -113,7 +103,7 @@ export default function SearchField({
   };
 
   // Hanle keypress events
-  const handleKeyPress = e => {
+  const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       // Fire immediate search if "Enter" is pressed
       handleSearch();
@@ -122,9 +112,9 @@ export default function SearchField({
   };
 
   // Handle change events
-  const handleChange = e => {
+  const handleChange = (e) => {
     const {
-      target: { value }
+      target: { value },
     } = e;
     setQuery(value);
     onChange(e);
@@ -157,7 +147,7 @@ export default function SearchField({
             )}
           </InputAdornment>
         ),
-        ...InputProps
+        ...InputProps,
       }}
       {...others}
     />
@@ -166,8 +156,13 @@ export default function SearchField({
 
 SearchField.propTypes = {
   delay: PropTypes.number,
+  hideClearButton: PropTypes.boolean,
+  onChange: PropTypes.func,
   onClear: PropTypes.func,
+  onKeyPress: PropTypes.func,
   onSearch: PropTypes.func,
+  value: PropTypes.string,
+  ClearButtonProps: PropTypes.object,
+  InputProps: PropTypes.object,
   SearchButtonProps: PropTypes.object,
-  ClearButtonProps: PropTypes.object
 };
