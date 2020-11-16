@@ -34,7 +34,6 @@ export { default as Push } from "./Push";
 export { default as ResultList } from "./ResultList";
 export { default as RouterWrapper } from "./RouterWrapper";
 export { default as SearchField } from "./SearchField";
-export { default as SortableList } from "./SortableList";
 export { default as StrengthLinearProgress } from "./StrengthLinearProgress";
 export { default as SuspenseWrapper } from "./SuspenseWrapper";
 export { default as TableHeadCell } from "./TableHeadCell";
