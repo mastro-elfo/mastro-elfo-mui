@@ -6,7 +6,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  ListSubheader
+  ListSubheader,
 } from "@material-ui/core";
 
 import Condition from "./Condition";
@@ -19,7 +19,7 @@ import evaluate from "../utils/evaluate";
  *
  * Otherwise `results` must be an array, for each item `mapper` is called and must provide at least a unique `key`.
  *
- * Also `LeftIcon` and `RightIcon` are used inside a `ListItemIcon`, and `primary` and `secondary` are used with `ListItemText`.
+ * Also `LeftIcon` are used inside a `ListItemIcon`, and `primary` and `secondary` are used with `ListItemText`.
  *
  * Anything else is passed to `ListItem`. By default `onClick` sets `button` to `true`.
  * @param  {string|function} subheader [description]
@@ -29,7 +29,7 @@ import evaluate from "../utils/evaluate";
  * @constructor
  */
 export default function ResultList({
-  mapper = r => r,
+  mapper = (r) => r,
   results,
   subheader,
   ...others
@@ -45,22 +45,15 @@ export default function ResultList({
         {...others}
       >
         {results &&
-          results.map(r => {
+          results.map((r) => {
             const {
               LeftIcon,
-              RightIcon,
               rightAction,
               primary,
               secondary,
               onClick,
               ...others
             } = mapper(r);
-            // TODO: // Deprecated: RightIcon, remove in version 2
-            if (!!RightIcon)
-              console.warn(
-                "`RightIcon` is deprecated and will be removed in version 2.0.0, use `rightAction` instead."
-              );
-
             return (
               <ListItem button={!!onClick} onClick={onClick} {...others}>
                 {!!LeftIcon && <ListItemIcon>{LeftIcon}</ListItemIcon>}
@@ -68,9 +61,6 @@ export default function ResultList({
                 <ListItemText primary={primary} secondary={secondary} />
 
                 {!!rightAction && rightAction}
-                {!rightAction && !!RightIcon && (
-                  <ListItemIcon>{RightIcon}</ListItemIcon>
-                )}
               </ListItem>
             );
           })}
@@ -82,5 +72,5 @@ export default function ResultList({
 ResultList.propTypes = {
   mapper: PropTypes.func,
   results: PropTypes.array,
-  subheader: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
+  subheader: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
 };
