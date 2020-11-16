@@ -11,7 +11,6 @@ import Loading from "./Loading";
 /**
  * `IconButton` with `Loading` component
  * @param node      children
- * @param function  callback Deprecated
  * @param Boolean   disabled=false  [description]
  * @param function  onClick=()=>{} Callback on click event
  * @param Object    AbsoluteCircularProgressProps={} Properties for `AbsoluteCircularProgress` component
@@ -20,9 +19,8 @@ import Loading from "./Loading";
  */
 export default function LoadingIconButton({
   children,
-  callback,
   disabled = false,
-  onClick,
+  onClick = () => Promise.reject(new Error("No callback provided")),
   AbsoluteCircularProgressProps = {},
   LoadingProps = {},
   ...others
@@ -30,40 +28,17 @@ export default function LoadingIconButton({
   const { enqueueSnackbar } = useSnackbar();
   const [loading, setLoading] = useState(false);
 
-  if (callback !== undefined) {
-    console.warn(
-      "`callback` is deprecated since v1.24.0 and will be removed in v2.0.0. Use `onClick` instead"
-    );
-  }
-
-  const cb =
-    onClick !== undefined
-      ? onClick
-      : callback !== undefined
-      ? callback
-      : () => Promise.reject(new Error("No callback provided"));
-
-  const handleClick = () => {
+  const handleClick = (e) => {
     setLoading(true);
     Promise.resolve()
-      .then(() => cb())
-      .catch(err => {
+      .then(() => onClick(e))
+      .catch((err) => {
         console.error(err);
         enqueueSnackbar(err.message, { variant: "error" });
       })
       .then(() => {
         setLoading(false);
       });
-
-    // setLoading(true);
-    // callback()
-    //   .catch(err => {
-    //     console.error(err);
-    //     enqueueSnackbar(err.message, { variant: "error" });
-    //   })
-    //   .then(() => {
-    //     setLoading(false);
-    //   });
   };
 
   return (
@@ -85,7 +60,8 @@ export default function LoadingIconButton({
 
 LoadingIconButton.propTypes = {
   children: PropTypes.node,
-  callback: PropTypes.func,
   disabled: PropTypes.bool,
-  AbsoluteCircularProgressProps: PropTypes.object
+  onClick: PropTypes.func,
+  AbsoluteCircularProgressProps: PropTypes.object,
+  LoadingProps: PropTypes.object,
 };
