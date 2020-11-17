@@ -1,3 +1,18 @@
+# v2.0.0
+
+- [x] :boom: :put_litter_in_its_place: `CollectionProps.mapper`
+- [x] :boom: :put_litter_in_its_place: `RightIcon` in `ResultList`
+- [x] :boom: :put_litter_in_its_place: `showClear` property in `SearchField`
+- [x] :boom: :put_litter_in_its_place: `IconButtonProps` in `DrawerIconButton`
+- [x] :boom: :put_litter_in_its_place: `callback` in `LoadingIconButton`
+- [x] :boom: :put_litter_in_its_place: `Component` in `Push`
+- [x] :boom: :put_litter_in_its_place: `FixedBottomNavigation`
+- [x] :boom: Remove named export `SortableList` to avoid `peerDependencies`
+- [x] :package: Remove `react-smooth-dnd` from `peerDependencies`
+- [x] :boom: Remove named export `Markdown` to avoid `peerDependencies`
+- [x] :package: Remove `react-markdown` from `peerDependencies`
+- [x] :arrow_up: :boom: `NestedListTypography`
+
 # v1.31.0
 
 - :arrow_up: :lipstick: `ErrorWrapper` has `header` property
