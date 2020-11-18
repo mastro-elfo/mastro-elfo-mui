@@ -1,6 +1,6 @@
 {
   "name": "mastro-elfo-mui",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "MaterialUI extension",
   "keywords": [
     "react",
@@ -26,7 +26,7 @@
     "prebuild": "yarn run test",
     "test": "jest",
     "deploy": "yarn publish",
-    "predeploy": "yarn run build"
+    "predeploy": "node ./scripts/predeploy.js && yarn run build"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -62,5 +62,8 @@
     "prop-types": "^15.0.0",
     "react": "^16.13.1",
     "react-router-dom": "^5.2.0"
+  },
+  "dependencies": {
+    "prompt": "^1.0.0"
   }
 }
