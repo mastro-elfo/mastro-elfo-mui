@@ -1,93 +1,67 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Markdown from "react-markdown";
 import { renderers } from "../src/utils/markdown-renderers";
+import { HashRouter } from "react-router-dom";
+
+const EM = renderers.emphasis;
+const Heading = renderers.heading;
+const A = renderers.link;
+const UL = renderers.list;
+const LI = renderers.listItem;
+const P = renderers.paragraph;
+const Strong = renderers.strong;
 
 test("Emphasis", () => {
-  const component = renderer.create(<Markdown>*emphasis*</Markdown>);
+  const component = renderer.create(<EM>Emphasis</EM>);
   const json = component.toJSON();
   // console.log(json);
-  const [child] = json.children;
-  const [content] = child.children;
-  expect(json.type).toBe("p");
-  expect(child.type).toBe("em");
+  expect(json.type).toBe("em");
 });
 
 test("Heading", () => {
-  const component = renderer.create(
-    <Markdown>
-      {`
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6`}
-    </Markdown>
-  );
+  const component = renderer.create(<Heading level={1}>Heading</Heading>);
   const json = component.toJSON();
-  const [h1, h2, h3, h4, h5, h6] = json;
-  expect(h1.type).toBe("h1");
-  expect(h2.type).toBe("h2");
-  expect(h3.type).toBe("h3");
-  expect(h4.type).toBe("h4");
-  expect(h5.type).toBe("h5");
-  expect(h6.type).toBe("h6");
+  // console.log(json);
+  expect(json.type).toBe("h1");
 });
 
 test("Link", () => {
-  const component = renderer.create(
-    <Markdown>{`[link](/location "title")[link](http://location "title")[link](https://location "title")`}</Markdown>
+  const inner = renderer.create(
+    <HashRouter>
+      <A href="/inner/path">Link</A>
+    </HashRouter>
   );
-  const json = component.toJSON();
-  // console.log(json);
-  const [a1, a2, a3] = json.children;
-  // console.log(a1.props);
-  // console.log(a2.props);
-  // console.log(a3.props);
-  expect(a1.type).toBe("a");
-  expect(a2.type).toBe("a");
-  expect(a3.type).toBe("a");
-  expect(a1.props.href).toBe("/location");
-  expect(a2.props.href).toBe("http://location");
-  expect(a3.props.href).toBe("https://location");
-  expect(a1.props.title).toBe("title");
-  expect(a2.props.title).toBe("title");
-  expect(a3.props.title).toBe("title");
+  const http = renderer.create(<A href="http://url">Http Url</A>);
+  const https = renderer.create(<A href="https://url">Https Url</A>);
+  const innerJson = inner.toJSON();
+  const httpJson = http.toJSON();
+  const httpsJson = https.toJSON();
+  expect(innerJson.type).toBe("a");
+  expect(httpJson.type).toBe("a");
+  expect(httpsJson.type).toBe("a");
 });
-
+//
 test("List", () => {
-  const component = renderer.create(
-    <Markdown>
-      {`* item1
-  * subitem1.1
-* item2
-  * subitem2.1
-* item3
-  * subitem3.1`}
-    </Markdown>
-  );
-  const json = component.toJSON();
-  // console.log(json.children[0].children);
-  expect(json.type).toBe("ul");
-  expect(json.children.every(({ type }) => type === "li")).toBe(true);
-  expect(
-    json.children.every(({ children: [_, { type }] }) => type === "ul")
-  ).toBe(true);
+  const ul = renderer.create(<UL></UL>);
+  const ol = renderer.create(<UL ordered={true}></UL>);
+  const li = renderer.create(<LI></LI>);
+  const ulJson = ul.toJSON();
+  const olJson = ol.toJSON();
+  const liJson = li.toJSON();
+  expect(ulJson.type).toBe("ul");
+  expect(olJson.type).toBe("ol");
+  expect(liJson.type).toBe("li");
 });
 
 test("Paragraph", () => {
-  const component = renderer.create(<Markdown>paragraph</Markdown>);
+  const component = renderer.create(<P>Paragraph</P>);
   const json = component.toJSON();
   expect(json.type).toBe("p");
 });
 
 test("Strong", () => {
-  const component = renderer.create(<Markdown>**strong**</Markdown>);
+  const component = renderer.create(<Strong>Strong</Strong>);
   const json = component.toJSON();
   // console.log(json);
-  const [child] = json.children;
-  const [content] = child.children;
-  expect(json.type).toBe("p");
-  expect(child.type).toBe("strong");
+  expect(json.type).toBe("strong");
 });
