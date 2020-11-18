@@ -258,7 +258,7 @@ function EditPage({
         <Header
           LeftAction={<BackIconButton />}
           RightActions={[
-            <LoadingIconButton key="save" callback={handleSave}>
+            <LoadingIconButton key="save" onClick={handleSave}>
               <SaveIcon />
             </LoadingIconButton>,
           ]}
@@ -296,7 +296,7 @@ function NewPage({
         <Header
           LeftAction={<BackIconButton />}
           RightActions={[
-            <LoadingIconButton key="save" callback={handleSave}>
+            <LoadingIconButton key="save" onClick={handleSave}>
               <SaveIcon />
             </LoadingIconButton>,
           ]}
