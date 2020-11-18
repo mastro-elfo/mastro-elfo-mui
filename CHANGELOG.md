@@ -1,17 +1,21 @@
+# v2.1.0
+
+- :beetle: Fix deprecated property `callback` for `LoadingIconButton` used in `Collection` component
+
 # v2.0.0
 
-- [x] :boom: :put_litter_in_its_place: `CollectionProps.mapper`
-- [x] :boom: :put_litter_in_its_place: `RightIcon` in `ResultList`
-- [x] :boom: :put_litter_in_its_place: `showClear` property in `SearchField`
-- [x] :boom: :put_litter_in_its_place: `IconButtonProps` in `DrawerIconButton`
-- [x] :boom: :put_litter_in_its_place: `callback` in `LoadingIconButton`
-- [x] :boom: :put_litter_in_its_place: `Component` in `Push`
-- [x] :boom: :put_litter_in_its_place: `FixedBottomNavigation`
-- [x] :boom: Remove named export `SortableList` to avoid `peerDependencies`
-- [x] :package: Remove `react-smooth-dnd` from `peerDependencies`
-- [x] :boom: Remove named export `Markdown` to avoid `peerDependencies`
-- [x] :package: Remove `react-markdown` from `peerDependencies`
-- [x] :arrow_up: :boom: `NestedListTypography`
+- :boom: :put_litter_in_its_place: `CollectionProps.mapper`
+- :boom: :put_litter_in_its_place: `RightIcon` in `ResultList`
+- :boom: :put_litter_in_its_place: `showClear` property in `SearchField`
+- :boom: :put_litter_in_its_place: `IconButtonProps` in `DrawerIconButton`
+- :boom: :put_litter_in_its_place: `callback` in `LoadingIconButton`
+- :boom: :put_litter_in_its_place: `Component` in `Push`
+- :boom: :put_litter_in_its_place: `FixedBottomNavigation`
+- :boom: Remove named export `SortableList` to avoid `peerDependencies`
+- :package: Remove `react-smooth-dnd` from `peerDependencies`
+- :boom: Remove named export `Markdown` to avoid `peerDependencies`
+- :package: Remove `react-markdown` from `peerDependencies`
+- :arrow_up: :boom: `NestedListTypography`
 
 # v1.31.0
 
@@ -207,19 +211,19 @@ Use rollup to build yarn package
 
 - Add custom title to collection component
 
-# 1.3.0
+# v1.3.0
 
 - Add push/replace Button
 - Add i18n
 
-# 1.2.0
+# v1.2.0
 
 - Add Login component
 
-# 1.1.0
+# v1.1.0
 
 - Add SuspenseWrapper component
 
-# 1.0.0
+# v1.0.0
 
 Older versions
