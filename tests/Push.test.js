@@ -11,11 +11,13 @@ test("Push with label", () => {
     </HashRouter>
   );
   const {
+    children,
+    props: { onClick },
     type,
-    props: { onClick }
   } = component.toJSON();
   expect(type).toBe("span");
   expect(typeof onClick).toBe("function");
+  expect(children).toEqual(["Push"]);
 });
 
 test("Push with element", () => {
@@ -27,9 +29,11 @@ test("Push with element", () => {
     </HashRouter>
   );
   const {
+    children,
+    props: { onClick },
     type,
-    props: { onClick }
   } = component.toJSON();
   expect(type).toBe("div");
   expect(typeof onClick).toBe("function");
+  expect(children).toEqual(["Push"]);
 });
