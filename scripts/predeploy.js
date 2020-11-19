@@ -14,12 +14,15 @@ function execCmd(cmd) {
   return exec(cmd).then(({ stdout }) => stdout.trim());
 }
 
-function expectYes(a) {
-  if (a === "n") {
-    console.warn("Checklist stop");
-    process.exit(1);
-  }
-  return a;
+function getSchema([changelog]) {
+  return [
+    {
+      name: "changelog",
+      description: `Last changelog found is ${changelog}. Ok? [yn]`,
+      pattern: /^[yn]/,
+      default: "y",
+    },
+  ];
 }
 
 Promise.all([
@@ -29,24 +32,21 @@ Promise.all([
     console.error(err);
     process.exit(1);
   })
-  .then(([changelog]) => {
+  .then((data) => {
+    const schema = getSchema(data);
+
     prompt.start();
-    prompt.get(
-      [
-        {
-          name: "changelog",
-          description: `Last changelog found is ${changelog}. Ok?`,
-          default: "y",
-          pattern: /^[yn]/,
-          before: expectYes,
-        },
-      ],
-      (err, results) => {
-        if (err) {
-          console.error(err);
-          process.exit(1);
-        }
-        console.log(results);
+    prompt.get(schema, (err, results) => {
+      if (err) {
+        console.error(err);
+        process.exit(1);
       }
-    );
+      // Filter answers
+      const checklist = Object.keys(results).filter((a) => results[a] !== "y");
+      if (checklist.length > 0) {
+        console.warn(`Fix Checklist: ${checklist.join(", ")}`);
+        process.exit(1);
+      }
+      console.log("Checklist complete");
+    });
   });
