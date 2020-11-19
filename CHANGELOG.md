@@ -1,3 +1,7 @@
+# v2.1.1
+
+- :beetle: Fix import in `Push` component
+
 # v2.1.0
 
 - :beetle: Fix deprecated property `callback` for `LoadingIconButton` used in `Collection` component
