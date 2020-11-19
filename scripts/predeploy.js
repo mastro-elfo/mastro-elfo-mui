@@ -14,6 +14,14 @@ function execCmd(cmd) {
   return exec(cmd).then(({ stdout }) => stdout.trim());
 }
 
+function expectYes(a) {
+  if (a === "n") {
+    console.warn("Checklist stop");
+    process.exit(1);
+  }
+  return a;
+}
+
 Promise.all([
   execCmd("cat ./CHANGELOG.md | grep '^#' | head -n 1 | cut -d 'v' -f 2"),
 ])
@@ -24,19 +32,21 @@ Promise.all([
   .then(([changelog]) => {
     prompt.start();
     prompt.get(
-      {
-        properties: {
-          changelog: {
-            description: `Last changelog found is ${changelog}. Ok?`,
-            default: "y",
-            pattern: /^[yn]/,
-          },
+      [
+        {
+          name: "changelog",
+          description: `Last changelog found is ${changelog}. Ok?`,
+          default: "y",
+          pattern: /^[yn]/,
+          before: expectYes,
         },
-      },
-      (err, _) => {
+      ],
+      (err, results) => {
         if (err) {
           console.error(err);
+          process.exit(1);
         }
+        console.log(results);
       }
     );
   });
