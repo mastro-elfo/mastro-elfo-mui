@@ -1,3 +1,7 @@
+# v2.1.2
+
+- :package: remove `prompt` dependency
+
 # v2.1.1
 
 - :beetle: Fix import in `Push` component
