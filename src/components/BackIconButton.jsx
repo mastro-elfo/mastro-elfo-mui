@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { useHistory } from "react-router-dom";
 
@@ -14,11 +15,23 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
  * @return {node}
  */
 
-export default function({ back = 1, IconProps = {}, ...props }) {
+export default function BackIconButton({
+  back = 1,
+  children,
+  IconProps = {},
+  ...props
+}) {
   const { go } = useHistory();
   return (
     <IconButton onClick={() => go(-parseInt(back))} {...props}>
       <ArrowBackIcon {...IconProps} />
+      {children}
     </IconButton>
   );
 }
+
+BackIconButton.propTypes = {
+  back: PropTypes.number,
+  children: PropTypes.node,
+  IconProps: PropTypes.object,
+};
