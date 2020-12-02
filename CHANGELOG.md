@@ -1,3 +1,8 @@
+# v2.2.0
+
+- [x] :put_litter_in_its_place: Remove deprecated components `Print` and `NoPrint`
+- [x] :sparkles: `BackIconButton` accepts `children` property
+
 # v2.1.2
 
 - :package: remove `prompt` dependency
