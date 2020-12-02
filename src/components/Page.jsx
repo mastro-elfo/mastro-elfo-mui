@@ -12,7 +12,6 @@ import { Paper } from "@material-ui/core";
 
 import MediaPrint from "./MediaPrint";
 import MediaScreen from "./MediaScreen";
-// import { NoPrint, Print } from "./Print";
 import TopFab from "./TopFab";
 
 /**
@@ -36,7 +35,7 @@ export default function Page({
   print = null,
   topFab = true,
   PaperProps = {},
-  TopFabProps = {}
+  TopFabProps = {},
 }) {
   const classes = useStyles();
 
@@ -63,9 +62,9 @@ Page.propTypes = {
   print: PropTypes.element,
   topFab: PropTypes.bool,
   PaperProps: PropTypes.object,
-  TopFabProps: PropTypes.object
+  TopFabProps: PropTypes.object,
 };
 
 const useStyles = makeStyles({
-  paper: { minHeight: "100%" }
+  paper: { minHeight: "100%" },
 });
