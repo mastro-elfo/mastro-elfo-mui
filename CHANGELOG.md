@@ -1,3 +1,8 @@
+# v2.3.1
+
+- [ ] remove `edge="end"` from `IconButton`s
+  - The default appearance is correct
+
 # v2.3.0
 
 - [x] :lipstick: add `edge="end"` to `IconButton`s

@@ -146,11 +146,7 @@ export default function SearchField({
         endAdornment: (
           <InputAdornment position="end">
             {!hideClearButton && (
-              <IconButton
-                edge="end"
-                onClick={handleClear}
-                {...ClearButtonProps}
-              >
+              <IconButton onClick={handleClear} {...ClearButtonProps}>
                 <ClearIcon />
               </IconButton>
             )}
