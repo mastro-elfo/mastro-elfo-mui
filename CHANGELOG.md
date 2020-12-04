@@ -1,3 +1,8 @@
+# v2.3.0
+
+- [x] :lipstick: add `edge="end"` to `IconButton`s
+- [x] :sparkles: new property `defaultValue` of `SearchField`
+
 # v2.2.0
 
 - [x] :put_litter_in_its_place: Remove deprecated components `Print` and `NoPrint`
