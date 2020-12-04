@@ -1,6 +1,6 @@
 # v2.3.1
 
-- [ ] remove `edge="end"` from `IconButton`s
+- [x] remove `edge="end"` from `IconButton`s
   - The default appearance is correct
 
 # v2.3.0
