@@ -25,12 +25,13 @@ export default function PasswordField({ IconButtonProps = {}, ...others }) {
             <IconButton
               onClick={() => setHide(!hide)}
               tabIndex={-1}
+              edge="end"
               {...IconButtonProps}
             >
               {hide ? <VisibilityIcon /> : <VisibilityOffIcon />}
             </IconButton>
           </InputAdornment>
-        )
+        ),
       }}
       {...others}
     />
@@ -38,5 +39,5 @@ export default function PasswordField({ IconButtonProps = {}, ...others }) {
 }
 
 PasswordField.propTypes = {
-  IconButtonProps: PropTypes.object
+  IconButtonProps: PropTypes.object,
 };
