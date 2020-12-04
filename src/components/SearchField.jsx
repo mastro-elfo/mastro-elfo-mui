@@ -15,6 +15,7 @@ import clean from "../utils/clean";
  * A `TextField` that manages a search input.
  *
  * `onSearch` is called when a search happens (by clicking or typing) with the query string as first parameter and the "deburred" string as second.
+ * @param       {String} [defaultValue=""]
  * @param       {Number} [delay=250] [description]
  * @param       {function} [onClear=()=>{}] [description]
  * @param       {function} [onSearch] Returns a `Promise`
@@ -25,6 +26,8 @@ import clean from "../utils/clean";
  * @constructor
  */
 export default function SearchField({
+  // Default value for non controlled component
+  defaultValue = "",
   // Debounce delay
   delay = 250,
   //
@@ -49,7 +52,9 @@ export default function SearchField({
   ...others
 }) {
   // Query string
-  const [query, setQuery] = useState(value === undefined ? "" : value);
+  const [query, setQuery] = useState(
+    value === undefined ? defaultValue : value
+  );
   // Searching status
   const [searching, setSearching] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
