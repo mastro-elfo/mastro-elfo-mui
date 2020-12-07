@@ -30,6 +30,10 @@ export default function Login({
   show = false,
   ...rest
 }) {
+  // TODO: deprecate
+  console.warn(
+    "This component is deprecated since v2.4.0 and will be removed in v3.0.0."
+  );
   const location = useLocation();
 
   return (
@@ -46,5 +50,5 @@ export default function Login({
 Login.propTypes = {
   children: PropTypes.node,
   Component: PropTypes.node,
-  show: PropTypes.any
+  show: PropTypes.any,
 };

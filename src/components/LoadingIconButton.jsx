@@ -33,6 +33,10 @@ export default function LoadingIconButton({
     Promise.resolve()
       .then(() => onClick(e))
       .catch((err) => {
+        // TODO: deprecate
+        console.warn(
+          "Catch is deprecated since v2.4.0 and will be removed in v3.0.0."
+        );
         console.error(err);
         enqueueSnackbar(err.message, { variant: "error" });
       })

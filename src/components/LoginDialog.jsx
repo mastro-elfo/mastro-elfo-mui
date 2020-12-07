@@ -9,7 +9,7 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
-  TextField
+  TextField,
 } from "@material-ui/core";
 
 import Loading from "./Loading";
@@ -31,6 +31,11 @@ export default function LoginDialog({
   UsernameProps = {},
   ...others
 }) {
+  // TODO: deprecate
+  console.warn(
+    "This component is deprecated since v2.4.0 and will be removed in v3.0.0."
+  );
+
   const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -39,7 +44,7 @@ export default function LoginDialog({
   const handleLogin = () => {
     setLoading(true);
     login(username, password)
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         enqueueSnackbar(err.message, { variant: "error" });
       })
@@ -88,5 +93,5 @@ LoginDialog.propTypes = {
   BoxProps: PropTypes.object,
   ButtonProps: PropTypes.object,
   PasswordProps: PropTypes.object,
-  UsernameProps: PropTypes.object
+  UsernameProps: PropTypes.object,
 };
