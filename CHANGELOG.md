@@ -1,3 +1,11 @@
+# v2.4.0
+
+- [x] :sparkles: new hook `useMounted`
+- [x] :wastebasket: mark deprecated `Login`
+- [x] :wastebasket: mark deprecated `LoginDialog`
+- [x] :wastebasket: mark deprecated `catch` in `SearchField`
+- [x] :wastebasket: mark deprecated `catch` in `LoadingIconButton`
+
 # v2.3.1
 
 - [x] remove `edge="end"` from `IconButton`s
