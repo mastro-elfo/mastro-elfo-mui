@@ -6,5 +6,6 @@ export { default as shorten } from "./shorten";
 export { default as unique } from "./unique";
 export { default as useCountdown } from "./useCountdown";
 export { default as useLilo } from "./useLilo";
+export { default as useMounted } from "./useMounted";
 export { usePalette } from "./usePalette";
 export { default as useSearchParams } from "./useSearchParams";
