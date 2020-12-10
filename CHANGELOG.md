@@ -1,3 +1,7 @@
+# v2.5.0
+
+- [x] :sparkles: new component `FileField`
+
 # v2.4.0
 
 - [x] :sparkles: new hook `useMounted`
