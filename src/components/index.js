@@ -21,8 +21,11 @@ export { default as Header } from "./Header";
 export { default as HeaderSearchField } from "./HeaderSearchField";
 export { default as Loading } from "./Loading";
 export { default as LoadingIconButton } from "./LoadingIconButton";
+// TODO: deprecated
 export { default as Login } from "./Login";
+// TODO: deprecated
 export { default as LoginDialog } from "./LoginDialog";
+export { default as LoginForm } from "./LoginDialog";
 export { default as MediaPrint } from "./MediaPrint";
 export { default as MediaScreen } from "./MediaScreen";
 export { default as NestedListTypography } from "./NestedListTypography";
