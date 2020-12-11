@@ -1,3 +1,7 @@
+# v2.6.0
+
+- [x] :sparkles: new component `LoginForm`
+
 # v2.5.0
 
 - [x] :sparkles: new component `FileField`
