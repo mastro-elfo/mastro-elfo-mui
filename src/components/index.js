@@ -25,7 +25,7 @@ export { default as LoadingIconButton } from "./LoadingIconButton";
 export { default as Login } from "./Login";
 // TODO: deprecated
 export { default as LoginDialog } from "./LoginDialog";
-export { default as LoginForm } from "./LoginDialog";
+export { default as LoginForm } from "./LoginForm";
 export { default as MediaPrint } from "./MediaPrint";
 export { default as MediaScreen } from "./MediaScreen";
 export { default as NestedListTypography } from "./NestedListTypography";
