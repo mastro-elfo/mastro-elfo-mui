@@ -1,3 +1,7 @@
+# v2.6.1
+
+- [x] :beetle: Fix named export `LoginForm`
+
 # v2.6.0
 
 - [x] :sparkles: new component `LoginForm`
