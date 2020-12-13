@@ -1,3 +1,7 @@
+# v2.6.2
+
+- [x] :beetle: warning-treating-module-as-external-dependency
+
 # v2.6.1
 
 - [x] :beetle: Fix named export `LoginForm`
