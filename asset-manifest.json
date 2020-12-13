@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/mastro-elfo-mui/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/mastro-elfo-mui/static/js/main.2a0829ef.chunk.js",
-    "main.js.map": "/mastro-elfo-mui/static/js/main.2a0829ef.chunk.js.map",
-    "runtime-main.js": "/mastro-elfo-mui/static/js/runtime-main.6e6f02fc.js",
-    "runtime-main.js.map": "/mastro-elfo-mui/static/js/runtime-main.6e6f02fc.js.map",
-    "static/js/2.1b9f7d57.chunk.js": "/mastro-elfo-mui/static/js/2.1b9f7d57.chunk.js",
-    "static/js/2.1b9f7d57.chunk.js.map": "/mastro-elfo-mui/static/js/2.1b9f7d57.chunk.js.map",
-    "static/js/3.541ca32d.chunk.js": "/mastro-elfo-mui/static/js/3.541ca32d.chunk.js",
-    "static/js/3.541ca32d.chunk.js.map": "/mastro-elfo-mui/static/js/3.541ca32d.chunk.js.map",
+    "main.css": "/mastro-elfo-mui/static/css/main.2f44a692.chunk.css",
+    "main.js": "/mastro-elfo-mui/static/js/main.5bbd9d25.chunk.js",
+    "main.js.map": "/mastro-elfo-mui/static/js/main.5bbd9d25.chunk.js.map",
+    "runtime-main.js": "/mastro-elfo-mui/static/js/runtime-main.e8a7e0fa.js",
+    "runtime-main.js.map": "/mastro-elfo-mui/static/js/runtime-main.e8a7e0fa.js.map",
+    "static/js/2.ea3c3de2.chunk.js": "/mastro-elfo-mui/static/js/2.ea3c3de2.chunk.js",
+    "static/js/2.ea3c3de2.chunk.js.map": "/mastro-elfo-mui/static/js/2.ea3c3de2.chunk.js.map",
+    "static/js/3.71960eb6.chunk.js": "/mastro-elfo-mui/static/js/3.71960eb6.chunk.js",
+    "static/js/3.71960eb6.chunk.js.map": "/mastro-elfo-mui/static/js/3.71960eb6.chunk.js.map",
     "index.html": "/mastro-elfo-mui/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/mastro-elfo-mui/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.1b9f7d57.chunk.js.LICENSE.txt": "/mastro-elfo-mui/static/js/2.1b9f7d57.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/mastro-elfo-mui/static/media/logo.6ce24c58.svg"
+    "static/css/main.2f44a692.chunk.css.map": "/mastro-elfo-mui/static/css/main.2f44a692.chunk.css.map",
+    "static/js/2.ea3c3de2.chunk.js.LICENSE.txt": "/mastro-elfo-mui/static/js/2.ea3c3de2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6e6f02fc.js",
-    "static/js/2.1b9f7d57.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.2a0829ef.chunk.js"
+    "static/js/runtime-main.e8a7e0fa.js",
+    "static/js/2.ea3c3de2.chunk.js",
+    "static/css/main.2f44a692.chunk.css",
+    "static/js/main.5bbd9d25.chunk.js"
   ]
 }
