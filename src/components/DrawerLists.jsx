@@ -8,7 +8,7 @@ import {
   ListItemIcon,
   ListItemSecondaryAction,
   ListItemText,
-  ListSubheader
+  ListSubheader,
 } from "@material-ui/core";
 
 /**
@@ -16,7 +16,10 @@ import {
  * @param       {Array} [lists=[]] [description]
  * @constructor
  */
-export default function DrawerLists({ lists = [] }) {
+export default function DrawerLists({
+  // Lists
+  lists = [],
+}) {
   return (
     <Fragment>
       {lists.map(
@@ -26,42 +29,12 @@ export default function DrawerLists({ lists = [] }) {
           items = [],
           key,
           leftFill = false,
-          rightFill = false
+          rightFill = false,
         }) => (
           <List key={key} subheader={<ListSubheader>{header}</ListSubheader>}>
-            {items.map(
-              ({
-                action = null,
-                icon = null,
-                key,
-                onClick = false,
-                primary = "",
-                secondary = "",
-                title = ""
-              }) => (
-                <ListItem
-                  key={key}
-                  title={title}
-                  button={Boolean(onClick)}
-                  onClick={Boolean(onClick) ? onClick : () => {}}
-                >
-                  {(!!icon || leftFill) &&
-                    (avatar ? (
-                      <ListItemAvatar>{icon || <span />}</ListItemAvatar>
-                    ) : (
-                      <ListItemIcon>{icon || <span />}</ListItemIcon>
-                    ))}
-
-                  <ListItemText primary={primary} secondary={secondary} />
-
-                  {(!!action || rightFill) && (
-                    <ListItemSecondaryAction>
-                      {action || <span />}
-                    </ListItemSecondaryAction>
-                  )}
-                </ListItem>
-              )
-            )}
+            {items.map(({ Component = ItemComponent, ...props }) => (
+              <ItemComponent key={key} {...props} />
+            ))}
           </List>
         )
       )}
@@ -83,11 +56,41 @@ DrawerLists.propTypes = {
           icon: PropTypes.node,
           onClick: PropTypes.func,
           primary: PropTypes.string,
-          secondary: PropTypes.string
+          secondary: PropTypes.string,
         })
       ),
       leftFill: PropTypes.bool,
-      rightFill: PropTypes.bool
+      rightFill: PropTypes.bool,
     })
-  )
+  ),
 };
+
+function ItemComponent({
+  action = null,
+  icon = null,
+  onClick = false,
+  primary = "",
+  secondary = "",
+  title = "",
+}) {
+  return (
+    <ListItem
+      title={title}
+      button={Boolean(onClick)}
+      onClick={Boolean(onClick) ? onClick : () => {}}
+    >
+      {(!!icon || leftFill) &&
+        (avatar ? (
+          <ListItemAvatar>{icon || <span />}</ListItemAvatar>
+        ) : (
+          <ListItemIcon>{icon || <span />}</ListItemIcon>
+        ))}
+
+      <ListItemText primary={primary} secondary={secondary} />
+
+      {(!!action || rightFill) && (
+        <ListItemSecondaryAction>{action || <span />}</ListItemSecondaryAction>
+      )}
+    </ListItem>
+  );
+}
