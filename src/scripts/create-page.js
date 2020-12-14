@@ -14,7 +14,7 @@ const capital = name[0].toUpperCase() + name.substr(1).toLowerCase();
 const template = `
 import React from "react";
 import { BackIconButton, Content, Header, Page } from "mastro-elfo-mui";
-import BrokenImageIcon from "@material-ui/icons/BrokenImage";
+import DrawerIcon from "@material-ui/icons/BrokenImage";
 
 function Component() {
   return (
@@ -35,7 +35,7 @@ export const drawer = {
   key: "<page>",
   primary: "<Page>",
   secondary: "",
-  icon: <BrokenImageIcon/>,
+  icon: <DrawerIcon/>,
   title: "Open <Page>"
 }
 `;
