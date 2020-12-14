@@ -1,3 +1,12 @@
+# v2.7.0
+
+- [x] :sparkles: `DrawerLists` items have new property `Component`
+- [x] :arrow_up: script `create-page.js`
+  ```diff
+  - import BrokenImageIcon from "@material-ui/icons/BrokenImage";
+  + import DrawerIcon from "@material-ui/icons/BrokenImage";
+  ```
+
 # v2.6.2
 
 - [x] :beetle: warning-treating-module-as-external-dependency
