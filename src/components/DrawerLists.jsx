@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 
 import {
   List,
@@ -33,7 +34,13 @@ export default function DrawerLists({
         }) => (
           <List key={key} subheader={<ListSubheader>{header}</ListSubheader>}>
             {items.map(({ Component = ItemComponent, ...props }) => (
-              <ItemComponent key={key} {...props} />
+              <ItemComponent
+                key={key}
+                avatar={avatar}
+                leftFill={leftFill}
+                rightFill={rightFill}
+                {...props}
+              />
             ))}
           </List>
         )
@@ -67,17 +74,35 @@ DrawerLists.propTypes = {
 
 function ItemComponent({
   action = null,
+  avatar = false,
+  external = false,
+  href = null,
   icon = null,
+  leftFill = false,
   onClick = false,
   primary = "",
+  rightFill = false,
   secondary = "",
   title = "",
 }) {
+  const { push } = useHistory();
+  const innerLink = !!href && !external;
+  const outerLink = !!href && !!external;
+  const isButton = !!onClick || !!href;
+
   return (
     <ListItem
       title={title}
-      button={Boolean(onClick)}
-      onClick={Boolean(onClick) ? onClick : () => {}}
+      button={isButton}
+      onClick={
+        outerLink
+          ? window.open(href)
+          : innerLink
+          ? push(href)
+          : isButton
+          ? onClick
+          : () => {}
+      }
     >
       {(!!icon || leftFill) &&
         (avatar ? (
@@ -94,3 +119,17 @@ function ItemComponent({
     </ListItem>
   );
 }
+
+ItemComponent.propTypes = {
+  action: PropTypes.node,
+  avatar: PropTypes.bool,
+  external: PropTypes.bool,
+  href: PropTypes.string,
+  icon: PropTypes.node,
+  leftFill: PropTypes.bool,
+  onClick: PropTypes.func,
+  primary: PropTypes.string,
+  rightFill: PropTypes.bool,
+  secondary: PropTypes.string,
+  title: PropTypes.string,
+};
