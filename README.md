@@ -8,6 +8,10 @@ or
 
 `npm i mastro-elfo-mui`
 
+# Documentation
+
+The full [documentation](https://github.com/mastro-elfo/mastro-elfo-mui/wiki "Documentation") is available on GitHub Wiki.
+
 # Getting started
 
 The start point of this library is then `AppContainer` component. This is not required, but gives the app some basic configuration.
@@ -32,11 +36,11 @@ function App() {
   return (
     <AppContainer
       ThemeProps={{
-        palette: { primary, secondary }
+        palette: { primary, secondary },
       }}
       RouterProps={{
         Router: HashRouter,
-        routes: [{ path: "/", component: HomePage, exact: true }]
+        routes: [{ path: "/", component: HomePage, exact: true }],
       }}
     />
   );
