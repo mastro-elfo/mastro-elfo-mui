@@ -13,11 +13,12 @@ const notistackRef = createRef();
  *
  * @see: https://iamhosseindhv.com/notistack
  * @param  {node} children [description]
+ * @param {object} DismissIconButtonProps
  * @param  {any} props    [description]
  * @constructor
  */
-export default function({ children, ...props }) {
-  const handleDismiss = key => () => notistackRef.current.closeSnackbar(key);
+export default function ({ children, DismissIconButtonProps, ...props }) {
+  const handleDismiss = (key) => () => notistackRef.current.closeSnackbar(key);
 
   return (
     <SnackbarProvider
@@ -25,14 +26,15 @@ export default function({ children, ...props }) {
       maxSnack={5}
       anchorOrigin={{
         vertical: "top",
-        horizontal: "right"
+        horizontal: "right",
       }}
       autoHideDuration={5000}
-      action={key => (
+      action={(key) => (
         <IconButton
           color="inherit"
           title="Dismiss"
           onClick={handleDismiss(key)}
+          {...DismissIconButtonProps}
         >
           <CloseIcon />
         </IconButton>
