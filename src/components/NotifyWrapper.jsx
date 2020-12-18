@@ -41,6 +41,7 @@ export default function NotifyWrapper({
           onClick={handleDismiss(key)}
           {...DismissIconButtonProps}
         >
+          {/*TODO: `color` and `title` properties are deprecated since v2.8.0 and will be removed in v3.0.0. Use DismissIconButtonProps instead.*/}
           <CloseIcon />
         </IconButton>
       )}
