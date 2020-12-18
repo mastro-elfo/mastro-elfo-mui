@@ -1,4 +1,5 @@
 import React, { createRef } from "react";
+import PropTypes from "prop-types";
 
 import { SnackbarProvider } from "notistack";
 
@@ -17,7 +18,11 @@ const notistackRef = createRef();
  * @param  {any} props    [description]
  * @constructor
  */
-export default function ({ children, DismissIconButtonProps, ...props }) {
+export default function NotifyWrapper({
+  children,
+  DismissIconButtonProps,
+  ...props
+}) {
   const handleDismiss = (key) => () => notistackRef.current.closeSnackbar(key);
 
   return (
@@ -45,3 +50,8 @@ export default function ({ children, DismissIconButtonProps, ...props }) {
     </SnackbarProvider>
   );
 }
+
+NotifyWrapper.propTypes = {
+  children: PropTypes.node,
+  DismissIconButtonProps: PropTypes.object,
+};
