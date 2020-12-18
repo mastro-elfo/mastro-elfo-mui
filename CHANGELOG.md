@@ -1,3 +1,8 @@
+# v2.8.0
+
+- [x] :sparkles: `NotifyWrapper` has new property `DismissIconButtonProps`
+- [x] :wastebasket: `color` and `title` in dismiss `IconButton` in `NotifyWrapper` are marked as deprecated, use `DismissIconButtonProps` instead
+
 # v2.7.0
 
 - [x] :sparkles: `DrawerLists` items have new property `Component`
