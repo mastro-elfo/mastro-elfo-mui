@@ -66,15 +66,17 @@ export default function SearchField({
     // Set searching true
     setSearching(true);
     // Callback
-    onSearch(
-      query,
-      clean(query, {
-        lower: true,
-        trim: true,
-        deburr: true,
-        replace_symbol: " ",
-        compact_spaces: true,
-      })
+    Promise.resolve(
+      onSearch(
+        query,
+        clean(query, {
+          lower: true,
+          trim: true,
+          deburr: true,
+          replace_symbol: " ",
+          compact_spaces: true,
+        })
+      )
     )
       .catch((err) => {
         // TODO: deprecate
