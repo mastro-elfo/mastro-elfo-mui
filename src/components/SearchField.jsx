@@ -87,7 +87,7 @@ export default function SearchField({
         enqueueSnackbar(err.message, { variant: "error" });
       })
       // In any case reset searching
-      .then(() => setSearching(false));
+      .finally(() => setSearching(false));
   };
 
   // Define a debounced function to handle keypress searches
