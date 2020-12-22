@@ -1,3 +1,7 @@
+# v2.9.0
+
+- :arrow_up: `onSearch` can be a regular `function` or return a `Promise`
+
 # v2.8.0
 
 - [x] :sparkles: `NotifyWrapper` has new property `DismissIconButtonProps`
