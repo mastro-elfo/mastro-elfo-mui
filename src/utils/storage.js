@@ -10,22 +10,26 @@
  * @param  {any} defaultValue   Default value if key is not found
  * @return {any}                Parsed JSON value
  */
-Storage.prototype.getJson = function(key, defaultValue) {
-  try {
-    return JSON.parse(this.getItem(key)) || defaultValue;
-  } catch (e) {
-    if (e instanceof SyntaxError) {
-      return defaultValue;
+if (!("getJson" in Storage.prototype)) {
+  Storage.prototype.getJson = function (key, defaultValue) {
+    try {
+      return JSON.parse(this.getItem(key)) || defaultValue;
+    } catch (e) {
+      if (e instanceof SyntaxError) {
+        return defaultValue;
+      }
+      throw e;
     }
-    throw e;
-  }
-};
+  };
+}
 
 /**
  * Stringify `value` and stores it in LocalStorage or SessionStorage
  * @param  {Number|String} key   The key
  * @param  {any} value Anything that can be converted to JSON string
  */
-Storage.prototype.setJson = function(key, value) {
-  this.setItem(key, JSON.stringify(value));
-};
+if (!("setJson" in Storage.prototype)) {
+  Storage.prototype.setJson = function (key, value) {
+    this.setItem(key, JSON.stringify(value));
+  };
+}
