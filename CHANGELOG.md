@@ -1,3 +1,9 @@
+# v2.10.0
+
+- [x] :sparkles: new utility `load`/`store`/`remove` from/in session or local storage
+- [x] :beetle: don't overwrite `getJson` and `setJson` if they're already defined
+- [x] :wastebasket: mark `getJson` and `setJson` as deprecated, since they may conflict with other libraries
+
 # v2.9.0
 
 - :arrow_up: `onSearch` can be a regular `function` or return a `Promise`
