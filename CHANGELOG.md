@@ -1,3 +1,7 @@
+# v2.10.1
+
+- [x] :beetle: `useMounted` didn't work as expected
+
 # v2.10.0
 
 - [x] :sparkles: new utility `load`/`store`/`remove` from/in session or local storage

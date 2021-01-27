@@ -6,16 +6,14 @@ import { useEffect, useRef } from "react";
  */
 export default function useMounted() {
   // Set start value
-  const mounted = useRef(false);
+  const mounted = useRef(true);
   // Create effect
-  useEffect(() => {
-    // Set `true` when mounted
-    mounted.current = true;
-    // Clean up
-    return () => {
+  useEffect(
+    () => () => {
       mounted.current = false;
-    };
-  }, []);
+    },
+    [mounted]
+  );
   // Return current value
   return mounted.current;
 }
