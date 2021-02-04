@@ -132,12 +132,12 @@
 # v1.25.0
 
 -   :arrow_up: `Push` use `cloneElement` instead of `Component` prop
--   :wastebasket: deprection warning for `Component` prop
+-   :wastebasket: deprecation warning for `Component` prop
 
 # v1.24.0
 
 -   :arrow_up: in `LoadingIconButton` use `onClick` instead of `callback`
--   :wastebasket: deprection warning for `callback`
+-   :wastebasket: deprecation warning for `callback`
 -   :rotating_light: add tests for `LoadingIconButton`
 -   :rotating_light: Add `LoadingProps` to `LoadingIconButton`
 -   :rotating_light: Fix documentation
@@ -145,7 +145,7 @@
 # v1.23.0
 
 -   :arrow_up: Use `...rest` with `IconButton` in `DrawerIconButton` component instead of `IconButtonProps`
--   :wastebasket: deprection warning for `IconButtonProps`
+-   :wastebasket: deprecation warning for `IconButtonProps`
 
 # v1.22.0
 
