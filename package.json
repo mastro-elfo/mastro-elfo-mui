@@ -64,5 +64,6 @@
     "prop-types": "^15.0.0",
     "react": "^16.13.1",
     "react-router-dom": "^5.2.0"
-  }
+  },
+  "dependencies": {}
 }
