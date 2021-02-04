@@ -1,5 +1,7 @@
 import babel from "rollup-plugin-babel";
-import { uglify } from "rollup-plugin-uglify";
+import {
+  uglify
+} from "rollup-plugin-uglify";
 import commonjs from "rollup-plugin-commonjs";
 
 const extensions = [".js", ".jsx"];
@@ -24,18 +26,20 @@ module.exports = {
       include: ["./src/**"],
       exclude: "node_modules/**"
     }),
-    commonjs({ extensions }),
+    commonjs({
+      extensions
+    }),
     uglify()
   ],
   external: [
     /@material-ui.*/,
-    /i18next.*/,
+    // /i18next.*/,
     "lodash",
     "notistack",
     "prop-types",
     "react",
-    "react-markdown",
+    // "react-markdown",
     "react-router-dom",
-    "react-smooth-dnd"
+    // "react-smooth-dnd"
   ]
 };
