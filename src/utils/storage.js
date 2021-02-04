@@ -10,13 +10,14 @@
  * @param  {any} defaultValue   Default value if key is not found
  * @return {any}                Parsed JSON value
  */
-if (!("getJson" in Storage.prototype)) {
-  // TODO: deprecate
-  console.warn(
-    "This method is deprecated since v2.10.0 and will be removed in v3.0.0. Use `load` instead."
-  );
 
-  Storage.prototype.getJson = function (key, defaultValue) {
+if (!("getJson" in Storage.prototype)) {
+  Storage.prototype.getJson = function(key, defaultValue) {
+    // TODO: deprecate
+    console.warn(
+      "This method is deprecated since v2.10.0 and will be removed in v3.0.0. Use `load` instead."
+    );
+
     try {
       return JSON.parse(this.getItem(key)) || defaultValue;
     } catch (e) {
@@ -34,12 +35,12 @@ if (!("getJson" in Storage.prototype)) {
  * @param  {any} value Anything that can be converted to JSON string
  */
 if (!("setJson" in Storage.prototype)) {
-  // TODO: deprecate
-  console.warn(
-    "This method is deprecated since v2.10.0 and will be removed in v3.0.0. Use `store` instead."
-  );
+  Storage.prototype.setJson = function(key, value) {
+    // TODO: deprecate
+    console.warn(
+      "This method is deprecated since v2.10.0 and will be removed in v3.0.0. Use `store` instead."
+    );
 
-  Storage.prototype.setJson = function (key, value) {
     this.setItem(key, JSON.stringify(value));
   };
 }
