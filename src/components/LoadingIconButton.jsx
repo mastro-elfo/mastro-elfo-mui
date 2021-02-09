@@ -30,8 +30,7 @@ export default function LoadingIconButton({
 
   const handleClick = (e) => {
     setLoading(true);
-    Promise.resolve()
-      .then(() => onClick(e))
+    Promise.resolve(onClick(e))
       .catch((err) => {
         // TODO: deprecate
         console.warn(
