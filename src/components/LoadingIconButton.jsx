@@ -40,7 +40,7 @@ export default function LoadingIconButton({
         console.error(err);
         enqueueSnackbar(err.message, { variant: "error" });
       })
-      .then(() => {
+      .finally(() => {
         setLoading(false);
       });
   };
