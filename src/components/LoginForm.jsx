@@ -39,11 +39,9 @@ export default function LoginForm({
   // Try to login
   const handleLogin = () => {
     setLoading(true);
-    Promise.resolve()
-      .then(() => login(username, password))
-      .finally(() => {
-        if (mounted) setLoading(false);
-      });
+    Promise.resolve(login(username, password)).finally(() => {
+      if (mounted) setLoading(false);
+    });
   };
   // If hit Enter, try to login
   const handleKeyPress = ({ code }) => code === "Enter" && handleLogin();
