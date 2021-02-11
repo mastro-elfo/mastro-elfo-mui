@@ -48,15 +48,24 @@ export default function ResultList({
           results.map((r) => {
             const {
               LeftIcon,
+              leftIcon,
               rightAction,
               primary,
               secondary,
               onClick,
               ...others
             } = mapper(r);
+            if (LeftIcon) {
+              console.warn(
+                "LeftIcon is deprecated since v2.11.0 and will be removed in v3.0.0. Use leftIcon (lower case 'L') instead."
+              );
+            }
             return (
               <ListItem button={!!onClick} onClick={onClick} {...others}>
-                {!!LeftIcon && <ListItemIcon>{LeftIcon}</ListItemIcon>}
+                {!!leftIcon && <ListItemIcon>{leftIcon}</ListItemIcon>}
+                {!leftIcon && !!LeftIcon && (
+                  <ListItemIcon>{LeftIcon}</ListItemIcon>
+                )}
 
                 <ListItemText primary={primary} secondary={secondary} />
 
