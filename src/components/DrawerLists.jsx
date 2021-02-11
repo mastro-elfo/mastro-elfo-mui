@@ -33,15 +33,19 @@ export default function DrawerLists({
           rightFill = false,
         }) => (
           <List key={key} subheader={<ListSubheader>{header}</ListSubheader>}>
-            {items.map(({ Component = ItemComponent, ...props }) => (
-              <ItemComponent
-                key={key}
-                avatar={avatar}
-                leftFill={leftFill}
-                rightFill={rightFill}
-                {...props}
-              />
-            ))}
+            {items
+              // Filter falsy items
+              .filter((item) => item)
+              // Map items
+              .map(({ Component = ItemComponent, ...props }) => (
+                <Component
+                  key={key}
+                  avatar={avatar}
+                  leftFill={leftFill}
+                  rightFill={rightFill}
+                  {...props}
+                />
+              ))}
           </List>
         )
       )}
@@ -75,6 +79,7 @@ DrawerLists.propTypes = {
 function ItemComponent({
   action = null,
   avatar = false,
+  disabled = false,
   external = false,
   href = null,
   icon = null,
@@ -94,6 +99,7 @@ function ItemComponent({
     <ListItem
       title={title}
       button={isButton}
+      disabled={disabled}
       onClick={
         outerLink
           ? window.open(href)
