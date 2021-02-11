@@ -14,13 +14,14 @@ test("Render", () => {
           primary: "Primary",
           secondary: "Secondary",
           onClick: () => {},
-          LeftIcon: <BrokenImageIcon />,
+          // LeftIcon: <BrokenImageIcon />,
+          leftIcon: <BrokenImageIcon />,
           rightAction: (
             <IconButton onClick={() => {}}>
               <span />
             </IconButton>
-          )
-        }
+          ),
+        },
       ].map((item, i) => ({ key: i, ...item }))}
     />
   );
