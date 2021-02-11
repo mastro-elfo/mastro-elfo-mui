@@ -1,3 +1,11 @@
+# v2.11.0
+
+- [x] :sparkles: New property `disabled` for each item in `DrawerLists`
+- [x] :beetle: Don't try to show `null` or `undefined` items in `DrawerLists`
+- [x] :sparkles: New property `Component` for each item in `DrawerLists`
+- [x] :wastebasket: Use `leftIcon` in `ResultList` component
+  - Also mark `ListIcon` as deprecated
+
 # v2.10.3
 
 - [x] :beetle: `LoadingIconButton` use `finally` at the end of the `Promise` chain
