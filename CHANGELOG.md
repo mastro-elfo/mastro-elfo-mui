@@ -1,3 +1,14 @@
+# v2.12.0
+
+- [x] :sparkles: `For` component
+  - properties:
+    - `each`: a list of object that will be used as properties
+    - `Component`: an element type that will be created for `each` element
+    - `map`: a function to map each element to `Component` properties
+    - `Container`: en element that wraps the `Component`s
+    - `ComponentProps`: common properties for each `Component`
+    - `ContainerProps`: properties for `Container`
+
 # v2.11.0
 
 - [x] :sparkles: New property `disabled` for each item in `DrawerLists`
