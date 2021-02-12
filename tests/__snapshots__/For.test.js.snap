@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter falsy 1`] = `
+Array [
+  <span
+    data-value="true"
+  />,
+  <span
+    data-value=""
+  />,
+  <span
+    data-value="1"
+  />,
+]
+`;
+
+exports[`Render 1`] = `
+<div
+  data-prop="container property"
+>
+  <span
+    data-mapped-property={0}
+    data-prop="component property"
+  >
+    0
+  </span>
+  <span
+    data-mapped-property={1}
+    data-prop="component property"
+  >
+    1
+  </span>
+  <span
+    data-mapped-property={2}
+    data-prop="component property"
+  >
+    2
+  </span>
+</div>
+`;
+
+exports[`Render empty 1`] = `null`;
+
+exports[`Render null 1`] = `null`;
+
+exports[`Render undefined 1`] = `null`;
+
+exports[`Render without props 1`] = `null`;
