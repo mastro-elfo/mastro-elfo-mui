@@ -66,5 +66,5 @@ Page.propTypes = {
 };
 
 const useStyles = makeStyles({
-  paper: { minHeight: "100%" },
+  paper: { minHeight: "100vh" },
 });
