@@ -6,6 +6,9 @@ import { useSnackbar } from "notistack";
 
 import { IconButton, InputAdornment, TextField } from "@material-ui/core";
 
+import AbsoluteCircularProgress from "./AbsoluteCircularProgress";
+import Loading from "./Loading";
+
 import ClearIcon from "@material-ui/icons/Clear";
 import SearchIcon from "@material-ui/icons/Search";
 
@@ -21,6 +24,7 @@ import clean from "../utils/clean";
  * @param       {function} [onSearch] Returns a `Promise`
  * @param       {object}  [SearchButtonProps={}] [description]
  * @param       {object}  [ClearButtonProps={}] [description]
+ * @param       {object}  [LoadingProps={}] [description]
  * @param       {object}  [InputProps={}] Override `TextField` `InputProps`
  * @param       {any} [others]  Forwarded to `TextField`
  * @constructor
@@ -46,6 +50,8 @@ export default function SearchField({
   ClearButtonProps = {},
   // Override `InputProps`
   InputProps = {},
+  // Loading props
+  LoadingProps = {},
   // Search button props
   SearchButtonProps = {},
   // Others are passed to TextField
@@ -146,6 +152,9 @@ export default function SearchField({
               {...SearchButtonProps}
             >
               <SearchIcon />
+              <Loading show={searching} {...LoadingProps}>
+                <AbsoluteCircularProgress />
+              </Loading>
             </IconButton>
           </InputAdornment>
         ),
@@ -175,5 +184,6 @@ SearchField.propTypes = {
   value: PropTypes.string,
   ClearButtonProps: PropTypes.object,
   InputProps: PropTypes.object,
+  LoadingProps: PropTypes.object,
   SearchButtonProps: PropTypes.object,
 };
