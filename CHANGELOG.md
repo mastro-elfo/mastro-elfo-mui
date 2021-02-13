@@ -1,3 +1,13 @@
+# v2.13.0
+
+- [x] :beetle: Fix `Page` `height`
+  ```diff
+  - paper: { minHeight: "100%" },
+  + paper: { height: "100vh" },
+  ```
+- [x] :sparkles: Add `Loading` with `AbsoluteCircularProgress` to search button in `SearchField` component
+- [x] :sparkles: Add `LoadingProps` to `SearchField` component
+
 # v2.12.0
 
 - [x] :sparkles: `For` component
