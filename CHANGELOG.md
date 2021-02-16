@@ -1,3 +1,8 @@
+# v2.14.0
+
+- [x] :sparkles: New utility `delay`
+- [x] :arrow_up: `SearchField` calls search after `delay`
+
 # v2.13.0
 
 - [x] :beetle: Fix `Page` `height`
