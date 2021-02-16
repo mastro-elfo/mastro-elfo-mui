@@ -1,3 +1,8 @@
+# v2.14.1
+
+- [x] :beetle: Fix named export `delay`
+- [x] :beetle: Fix named import `delay` in `SearchField` component
+
 # v2.14.0
 
 - [x] :sparkles: New utility `delay`

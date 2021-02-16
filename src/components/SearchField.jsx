@@ -13,7 +13,7 @@ import ClearIcon from "@material-ui/icons/Clear";
 import SearchIcon from "@material-ui/icons/Search";
 
 import clean from "../utils/clean";
-import delay from "../utils/delay";
+import delayFn from "../utils/delay";
 
 /**
  * A `TextField` that manages a search input.
@@ -85,7 +85,7 @@ export default function SearchField({
     //     })
     //   )
     // )
-    delay(
+    delayFn(
       0,
       onSearch,
       query,
