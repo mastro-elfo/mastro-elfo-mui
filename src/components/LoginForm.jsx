@@ -6,6 +6,7 @@ import AbsoluteCircularProgress from "./AbsoluteCircularProgress";
 import Loading from "./Loading";
 import PasswordField from "./PasswordField";
 import useMounted from "../utils/useMounted";
+import delay from "../utils/delay";
 
 export default function LoginForm({
   // Custom actions after login button
@@ -33,7 +34,10 @@ export default function LoginForm({
   // Try to login
   const handleLogin = () => {
     setLoading(true);
-    Promise.resolve(login(username, password)).finally(() => {
+    // Promise.resolve(login(username, password)).finally(() => {
+    //   if (mounted) setLoading(false);
+    // });
+    delay(0, login, username, password).finally(() => {
       if (mounted) setLoading(false);
     });
   };
