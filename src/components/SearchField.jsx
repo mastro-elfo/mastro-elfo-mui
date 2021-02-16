@@ -13,6 +13,7 @@ import ClearIcon from "@material-ui/icons/Clear";
 import SearchIcon from "@material-ui/icons/Search";
 
 import clean from "../utils/clean";
+import delay from "../utils/delay";
 
 /**
  * A `TextField` that manages a search input.
@@ -72,17 +73,29 @@ export default function SearchField({
     // Set searching true
     setSearching(true);
     // Callback
-    Promise.resolve(
-      onSearch(
-        query,
-        clean(query, {
-          lower: true,
-          trim: true,
-          deburr: true,
-          replace_symbol: " ",
-          compact_spaces: true,
-        })
-      )
+    // Promise.resolve(
+    //   onSearch(
+    //     query,
+    //     clean(query, {
+    //       lower: true,
+    //       trim: true,
+    //       deburr: true,
+    //       replace_symbol: " ",
+    //       compact_spaces: true,
+    //     })
+    //   )
+    // )
+    delay(
+      0,
+      onSearch,
+      query,
+      clean(query, {
+        lower: true,
+        trim: true,
+        deburr: true,
+        replace_symbol: " ",
+        compact_spaces: true,
+      })
     )
       .catch((err) => {
         // TODO: deprecate
