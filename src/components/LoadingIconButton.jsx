@@ -7,6 +7,7 @@ import { IconButton } from "@material-ui/core";
 
 import AbsoluteCircularProgress from "./AbsoluteCircularProgress";
 import Loading from "./Loading";
+import delay from "../utils/delay";
 
 /**
  * `IconButton` with `Loading` component
@@ -30,7 +31,8 @@ export default function LoadingIconButton({
 
   const handleClick = (e) => {
     setLoading(true);
-    Promise.resolve(onClick(e))
+    // Promise.resolve(onClick(e))
+    delay(0, onClick, e)
       .catch((err) => {
         // TODO: deprecate
         console.warn(
