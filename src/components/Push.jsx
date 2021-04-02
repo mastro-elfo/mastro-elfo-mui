@@ -12,11 +12,17 @@ import { useHistory } from "react-router-dom";
  * @constructor
  */
 
-export default function Push({ children, href, replace = false, ...rest }) {
+export default function Push({
+  children,
+  href,
+  replace = false,
+  state = null,
+  ...rest
+}) {
   const { push, replace: repl } = useHistory();
 
   // Define callback
-  const handleClick = () => (replace ? repl(href) : push(href));
+  const handleClick = () => (replace ? repl(href, state) : push(href, state));
 
   // If `children` is a valid element, clone with `onClick: handleClick`
   if (isValidElement(children)) {

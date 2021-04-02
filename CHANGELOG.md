@@ -1,3 +1,7 @@
+# v2.15.0
+
+- [x] :sparkles: New property `state` of `Push`
+
 # v2.14.1
 
 - [x] :beetle: Fix named export `delay`
