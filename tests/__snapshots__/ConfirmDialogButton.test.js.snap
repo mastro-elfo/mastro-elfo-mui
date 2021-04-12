@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Component 1`] = `
+<div
+  data-custom={true}
+  onClick={[Function]}
+>
+  <span />
+</div>
+`;

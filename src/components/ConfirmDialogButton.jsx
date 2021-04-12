@@ -16,13 +16,17 @@ export default function ConfirmDialogButton({
   children,
   isIcon = false,
   onConfirm = () => {},
+  Component = Button,
   DialogProps = {},
   ...others
 }) {
   const [open, setOpen] = useState(false);
 
   // Use Button or IconButton
-  const Component = isIcon ? IconButton : Button;
+  // const Component = isIcon ? IconButton : Button;
+  if (isIcon) {
+    Component = IconButton;
+  }
 
   const handleConfirm = () => {
     setOpen(false);
@@ -50,5 +54,5 @@ ConfirmDialogButton.propTypes = {
   isIcon: PropTypes.bool,
   onConfirm: PropTypes.func,
   ButtonProps: PropTypes.object,
-  DialogProps: PropTypes.object
+  DialogProps: PropTypes.object,
 };
