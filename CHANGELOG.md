@@ -1,3 +1,8 @@
+# v2.16.0
+
+- [x] :sparkles: New property `Component` of `ConfirmDialogButton`
+- [x] :beetle: Fix theme update
+
 # v2.15.0
 
 - [x] :sparkles: New property `state` of `Push`
