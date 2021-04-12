@@ -16,7 +16,7 @@ export default function ThemeWrapper({ children, ...props }) {
   const [palette, setPalette] = useState(defaultPalette);
   const THEME = createMuiTheme({
     ...props,
-    palette: { ...props.palette, ...palette }
+    palette: { ...palette, ...props.palette },
   });
 
   return (
