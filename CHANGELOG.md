@@ -1,3 +1,8 @@
+# v2.17.0
+
+- [x] :beetle: Fix ConfirmDialogButton properties
+- [x] :sparkles: New property actions of ConfirmDialog
+
 # v2.16.0
 
 - [x] :sparkles: New property `Component` of `ConfirmDialogButton`
