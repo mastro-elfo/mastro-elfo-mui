@@ -39,11 +39,11 @@ export default function ConfirmDialogButton({
         {children}
       </Component>
       <ConfirmDialog
-        {...DialogProps}
         open={open}
         onClose={() => setOpen(false)}
         onCancel={() => setOpen(false)}
         onConfirm={handleConfirm}
+        {...DialogProps}
       />
     </Fragment>
   );
