@@ -7,7 +7,7 @@ import {
   DialogActions,
   DialogTitle,
   DialogContent,
-  DialogContentText
+  DialogContentText,
 } from "@material-ui/core";
 
 import Condition from "./Condition";
@@ -22,21 +22,23 @@ import Condition from "./Condition";
  * @constructor
  */
 export default function ConfirmDialog({
-  // Content of `DialogTitle`
-  title = "",
-  // If array each element is the content of a different `DialogContentText`
-  content = "",
-  // Content of confirm button
-  confirm = "",
+  // Other actions
+  actions = null,
   // Content of cancel button
   cancel = "",
-  // Confirm callback
-  onConfirm = () => {},
+  // Content of confirm button
+  confirm = "",
+  // If array each element is the content of a different `DialogContentText`
+  content = "",
   // Cancel callback
   onCancel = () => {},
+  // Confirm callback
+  onConfirm = () => {},
+  // Content of `DialogTitle`
+  title = "",
   // Buttons props
-  ConfirmButtonProps = {},
   CancelButtonProps = {},
+  ConfirmButtonProps = {},
   // Other props are passed to `Dialog`
   ...other
 }) {
@@ -82,6 +84,8 @@ export default function ConfirmDialog({
               {cancel}
             </Button>
           </Condition>
+
+          {actions}
         </DialogActions>
       </Condition>
     </Dialog>
@@ -89,12 +93,12 @@ export default function ConfirmDialog({
 }
 
 ConfirmDialog.propTypes = {
-  title: PropTypes.node,
-  content: PropTypes.node,
-  confirm: PropTypes.node,
   cancel: PropTypes.node,
-  onConfirm: PropTypes.func,
+  confirm: PropTypes.node,
+  content: PropTypes.node,
   onCancel: PropTypes.func,
+  onConfirm: PropTypes.func,
+  title: PropTypes.node,
+  CancelButtonProps: PropTypes.object,
   ConfirmButtonProps: PropTypes.object,
-  CancelButtonProps: PropTypes.object
 };
