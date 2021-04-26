@@ -1,3 +1,7 @@
+# v2.18.0
+
+- [x] :sparkles: New Component ConfigWrapper
+
 # v2.17.0
 
 - [x] :beetle: Fix ConfirmDialogButton properties
