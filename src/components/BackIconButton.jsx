@@ -4,6 +4,9 @@ import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
 import { IconButton } from "@material-ui/core";
+
+import { useConfig } from "./ConfigWrapper";
+
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 /**
@@ -21,9 +24,11 @@ export default function BackIconButton({
   IconProps = {},
   ...props
 }) {
+  const [{ BackIconButton: config }] = useConfig();
   const { go } = useHistory();
+
   return (
-    <IconButton onClick={() => go(-parseInt(back))} {...props}>
+    <IconButton onClick={() => go(-parseInt(back))} {...config} {...props}>
       <ArrowBackIcon {...IconProps} />
       {children}
     </IconButton>

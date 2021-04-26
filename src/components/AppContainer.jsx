@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import ConfigWrapper from "./ConfigWrapper";
 import ErrorWrapper from "./ErrorWrapper";
 import NotifyWrapper from "./NotifyWrapper";
 import RouterWrapper from "./RouterWrapper";
@@ -13,6 +14,7 @@ import Wrapper from "./Wrapper";
  *
  * Wraps application with Theme, Error handler, Notifier and Router. Wrappers can be configured with ThemeProps, NotifyProps and RouterProps.
  *
+ * @param       {Object} [ConfigProps={}]   Properties for `ConfigWrapper`
  * @param       {Object} [ErrorProps={}]    Properties for `ErrorWrapper`
  * @param       {Object} [NotifyProps={}]   Properties for `NotifyWrapper`
  * @param       {Object} [RouterProps={}]   Properties for `RouterWrapper`
@@ -22,6 +24,7 @@ import Wrapper from "./Wrapper";
  * @constructor
  */
 export default function AppContainer({
+  ConfigProps = {},
   ErrorProps = {},
   NotifyProps = {},
   RouterProps = {},
@@ -32,6 +35,7 @@ export default function AppContainer({
   return (
     <Wrapper
       Children={[
+        { Component: ConfigWrapper, ...ConfigProps },
         { Component: ThemeWrapper, ...ThemeProps },
         { Component: SuspenseWrapper, ...SuspenseProps },
         { Component: ErrorWrapper, ...ErrorProps },
