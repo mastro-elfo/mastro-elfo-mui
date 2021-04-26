@@ -4,15 +4,17 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { Fab, useScrollTrigger, Zoom } from "@material-ui/core";
 
+import { useConfig } from "./ConfigWrapper";
+
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   Fab: {
     position: "fixed",
     bottom: theme.spacing(1),
     right: theme.spacing(1),
-    zIndex: theme.zIndex.modal
-  }
+    zIndex: theme.zIndex.modal,
+  },
 }));
 
 /**
@@ -22,6 +24,7 @@ const useStyles = makeStyles(theme => ({
  * @constructor
  */
 export default function TopFab({ threshold = 100, ...others }) {
+  const [{ TopFab: config }] = useConfig();
   const classes = useStyles();
   const trigger = useScrollTrigger({ disableHysteresis: true, threshold });
 
@@ -31,7 +34,12 @@ export default function TopFab({ threshold = 100, ...others }) {
 
   return (
     <Zoom in={trigger}>
-      <Fab onClick={handleClick} className={classes.Fab} {...others}>
+      <Fab
+        onClick={handleClick}
+        className={classes.Fab}
+        {...config}
+        {...others}
+      >
         <KeyboardArrowUpIcon />
       </Fab>
     </Zoom>
@@ -40,5 +48,5 @@ export default function TopFab({ threshold = 100, ...others }) {
 
 TopFab.propTypes = {
   // Minimum scroll before show the button
-  threshold: PropTypes.number
+  threshold: PropTypes.number,
 };
