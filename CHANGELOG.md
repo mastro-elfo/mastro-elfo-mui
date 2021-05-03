@@ -1,3 +1,7 @@
+# v2.19.0
+
+- [x] :sparkles: New property `ReloadIconButtonProps` of `ErrorWrapper`
+
 # v2.18.0
 
 - [x] :sparkles: New Component ConfigWrapper
