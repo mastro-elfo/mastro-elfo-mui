@@ -20,7 +20,7 @@ import Wrapper from "./Wrapper";
  * @param       {Object} [RouterProps={}]   Properties for `RouterWrapper`
  * @param       {Object} [SuspenseProps={}] Properties for `SuspenseWrapper`
  * @param       {Object} [ThemeProps={}]    Properties for `ThemeWrapper`
- * @param       {Object} [WrapperProps={}}] Other wrappers
+ * @param       {Object} [WrapperProps={}] Other wrappers
  * @constructor
  */
 export default function AppContainer({
