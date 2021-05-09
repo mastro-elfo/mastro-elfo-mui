@@ -1,3 +1,7 @@
+# v2.19.1
+
+- [x] :beetle: Snackbars are visible when a page is printed
+
 # v2.19.0
 
 - [x] :sparkles: New property `ReloadIconButtonProps` of `ErrorWrapper`
