@@ -10,8 +10,12 @@ import GrowTypography from "./GrowTypography";
  *
  * Children are rendered inside a flexGrow Typography
  * @param   {node}    children            [description]
+ * // TODO: Remove in v3.0.0
  * @param   {node}    [LeftAction=null]   [description]
+ * @param   {node}    [leftAction=null]
+ * // TODO: Remove in v3.0.0
  * @param   {Array}   [RightActions=[]]   [description]
+ * @param   {node}    [rightAction=null]
  * @param   {Object}  [TitleProps={}}]    [description]
  * @param   {Object}  [ToolbarProps={}}]  [description]
  * @param   {any}     [rest]              [description]
@@ -30,21 +34,17 @@ export default function Header({
   ...rest
 }) {
   if (LeftAction !== null) {
+    // TODO: Remove in v3.0.0
     console.warn(
       "Property `LeftAction` is deprecated since v2.20.0 and will be removed in v3.0.0. Use `leftAction` instead"
     );
   }
-  // console.log(
-  //   RightActions,
-  //   typeof RightActions,
-  //   RightActions.map,
-  //   RightActions.length
-  // );
   if (
     RightActions !== null &&
     typeof RightActions === "object" &&
     (!RightActions.map || RightActions.length !== 0)
   ) {
+    // TODO: Remove in v3.0.0
     console.warn(
       "Property `RightActions` is deprecated since v2.20.0 and will be removed in v3.0.0. Use `rightAction` instead"
     );
