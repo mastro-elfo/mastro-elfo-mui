@@ -19,21 +19,47 @@ import GrowTypography from "./GrowTypography";
  */
 export default function Header({
   children,
+  // TODO: Remove in v3.0.0
   LeftAction = null,
+  leftAction = null,
+  // TODO: Remove in v3.0.0
   RightActions = [],
+  rightAction = null,
   TitleProps = {},
   ToolbarProps = {},
   ...rest
 }) {
+  if (LeftAction !== null) {
+    console.warn(
+      "Property `LeftAction` is deprecated since v2.20.0 and will be removed in v3.0.0. Use `leftAction` instead"
+    );
+  }
+  // console.log(
+  //   RightActions,
+  //   typeof RightActions,
+  //   RightActions.map,
+  //   RightActions.length
+  // );
+  if (
+    RightActions !== null &&
+    typeof RightActions === "object" &&
+    (!RightActions.map || RightActions.length !== 0)
+  ) {
+    console.warn(
+      "Property `RightActions` is deprecated since v2.20.0 and will be removed in v3.0.0. Use `rightAction` instead"
+    );
+  }
   return (
     <Fragment>
       <AppBar {...rest}>
         <Toolbar {...ToolbarProps}>
           {LeftAction}
+          {leftAction}
           <GrowTypography variant="h6" {...TitleProps}>
             {children}
           </GrowTypography>
           {RightActions}
+          {rightAction}
         </Toolbar>
       </AppBar>
       <Toolbar />
@@ -43,11 +69,21 @@ export default function Header({
 
 Header.propTypes = {
   children: PropTypes.node,
+  // TODO: Remove in v3.0.0
   LeftAction: PropTypes.node,
+  leftAction: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  // TODO: Remove in v3.0.0
   RightActions: PropTypes.oneOfType([
     PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
+    PropTypes.arrayOf(PropTypes.node),
+  ]),
+  rightAction: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
   ]),
   TitleProps: PropTypes.object,
-  ToolbarProps: PropTypes.object
+  ToolbarProps: PropTypes.object,
 };
