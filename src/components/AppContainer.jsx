@@ -34,7 +34,7 @@ export default function AppContainer({
 }) {
   return (
     <Wrapper
-      Children={[
+      components={[
         { Component: ConfigWrapper, ...ConfigProps },
         { Component: ThemeWrapper, ...ThemeProps },
         { Component: SuspenseWrapper, ...SuspenseProps },
