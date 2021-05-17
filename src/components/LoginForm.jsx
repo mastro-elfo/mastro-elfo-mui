@@ -18,7 +18,9 @@ export default function LoginForm({
   // Start value for password
   defaultUsername = "",
   // Login button label
+  // TODO: Remove in v3.0.0
   LoginLabel = "Login",
+  loginLabel = "Login",
   // Login button props
   LoginProps = {},
   // Password Field props
@@ -77,7 +79,10 @@ export default function LoginForm({
           disabled={loading}
           {...LoginProps}
         >
-          {LoginLabel}
+          {
+            // TODO: Change in v3.0.0 {loginLabel}
+          }
+          {LoginLabel !== "Login" ? LoginLabel : loginLabel}
           <Loading show={loading}>
             <AbsoluteCircularProgress />
           </Loading>
@@ -94,7 +99,9 @@ LoginForm.propTypes = {
   login: PropTypes.func,
   defaultPassword: PropTypes.string,
   defaultUsername: PropTypes.string,
+  // TODO: Remove in v3.0.0
   LoginLabel: PropTypes.string,
+  loginLabel: PropTypes.string,
   LoginProps: PropTypes.object,
   PasswordProps: PropTypes.object,
   UsernameProps: PropTypes.object,
