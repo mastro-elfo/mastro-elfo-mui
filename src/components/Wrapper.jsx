@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
 export default function Wrapper({ children, Children = [], components = [] }) {
   if (Children && Children.length) {
     console.warn(
-      "Property `Children` is deprecated since 2.20.0 and will be removed in v3.0.0. Use `components` instead"
+      "Property `Children` is deprecated since v2.19.2 and will be removed in v3.0.0. Use `components` instead"
     );
   }
   // Take the first child

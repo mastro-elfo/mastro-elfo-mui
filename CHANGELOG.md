@@ -1,3 +1,10 @@
+# v2.19.2
+
+- [x] :beetle: Fix exports
+- [x] :beetle: Fix start characters of properties
+  - `Header:LeftAction`, `Header:RightActions`, `LoginForm:LoginLabel`, `Wrapper:Children` are now deprecated
+  - `Header:leftAction`, `Header:rightAction`, `LoginForm:loginLabel`, `Wrapper:components` are new properties
+
 # v2.19.1
 
 - [x] :beetle: Snackbars are visible when a page is printed

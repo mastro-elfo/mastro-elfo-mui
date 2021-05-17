@@ -36,7 +36,7 @@ export default function Header({
   if (LeftAction !== null) {
     // TODO: Remove in v3.0.0
     console.warn(
-      "Property `LeftAction` is deprecated since 2.20.0 and will be removed in v3.0.0. Use `leftAction` instead"
+      "Property `LeftAction` is deprecated since v2.19.2 and will be removed in v3.0.0. Use `leftAction` instead"
     );
   }
   if (
@@ -46,7 +46,7 @@ export default function Header({
   ) {
     // TODO: Remove in v3.0.0
     console.warn(
-      "Property `RightActions` is deprecated since 2.20.0 and will be removed in v3.0.0. Use `rightAction` instead"
+      "Property `RightActions` is deprecated since v2.19.2 and will be removed in v3.0.0. Use `rightAction` instead"
     );
   }
   return (
