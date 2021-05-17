@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 import { IconButton } from "@material-ui/core";
 
-import { useConfig } from "./ConfigWrapper";
+import { useConfig } from "../utils/useConfig";
 
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
