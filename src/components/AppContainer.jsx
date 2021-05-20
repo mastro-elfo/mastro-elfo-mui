@@ -30,7 +30,8 @@ export default function AppContainer({
   RouterProps = {},
   SuspenseProps = {},
   ThemeProps = {},
-  WrapperProps = { Children: [] },
+  // TODO: remove `Children` in v3.0.0
+  WrapperProps = { Children: [], components: [] },
 }) {
   return (
     <Wrapper
@@ -41,6 +42,7 @@ export default function AppContainer({
         { Component: ErrorWrapper, ...ErrorProps },
         { Component: NotifyWrapper, ...NotifyProps },
         ...WrapperProps.Children,
+        ...WrapperProps.components,
       ]}
     >
       <RouterWrapper {...RouterProps} />

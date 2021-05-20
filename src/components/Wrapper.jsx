@@ -25,7 +25,7 @@ export default function Wrapper({ children, Children = [], components = [] }) {
     // Render Component and Wrap the rest
     return (
       <Component {...props}>
-        <Wrapper Children={rest}>{children}</Wrapper>
+        <Wrapper components={rest}>{children}</Wrapper>
       </Component>
     );
   } else {
