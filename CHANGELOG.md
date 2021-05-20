@@ -1,3 +1,9 @@
+# v2.19.3
+
+- [] :beetle: Fix `AppContainer` uses `Wrapper.Children` instead of `Wrapper.components`
+- [] :beetle: Fix `Wrapper` uses `Children` instead of `components`
+- [] :beetle: Fix 'React' is defined but never used no-unused-vars in `useConfig`
+
 # v2.19.2
 
 - [x] :beetle: Fix exports
