@@ -1,3 +1,7 @@
+# v2.19.5
+
+- [x] :beetle: `DrawerLists` use Fragment
+
 # v2.19.4
 
 - [x] :beetle: Fix TypeError: Invalid attempt to spread non-iterable instance
