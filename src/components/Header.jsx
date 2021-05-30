@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
-import { AppBar, Toolbar } from "@material-ui/core";
+import { AppBar, Container, Toolbar } from "@material-ui/core";
 
 import GrowTypography from "./GrowTypography";
 
@@ -9,16 +9,17 @@ import GrowTypography from "./GrowTypography";
  * Create an AppBar/Toolbar header.
  *
  * Children are rendered inside a flexGrow Typography
- * @param   {node}    children            [description]
+ * @param node children
  * // TODO: Remove in v3.0.0
- * @param   {node}    [LeftAction=null]   [description]
- * @param   {node}    [leftAction=null]
+ * @param node LeftAction=null
+ * @param node leftAction=null
  * // TODO: Remove in v3.0.0
- * @param   {Array}   [RightActions=[]]   [description]
- * @param   {node}    [rightAction=null]
- * @param   {Object}  [TitleProps={}}]    [description]
- * @param   {Object}  [ToolbarProps={}}]  [description]
- * @param   {any}     [rest]              [description]
+ * @param Array RightActions=[]
+ * @param node rightAction=null
+ * @param Object TitleProps={}
+ * @param Object ToolbarProps={}
+ * @param bool withContainer if `true` wraps inner `Toolbar` inside `Container`
+ * @param any rest The rest of the props are passed to `AppBar`
  * @constructor
  */
 export default function Header({
@@ -31,6 +32,7 @@ export default function Header({
   rightAction = null,
   TitleProps = {},
   ToolbarProps = {},
+  withContainer = false,
   ...rest
 }) {
   if (LeftAction !== null) {
@@ -49,18 +51,27 @@ export default function Header({
       "Property `RightActions` is deprecated since v2.19.2 and will be removed in v3.0.0. Use `rightAction` instead"
     );
   }
+
+  const appBarContent = (
+    <Toolbar disableGutters={withContainer} {...ToolbarProps}>
+      {LeftAction}
+      {leftAction}
+      <GrowTypography variant="h6" {...TitleProps}>
+        {children}
+      </GrowTypography>
+      {RightActions}
+      {rightAction}
+    </Toolbar>
+  );
+
   return (
     <Fragment>
       <AppBar {...rest}>
-        <Toolbar {...ToolbarProps}>
-          {LeftAction}
-          {leftAction}
-          <GrowTypography variant="h6" {...TitleProps}>
-            {children}
-          </GrowTypography>
-          {RightActions}
-          {rightAction}
-        </Toolbar>
+        {!!withContainer ? (
+          <Container>{appBarContent}</Container>
+        ) : (
+          appBarContent
+        )}
       </AppBar>
       <Toolbar />
     </Fragment>
@@ -86,4 +97,5 @@ Header.propTypes = {
   ]),
   TitleProps: PropTypes.object,
   ToolbarProps: PropTypes.object,
+  withContainer: PropTypes.bool,
 };

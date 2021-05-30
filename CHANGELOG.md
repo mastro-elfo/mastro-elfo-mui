@@ -1,3 +1,7 @@
+# v2.20.0
+
+- [x] :sparkles: New property `withContainer`
+
 # v2.19.5
 
 - [x] :beetle: `DrawerLists` use Fragment
