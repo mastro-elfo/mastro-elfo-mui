@@ -1,6 +1,6 @@
 # v2.20.0
 
-- [x] :sparkles: New property `withContainer`
+- [x] :sparkles: New property `withContainer` of `Header`
 
 # v2.19.5
 
