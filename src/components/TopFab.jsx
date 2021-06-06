@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { Fab, useScrollTrigger, Zoom } from "@material-ui/core";
 
-import { useConfig } from "./ConfigWrapper";
+import { useConfig } from "../utils/useConfig";
 
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 

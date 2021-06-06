@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 
@@ -21,35 +21,31 @@ export default function DrawerLists({
   // Lists
   lists = [],
 }) {
-  return (
-    <Fragment>
-      {lists.map(
-        ({
-          avatar = false,
-          header = "",
-          items = [],
-          key,
-          leftFill = false,
-          rightFill = false,
-        }) => (
-          <List key={key} subheader={<ListSubheader>{header}</ListSubheader>}>
-            {items
-              // Filter falsy items
-              .filter((item) => item)
-              // Map items
-              .map(({ Component = ItemComponent, ...props }) => (
-                <Component
-                  key={key}
-                  avatar={avatar}
-                  leftFill={leftFill}
-                  rightFill={rightFill}
-                  {...props}
-                />
-              ))}
-          </List>
-        )
-      )}
-    </Fragment>
+  return lists.map(
+    ({
+      avatar = false,
+      header = "",
+      items = [],
+      key,
+      leftFill = false,
+      rightFill = false,
+    }) => (
+      <List key={key} subheader={<ListSubheader>{header}</ListSubheader>}>
+        {items
+          // Filter falsy items
+          .filter((item) => item)
+          // Map items
+          .map(({ Component = ItemComponent, ...props }) => (
+            <Component
+              key={key}
+              avatar={avatar}
+              leftFill={leftFill}
+              rightFill={rightFill}
+              {...props}
+            />
+          ))}
+      </List>
+    )
   );
 }
 

@@ -44,6 +44,7 @@ export default class ErrorWrapper extends Component {
                   key="reload"
                   title="Reload"
                   onClick={this.handleReloadClick}
+                  {...this.props.ReloadIconButtonProps}
                 >
                   <RefreshIcon />
                 </IconButton>,

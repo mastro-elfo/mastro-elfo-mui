@@ -11,16 +11,21 @@ import PropTypes from "prop-types";
  * @param       {Array}  [Children=[]] [description]
  * @constructor
  */
-export default function Wrapper({ children, Children = [] }) {
+export default function Wrapper({ children, Children = [], components = [] }) {
+  if (Children && Children.length) {
+    console.warn(
+      "Property `Children` is deprecated since v2.19.2 and will be removed in v3.0.0. Use `components` instead"
+    );
+  }
   // Take the first child
-  const [Child, ...rest] = Children;
+  const [Child, ...rest] = Children && Children.length ? Children : components;
   if (Child) {
     // Split Child between Component and all the rest
     const { Component, ...props } = Child;
     // Render Component and Wrap the rest
     return (
       <Component {...props}>
-        <Wrapper Children={rest}>{children}</Wrapper>
+        <Wrapper components={rest}>{children}</Wrapper>
       </Component>
     );
   } else {
@@ -40,5 +45,5 @@ Wrapper.propTypes = {
         return new Error("Component property is required");
       }
     })
-  )
+  ),
 };

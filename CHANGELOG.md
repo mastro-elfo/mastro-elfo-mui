@@ -1,3 +1,40 @@
+# v2.20.0
+
+- [x] :sparkles: New property `withContainer` of `Header`
+
+# v2.19.5
+
+- [x] :beetle: `DrawerLists` use Fragment
+
+# v2.19.4
+
+- [x] :beetle: Fix TypeError: Invalid attempt to spread non-iterable instance
+
+# v2.19.3
+
+- [x] :beetle: Fix `AppContainer` uses `Wrapper.Children` instead of `Wrapper.components`
+- [x] :beetle: Fix `Wrapper` uses `Children` instead of `components`
+- [x] :beetle: Fix 'React' is defined but never used no-unused-vars in `useConfig`
+
+# v2.19.2
+
+- [x] :beetle: Fix exports
+- [x] :beetle: Fix start characters of properties
+  - `Header:LeftAction`, `Header:RightActions`, `LoginForm:LoginLabel`, `Wrapper:Children` are now deprecated
+  - `Header:leftAction`, `Header:rightAction`, `LoginForm:loginLabel`, `Wrapper:components` are new properties
+
+# v2.19.1
+
+- [x] :beetle: Snackbars are visible when a page is printed
+
+# v2.19.0
+
+- [x] :sparkles: New property `ReloadIconButtonProps` of `ErrorWrapper`
+
+# v2.18.0
+
+- [x] :sparkles: New Component ConfigWrapper
+
 # v2.17.0
 
 - [x] :beetle: Fix ConfirmDialogButton properties

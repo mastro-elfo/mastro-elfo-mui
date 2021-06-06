@@ -20,7 +20,7 @@ import Wrapper from "./Wrapper";
  * @param       {Object} [RouterProps={}]   Properties for `RouterWrapper`
  * @param       {Object} [SuspenseProps={}] Properties for `SuspenseWrapper`
  * @param       {Object} [ThemeProps={}]    Properties for `ThemeWrapper`
- * @param       {Object} [WrapperProps={}}] Other wrappers
+ * @param       {Object} [WrapperProps={}] Other wrappers
  * @constructor
  */
 export default function AppContainer({
@@ -30,17 +30,20 @@ export default function AppContainer({
   RouterProps = {},
   SuspenseProps = {},
   ThemeProps = {},
-  WrapperProps = { Children: [] },
+  WrapperProps = {},
 }) {
+  // TODO: remove `Children` in v3.0.0
+  const { Children = [], components = [] } = WrapperProps;
   return (
     <Wrapper
-      Children={[
+      components={[
         { Component: ConfigWrapper, ...ConfigProps },
         { Component: ThemeWrapper, ...ThemeProps },
         { Component: SuspenseWrapper, ...SuspenseProps },
         { Component: ErrorWrapper, ...ErrorProps },
         { Component: NotifyWrapper, ...NotifyProps },
-        ...WrapperProps.Children,
+        ...Children,
+        ...components,
       ]}
     >
       <RouterWrapper {...RouterProps} />
