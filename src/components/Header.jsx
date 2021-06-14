@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
-import { AppBar, Container, Toolbar } from "@material-ui/core";
+import { AppBar, Container, Toolbar, Typography } from "@material-ui/core";
 
 import GrowTypography from "./GrowTypography";
 
@@ -9,17 +9,18 @@ import GrowTypography from "./GrowTypography";
  * Create an AppBar/Toolbar header.
  *
  * Children are rendered inside a flexGrow Typography
- * @param node children
+ * @param node    children
  * // TODO: Remove in v3.0.0
- * @param node LeftAction=null
- * @param node leftAction=null
+ * @param node    LeftAction=null
+ * @param node    leftAction=null
  * // TODO: Remove in v3.0.0
- * @param Array RightActions=[]
- * @param node rightAction=null
- * @param Object TitleProps={}
- * @param Object ToolbarProps={}
- * @param bool withContainer if `true` wraps inner `Toolbar` inside `Container`
- * @param any rest The rest of the props are passed to `AppBar`
+ * @param array   RightActions=[]
+ * @param node    rightAction=null
+ * @param bool    shrink=false       if `true` "shrinks" the `Typography` component
+ * @param object  TitleProps={}
+ * @param object  ToolbarProps={}
+ * @param bool    withContainer      if `true` wraps inner `Toolbar` inside `Container`
+ * @param any     rest               The rest of the props are passed to `AppBar`
  * @constructor
  */
 export default function Header({
@@ -30,6 +31,7 @@ export default function Header({
   // TODO: Remove in v3.0.0
   RightActions = [],
   rightAction = null,
+  shrink = false,
   TitleProps = {},
   ToolbarProps = {},
   withContainer = false,
@@ -52,13 +54,15 @@ export default function Header({
     );
   }
 
+  const TypographyComponent = shrink ? Typography : GrowTypography;
+
   const appBarContent = (
     <Toolbar disableGutters={withContainer} {...ToolbarProps}>
       {LeftAction}
       {leftAction}
-      <GrowTypography variant="h6" {...TitleProps}>
+      <TypographyComponent variant="h6" {...TitleProps}>
         {children}
-      </GrowTypography>
+      </TypographyComponent>
       {RightActions}
       {rightAction}
     </Toolbar>
@@ -95,6 +99,7 @@ Header.propTypes = {
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node),
   ]),
+  shrink: PropTypes.bool,
   TitleProps: PropTypes.object,
   ToolbarProps: PropTypes.object,
   withContainer: PropTypes.bool,

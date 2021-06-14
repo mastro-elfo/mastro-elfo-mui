@@ -1,3 +1,7 @@
+# v2.21.0
+
+- [x] :sparkles: New property `shrink` of Header
+
 # v2.20.0
 
 - [x] :sparkles: New property `withContainer` of `Header`
