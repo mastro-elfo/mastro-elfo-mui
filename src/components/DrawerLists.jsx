@@ -60,6 +60,7 @@ DrawerLists.propTypes = {
           key: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
             .isRequired,
           action: PropTypes.node,
+          disabled: PropTypes.bool,
           icon: PropTypes.node,
           onClick: PropTypes.func,
           primary: PropTypes.string,
