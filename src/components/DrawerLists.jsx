@@ -99,9 +99,9 @@ function ItemComponent({
       disabled={disabled}
       onClick={
         outerLink
-          ? window.open(href)
+          ? () => window.open(href)
           : innerLink
-          ? push(href)
+          ? () => push(href)
           : isButton
           ? onClick
           : () => {}
