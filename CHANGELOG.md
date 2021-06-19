@@ -1,3 +1,8 @@
+# v2.21.1
+
+- [x] :beetle: Fix `DrawerLists`/`ItemComponent` call `window.open` and `push` directly when `href` is set
+- [ ] Fix ErrorWrapper use deprecated RightActions
+
 # v2.21.0
 
 - [x] :sparkles: New property `shrink` of Header
