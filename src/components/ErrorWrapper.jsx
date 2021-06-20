@@ -39,16 +39,15 @@ export default class ErrorWrapper extends Component {
         <Page
           header={
             <Header
-              RightActions={[
+              rightAction={
                 <IconButton
-                  key="reload"
                   title="Reload"
                   onClick={this.handleReloadClick}
                   {...this.props.ReloadIconButtonProps}
                 >
                   <RefreshIcon />
-                </IconButton>,
-              ]}
+                </IconButton>
+              }
             >
               {this.props.header || "An error occurred"}
             </Header>
