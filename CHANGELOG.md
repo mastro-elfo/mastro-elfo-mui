@@ -1,7 +1,7 @@
 # v2.21.1
 
 - [x] :beetle: Fix `DrawerLists`/`ItemComponent` call `window.open` and `push` directly when `href` is set
-- [x] :beetle: Fix ErrorWrapper use deprecated RightActions
+- [x] :beetle: Fix `ErrorWrapper` use deprecated `RightActions`
 
 # v2.21.0
 
@@ -13,7 +13,7 @@
 
 # v2.19.5
 
-- [x] :beetle: `DrawerLists` use Fragment
+- [x] :beetle: `DrawerLists` use `Fragment`
 
 # v2.19.4
 
