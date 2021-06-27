@@ -36,7 +36,8 @@ export const drawer = {
   primary: "<Page>",
   secondary: "",
   icon: <DrawerIcon/>,
-  title: "Open <Page>"
+  title: "Open <Page>",
+  href: "/<page>"
 }
 `;
 
