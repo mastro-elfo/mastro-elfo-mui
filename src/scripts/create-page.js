@@ -19,7 +19,7 @@ import DrawerIcon from "@material-ui/icons/BrokenImage";
 function Component() {
   return (
     <Page
-      header={<Header LeftAction={<BackIconButton />}><Page></Header>}
+      header={<Header leftAction={<BackIconButton />}><Page></Header>}
       content={<Content><Page> content</Content>}
     />
   );
