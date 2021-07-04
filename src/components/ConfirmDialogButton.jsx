@@ -7,15 +7,18 @@ import ConfirmDialog from "./ConfirmDialog";
 
 /**
  * Creates a `Button`  or an `IconButton` that opens a `ConfirmDialog`.
- * @param       {node}  children       [description]
- * @param       {Boolean} [isIcon=false] [description]
- * @param       {function}  [onConfirm=()={}]  [description]
- * @constructor
+ * @param {node}  children
+ * @param {Boolean} isIcon=false
+ * @param {function}  onConfirm=()=>{}
+ * @param {function} onOpen=()=>{}
+ * @param {node} Component=Button
+ * @param {object} DialogProps={}
  */
 export default function ConfirmDialogButton({
   children,
   isIcon = false,
   onConfirm = () => {},
+  onOpen = () => {},
   Component = Button,
   DialogProps = {},
   ...others
@@ -33,9 +36,14 @@ export default function ConfirmDialogButton({
     onConfirm();
   };
 
+  const handleOpen = () => {
+    setOpen(true);
+    onOpen();
+  };
+
   return (
     <Fragment>
-      <Component onClick={() => setOpen(true)} {...others}>
+      <Component onClick={handleOpen} {...others}>
         {children}
       </Component>
       <ConfirmDialog
@@ -53,6 +61,7 @@ ConfirmDialogButton.propTypes = {
   children: PropTypes.node.isRequired,
   isIcon: PropTypes.bool,
   onConfirm: PropTypes.func,
+  onOpen: PropTypes.func,
   ButtonProps: PropTypes.object,
   DialogProps: PropTypes.object,
 };

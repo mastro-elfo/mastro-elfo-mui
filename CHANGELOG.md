@@ -1,3 +1,7 @@
+# v2.23.0
+
+- [x] :sparkles: New property `onOpen` of `ConfirmDialogButton`
+
 # v2.22.0
 
 - [x] :beetle: Fix deprecated `LeftAction`
