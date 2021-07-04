@@ -1,7 +1,12 @@
+# v2.22.0
+
+- [x] :beetle: Fix deprecated `LeftAction`
+- [x] :arrow_up: Add `href` attribute to drawer object
+
 # v2.21.1
 
 - [x] :beetle: Fix `DrawerLists`/`ItemComponent` call `window.open` and `push` directly when `href` is set
-- [ ] Fix ErrorWrapper use deprecated RightActions
+- [x] :beetle: Fix `ErrorWrapper` use deprecated `RightActions`
 
 # v2.21.0
 
@@ -13,7 +18,7 @@
 
 # v2.19.5
 
-- [x] :beetle: `DrawerLists` use Fragment
+- [x] :beetle: `DrawerLists` use `Fragment`
 
 # v2.19.4
 
