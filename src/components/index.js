@@ -35,6 +35,7 @@ export { default as NotifyWrapper } from "./NotifyWrapper";
 export { default as Page } from "./Page";
 export { default as PasswordField } from "./PasswordField";
 export { default as Push } from "./Push";
+export { default as Responsive } from "./Responsive";
 export { default as ResultList } from "./ResultList";
 export { default as RouterWrapper } from "./RouterWrapper";
 export { default as SearchField } from "./SearchField";

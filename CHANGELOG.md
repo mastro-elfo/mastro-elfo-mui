@@ -1,3 +1,7 @@
+# v2.24.0
+
+- [x] :sparkles: New component `Responsive`
+
 # v2.23.0
 
 - [x] :sparkles: New property `onOpen` of `ConfirmDialogButton`
